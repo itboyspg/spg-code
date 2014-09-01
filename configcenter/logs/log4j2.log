@@ -1,0 +1,46 @@
+2014.08.28 at 11:45:16 CST DEBUG com.spg.configcenter.pushserver.PushServerStartTest 31 test - 
+2014.08.28 at 11:46:48 CST DEBUG com.spg.configcenter.pushserver.PushServerStartTest 31 test - 
+2014-08-28 11:47:54 CST DEBUG com.spg.configcenter.pushserver.PushServerStartTest 31 test - 
+2014-08-28 11:48:09 CST DEBUG com.spg.configcenter.pushserver.PushServerStartTest 31 test - 
+2014-08-28 11:48:45 CST DEBUG com.spg.configcenter.pushserver.PushServerStartTest 31 test - 
+2014-08-28 11:48:57 CST DEBUG com.spg.configcenter.pushserver.PushServerStartTest 31 test - 
+2014-08-28 11:49:31 CST DEBUG com.spg.configcenter.pushserver.PushServerStartTest 31 test - 
+2014-08-28 11:49:55 CST DEBUG com.spg.configcenter.pushserver.PushServerStartTest 31 test - 
+2014-08-28 11:50:03 CST DEBUG com.spg.configcenter.pushserver.PushServerStartTest 31 test - 
+2014-08-28 11:50:37 CST DEBUG com.spg.configcenter.pushserver.PushServerStartTest 31 test - 
+2014-08-28 11:51:06 CST DEBUG com.spg.configcenter.pushserver.PushServerStartTest 31 test - 
+2014-08-28 11:51:32 CST DEBUG com.spg.configcenter.pushserver.PushServerStartTest 31 test - 
+2014-08-28 11:51:53 CST DEBUG com.spg.configcenter.pushserver.PushServerStartTest 32 test - 
+[2014-08-28 11:52:29] [DEBUG] [com.spg.configcenter.pushserver.PushServerStartTest.test(PushServerStartTest.java:32)] - 
+[2014-08-28 11:56:02] [main] [DEBUG] [com.spg.configcenter.pushserver.PushServerStartTest.test(PushServerStartTest.java:32)] - 
+[2014-08-28 12:03:17] [main] [DEBUG] [com.spg.configcenter.pushserver.PushServerStartTest.test(PushServerStartTest.java:32)] - 
+[2014-08-28 12:03:24] [main] [TRACE] [com.spg.configcenter.pushserver.PushServerStartTest.test(PushServerStartTest.java:31)] - entry params(123)
+[2014-08-28 12:03:24] [main] [DEBUG] [com.spg.configcenter.pushserver.PushServerStartTest.test(PushServerStartTest.java:32)] - 
+[2014-08-28 14:36:46] [main] [DEBUG] [com.spg.configcenter.pushserver.PushServerStartTest.testFormatJson(PushServerStartTest.java:43)] - {"data1":100,"data2":"hello","list":["String 1","String 2","String 3"]}
+[2014-08-28 14:37:13] [main] [DEBUG] [com.spg.configcenter.pushserver.PushServerStartTest.testFormatJson(PushServerStartTest.java:43)] - {"data1":100,"data2":"hello","list":["String 1","String 2","String 3"]}
+[2014-08-28 14:37:13] [main] [DEBUG] [com.spg.configcenter.pushserver.PushServerStartTest.testFormatJson(PushServerStartTest.java:44)] - {
+  "data1": 100,
+  "data2": "hello",
+  "list": [
+    "String 1",
+    "String 2",
+    "String 3"
+  ]
+}
+[2014-08-28 14:38:15] [main] [DEBUG] [com.spg.configcenter.pushserver.PushServerStartTest.testFormatJson(PushServerStartTest.java:43)] - {"data1":100,"data2":"hello","list":["String 1","String 2","String 3"]}
+[2014-08-28 14:47:05] [main] [DEBUG] [com.spg.configcenter.pushserver.PushServerStartTest.testFormatJson(PushServerStartTest.java:43)] - {"data1":100,"data2":"hello","list":["String 1","String 2","String 3"}
+[2014-08-28 14:50:37] [main] [DEBUG] [com.spg.configcenter.pushserver.PushServerStartTest.testFormatJson(PushServerStartTest.java:43)] - {"data1":100,"data2":"hello","list":["String 1","String 2","String 3"}
+[2014-08-28 14:50:37] [main] [DEBUG] [com.spg.configcenter.pushserver.PushServerStartTest.testFormatJson(PushServerStartTest.java:44)] - null
+[2014-08-28 14:54:58] [main] [DEBUG] [com.spg.configcenter.pushserver.PushServerStartTest.testFormatJson(PushServerStartTest.java:44)] - {"data1":100,"data2":"hello","list":["String 1","String 2","String 3"}
+[2014-08-28 14:55:10] [main] [DEBUG] [com.spg.configcenter.pushserver.PushServerStartTest.testFormatJson(PushServerStartTest.java:44)] - {"data1":100,"data2":"hello","list":["String 1","String 2","String 3"}
+[2014-08-28 14:55:10] [main] [ERROR] [com.spg.configcenter.pushserver.PushServerStartTest.isGoodJson(PushServerStartTest.java:83)] - bad json: {"data1":100,"data2":"hello","list":["String 1","String 2","String 3"}
+[2014-08-28 14:55:24] [main] [DEBUG] [com.spg.configcenter.pushserver.PushServerStartTest.testFormatJson(PushServerStartTest.java:44)] - {"data1":100,"data2":"hello","list":["String 1","String 2","String 3"]}
+[2014-08-28 14:55:24] [main] [DEBUG] [com.spg.configcenter.pushserver.PushServerStartTest.testFormatJson(PushServerStartTest.java:45)] - {
+  "data1": 100,
+  "data2": "hello",
+  "list": [
+    "String 1",
+    "String 2",
+    "String 3"
+  ]
+}

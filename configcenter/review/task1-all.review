@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Review id="task1">
+  <ReviewIssue id="HXMUZ2U4">
+    <ReviewIssueMeta>
+      <CreationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2014-07-15 :: 14:48:07:708 CST</CreationDate>
+      <LastModificationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2014-07-15 :: 15:19:20:817 CST</LastModificationDate>
+    </ReviewIssueMeta>
+    <ReviewerId>all</ReviewerId>
+    <AssignedTo>all</AssignedTo>
+    <File></File>
+    <Type>item.label.unset</Type>
+    <Severity>item.label.unset</Severity>
+    <Summary>描述</Summary>
+    <Description>描述</Description>
+    <Annotation>完全</Annotation>
+    <Revision>修改</Revision>
+    <Resolution>item.label.unset</Resolution>
+    <Status>item.status.label.closed</Status>
+  </ReviewIssue>
+</Review>

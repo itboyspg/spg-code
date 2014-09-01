@@ -1,0 +1,24 @@
+[2014-07-14 11:17:03] [main] [DEBUG] [com.spg.commons.stringutil.MyStringUtil] [35] - enter function, [yyyy, 2014-07-14]
+[2014-07-14 11:17:03] [main] [DEBUG] [com.spg.commons.datetime.MyDateTimeUtil] [34] - enter function, , parm1:yyyy, parm2:2014-07-14
+[2014-07-14 11:33:55] [main] [DEBUG] [com.spg.commons.stringutil.MyStringUtil] [35] - enter function, [yyyy, 2014-07-14]
+[2014-07-14 11:33:55] [main] [DEBUG] [com.spg.commons.logutil.MyLogUtil] [33] - enter function, , parm1:yyyy, parm2:2014-07-14
+[2014-07-14 11:36:14] [main] [DEBUG] [com.spg.commons.stringutil.MyStringUtil] [35] - enter function, [yyyy, 2014-07-14]
+[2014-07-14 11:36:14] [main] [DEBUG] [com.spg.commons.logutil.MyLogUtil] [40] - enter function, parm1:yyyy, parm2:2014-07-14
+[2014-07-14 11:38:15] [main] [DEBUG] [com.spg.commons.stringutil.MyStringUtil] [35] - enter function, [yyyy, 2014-07-14]
+[2014-07-14 11:38:15] [main] [DEBUG] [com.spg.commons.logutil.MyLogUtil] [41] - enter function30, parm1:yyyy, parm2:2014-07-14
+[2014-07-14 11:41:26] [main] [DEBUG] [com.spg.commons.stringutil.MyStringUtil] [35] - enter function, [yyyy, 2014-07-14]
+[2014-07-14 11:41:26] [main] [DEBUG] [com.spg.commons.logutil.MyLogUtil] [43] - enter functionline number:30, class name: com.spg.commons.logutil.MyLogUtil, method name: enterFunction, parm1:yyyy, parm2:2014-07-14
+[2014-07-14 11:42:03] [main] [DEBUG] [com.spg.commons.stringutil.MyStringUtil] [35] - enter function, [yyyy, 2014-07-14]
+[2014-07-14 11:42:03] [main] [DEBUG] [com.spg.commons.logutil.MyLogUtil] [43] - enter functionline number:35, class name: com.spg.commons.datetime.MyDateTimeUtil, method name: getDateTime, parm1:yyyy, parm2:2014-07-14
+[2014-07-14 11:42:37] [main] [DEBUG] [com.spg.commons.stringutil.MyStringUtil] [35] - enter function, [yyyy, 2014-07-14]
+[2014-07-14 11:42:37] [main] [DEBUG] [com.spg.commons.logutil.MyLogUtil] [43] - 
+enter functionline number:35, class name: com.spg.commons.datetime.MyDateTimeUtil, method name: getDateTime, parm1:yyyy, parm2:2014-07-14
+[2014-07-14 11:43:01] [main] [DEBUG] [com.spg.commons.stringutil.MyStringUtil] [35] - enter function, [yyyy, 2014-07-14]
+[2014-07-14 11:43:01] [main] [DEBUG] [com.spg.commons.logutil.MyLogUtil] [43] - 
+enter function, class name: com.spg.commons.datetime.MyDateTimeUtil, method name: getDateTimeline number:35, parm1:yyyy, parm2:2014-07-14
+[2014-07-14 11:43:34] [main] [DEBUG] [com.spg.commons.stringutil.MyStringUtil] [35] - enter function, [yyyy, 2014-07-14]
+[2014-07-14 11:43:34] [main] [DEBUG] [com.spg.commons.logutil.MyLogUtil] [43] - 
+enter functioncom.spg.commons.datetime.MyDateTimeUtil.getDateTime 35, parm1:yyyy, parm2:2014-07-14
+[2014-07-14 11:44:23] [main] [DEBUG] [com.spg.commons.stringutil.MyStringUtil] [35] - enter function, [yyyy, 2014-07-14]
+[2014-07-14 11:44:23] [main] [DEBUG] [com.spg.commons.logutil.MyLogUtil] [43] - 
+enter function com.spg.commons.datetime.MyDateTimeUtil.getDateTime 35, parm1:yyyy, parm2:2014-07-14
