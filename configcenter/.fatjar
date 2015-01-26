@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Thu Sep 04 15:30:27 CST 2014
+onejar.license.required=true
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=configcenter.jar
+manifest.mergeall=true
+manifest.mainclass=
+manifest.file=<createnew>
+jarname.isextern=false
+onejar.expand=
+excludes=<po|configcenter>~com/~spg/~configcenter/~controller/;<po|configcenter>~com/~spg/~configcenter/~manager/;<po|configcenter>~com/~spg/~configcenter/~pushserver/;<po|configcenter>~com/~spg/~configcenter/~util/;<po|configcenter>~jdbc.properties;<po|configcenter>~log4j.properties;<po|configcenter>~log4j2.xml;<po|configcenter>~mybatis-config.xml;<po|configcenter>~netty.configuration.properties;<po|configcenter>~spring-component.xml;<po|configcenter>~spring-jdbc.xml;<po|configcenter>~spring-mvc.xml;<jar|junit-4.11.jar>;<jar|hamcrest-core-1.3.jar>;<jar|log4j-api-2.0.2.jar>;<jar|log4j-core-2.0.2.jar>;<jar|gson-2.3.jar>;<jar|log4j-1.2.17.jar>;<jar|mybatis-3.2.4.jar>;<jar|spring-core-3.2.5.RELEASE.jar>;<jar|commons-logging-1.1.1.jar>;<jar|spring-web-3.2.5.RELEASE.jar>;<jar|aopalliance-1.0.jar>;<jar|spring-aop-3.2.5.RELEASE.jar>;<jar|spring-webmvc-3.2.5.RELEASE.jar>;<jar|spring-expression-3.2.5.RELEASE.jar>;<jar|spring-beans-3.2.5.RELEASE.jar>;<jar|spring-context-3.2.5.RELEASE.jar>;<jar|spring-jdbc-3.2.5.RELEASE.jar>;<jar|spring-tx-3.2.5.RELEASE.jar>;<jar|spring-context-support-3.2.5.RELEASE.jar>;<jar|spring-test-3.2.5.RELEASE.jar>;<jar|javax.servlet-api-3.1.0.jar>;<jar|jstl-1.1.2.jar>;<jar|standard-1.1.2.jar>;<jar|mybatis-spring-1.2.2.jar>;<jar|quartz-2.2.1.jar>;<jar|slf4j-api-1.6.6.jar>;<jar|c3p0-0.9.1.2.jar>;<jar|commons-codec-1.9.jar>;<jar|netty-all-4.0.23.Final.jar>;<jar|spring-retry-1.1.0.RELEASE.jar>;<jar|fastjson-1.1.37.jar>
+includes=
