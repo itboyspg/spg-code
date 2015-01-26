@@ -1,4 +1,3 @@
-
 /**
  * 
  */
@@ -17,7 +16,8 @@ import org.junit.Test;
  */
 public class ConvertScriptTagTest
 {
-//    private static final Log LOGGER = LogFactory.getLog(ConvertScriptTagTest.class);
+    // private static final Log LOGGER =
+    // LogFactory.getLog(ConvertScriptTagTest.class);
 
     @Test
     public void testConvertScript()
@@ -27,4 +27,3 @@ public class ConvertScriptTagTest
         System.out.println(result);
     }
 }
-

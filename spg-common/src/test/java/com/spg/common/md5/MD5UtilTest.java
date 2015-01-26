@@ -1,4 +1,3 @@
-
 /**
  * 
  */
@@ -24,7 +23,7 @@ import org.junit.Test;
  */
 public class MD5UtilTest
 {
-//    private static final Log LOGGER = LogFactory.getLog(MD5UtilTest.class);
+    // private static final Log LOGGER = LogFactory.getLog(MD5UtilTest.class);
 
     /**
      * @description:
@@ -45,7 +44,7 @@ public class MD5UtilTest
         map.put("b", "dd");
         map.put("s", "sdf");
         String joinKey = "#";
-        
+
         String result = MD5Util.encrypt(privateKey, map, joinKey);
         Assert.assertEquals("5a496a0842c5b35ad78a02c3195a000e", result);
     }
@@ -59,11 +58,11 @@ public class MD5UtilTest
         map.add("dd");
         map.add("sdf");
         String joinKey = "#";
-        
+
         String result = MD5Util.encrypt(privateKey, map, joinKey);
         Assert.assertEquals("8f3998c2a1303dfbf52fdabc9cb521e2", result);
     }
-    
+
     @Test
     public void testEncryptByDictionary()
     {
@@ -78,4 +77,3 @@ public class MD5UtilTest
         Assert.assertEquals("dce3c590c13670c70bbd670d656087fc", result);
     }
 }
-
