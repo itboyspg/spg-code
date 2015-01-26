@@ -7,7 +7,9 @@ import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -102,8 +104,7 @@ public final class MyDateUtil
      * 
      * @description: 获取相对于当前时间的其他时间
      * 
-     *               Examples:
-     *               <blockquote>
+     *               Examples: <blockquote>
      * 
      *               <pre>
      * 如果当前时间为2014-12-20
@@ -146,4 +147,29 @@ public final class MyDateUtil
         return null;
     }
 
+    /**
+     * @description: 根据给定的时间格式，获取此时间格式中某月份中总共有多少天。如：2014-02-22，则返回28；
+     * @author: Wind-spg
+     * @param source 原时间
+     * @param dateFormat 时间格式，如yyyy-MM
+     * @return 某月中有多少天
+     * @throws ParseException
+     */
+    public static int getDaysOfMouth(String source, String dateFormat) throws ParseException
+    {
+        int count = 0;
+        SimpleDateFormat format = new SimpleDateFormat(dateFormat);
+        try
+        {
+            Date date = format.parse(source);
+            Calendar calendar = new GregorianCalendar();
+            calendar.setTime(date);
+            count = calendar.getActualMaximum(Calendar.DATE);
+        } catch (ParseException e)
+        {
+            LOGGER.error("parse error!", e);
+            throw e;
+        }
+        return count;
+    }
 }
