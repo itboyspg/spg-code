@@ -1,5 +1,8 @@
 package com.spg.apidoc.service.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Service;
@@ -20,6 +23,18 @@ import com.spg.apidoc.service.UserService;
 public class UserServiceImpl implements UserService
 {
     private static final Log LOGGER = LogFactory.getLog(UserServiceImpl.class);
+    
+    private static List<UserInfo> allUsers = new ArrayList<UserInfo>();
+    
+    static
+    {
+        UserInfo user = null;
+        for (int i = 0; i < 2; i++)
+        {
+            user = new UserInfo((i+1), "name", i);
+            allUsers.add(user);
+        }
+    }
 
     /**
      * @see com.spg.apidoc.service.UserService#addUser(com.spg.apidoc.po.UserInfo)
@@ -28,8 +43,9 @@ public class UserServiceImpl implements UserService
     public int addUser(UserInfo user)
     {
         LOGGER.debug(String.format("enter function"));
+        allUsers.add(user);
         LOGGER.debug(String.format("exit function"));
-        return 0;
+        return 1;
     }
 
     /**
@@ -59,7 +75,8 @@ public class UserServiceImpl implements UserService
     public UserInfo queryUserById(int id)
     {
         LOGGER.debug(String.format("enter function"));
-        LOGGER.debug(String.format("exit function"));
-        return null;
+        UserInfo user = allUsers.get(id);
+        LOGGER.debug(String.format("exit function, %s", user));
+        return user;
     }
 }

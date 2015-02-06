@@ -23,7 +23,7 @@ import com.spg.apidoc.service.UserService;
  * @version V1.0.0
  *
  */
-@Controller(value = "userCtrl")
+@Controller
 public class UserCtroller extends BaseController
 {
 
@@ -38,6 +38,7 @@ public class UserCtroller extends BaseController
     {
         String postData = request.getParameter("postData");
 
+        LOGGER.debug(String.format("at function, %s", postData));
         if (null == postData || postData.isEmpty())
         {
             return super.buildFailedResultInfo(-1, "post data is empty!");

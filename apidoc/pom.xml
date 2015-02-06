@@ -107,6 +107,13 @@
 			<artifactId>fastjson</artifactId>
 			<version>1.1.43</version>
 		</dependency>
+		<dependency>
+			<groupId>com.mangofactory</groupId>
+			<artifactId>swagger-springmvc</artifactId>
+			<version>0.9.4</version>
+		</dependency>
+
+
 	</dependencies>
 
 	<build>
