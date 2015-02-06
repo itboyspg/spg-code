@@ -18,13 +18,25 @@ public class UserInfo implements Serializable
      */
     private static final long serialVersionUID = 5402516802630861439L;
 
-//    private static final Log LOGGER = LogFactory.getLog(UserInfo.class);
+    // private static final Log LOGGER = LogFactory.getLog(UserInfo.class);
 
     private int id;
 
     private String name;
 
     private int age;
+
+    public UserInfo()
+    {
+
+    }
+
+    public UserInfo(int id, String name, int age)
+    {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+    }
 
     public int getId()
     {
