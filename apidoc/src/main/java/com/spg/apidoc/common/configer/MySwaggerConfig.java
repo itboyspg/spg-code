@@ -50,12 +50,12 @@ public class MySwaggerConfig
     private ApiInfo apiInfo()
     {
         ApiInfo apiInfo = new ApiInfo(
-                "My Apps API Title", 
-                "My Apps API Description",
+                "xxx系统API接口管理", 
+                "各个controller下对应相应业务接口",
                 "My Apps API terms of service", 
-                "My Apps API Contact Email", 
-                "My Apps API Licence Type",
-                "My Apps API License URL");
+                "任何问题可联系xxx",
+                null,
+                null);
         return apiInfo;
     }
 }
