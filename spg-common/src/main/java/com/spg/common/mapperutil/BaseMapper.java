@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 项目名称：MyCommon
+ * 项目名称：spg-common
  * 
  * @description:mybatis dao层基础接口
  * 

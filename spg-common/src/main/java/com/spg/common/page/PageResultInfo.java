@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * 项目名称：forum
+ * 项目名称：spg-common
  * 
  * @description: 分页结果对象,默认当前页为第一页，每页10条记录，总页数会根据总记录数和每页数据大小计算
  * 

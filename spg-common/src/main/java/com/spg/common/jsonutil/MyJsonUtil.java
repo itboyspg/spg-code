@@ -12,7 +12,7 @@ import com.google.gson.JsonParseException;
 import com.google.gson.JsonParser;
 
 /**
- * 项目名称：MyCommon
+ * 项目名称：spg-common
  * 
  * @description: json工具，json格式化、判断json是否合法
  * 
