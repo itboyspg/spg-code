@@ -20,7 +20,6 @@ import org.apache.commons.logging.LogFactory;
  * @author Wind-spg
  * @create_time：2014年10月31日 上午8:55:51
  * @version V1.0.0
- * 
  */
 public final class FilterStringUtil
 {

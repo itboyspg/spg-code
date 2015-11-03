@@ -34,7 +34,6 @@ import com.spg.common.pojo.MyHttpResponse;
  * @author Wind-spg
  * @create_time：2014年12月2日 下午2:29:41
  * @version V1.0.0
- * 
  */
 public class MyHttpUtil
 {

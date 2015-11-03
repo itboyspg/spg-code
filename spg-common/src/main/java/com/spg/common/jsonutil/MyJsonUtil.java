@@ -15,13 +15,9 @@ import com.google.gson.JsonParser;
  * 项目名称：spg-common
  * 
  * @description: json工具，json格式化、判断json是否合法
- * 
- * @author spg
- * 
+ * @author Wind-spg
  * @create_time：2014年8月28日 下午2:43:53
- * 
  * @version V1.0.0
- * 
  */
 public final class MyJsonUtil
 {
@@ -33,7 +29,7 @@ public final class MyJsonUtil
     }
 
     /**
-     * json格式化
+     * json格式化输出
      * 
      * @param origJson
      *            需要格式化的json字符串

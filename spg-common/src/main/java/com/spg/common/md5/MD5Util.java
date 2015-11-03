@@ -21,7 +21,6 @@ import org.apache.commons.logging.LogFactory;
  * @author Wind-spg
  * @create_time：2014年10月17日 上午11:55:46
  * @version V1.0.0
- * 
  */
 public final class MD5Util
 {

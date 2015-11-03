@@ -17,7 +17,6 @@ import com.google.common.collect.Ordering;
  * @author Wind-spg
  * @create_time：2014年11月26日 下午5:30:32
  * @version V1.0.0
- * 
  */
 public class ValueComparableMap<K extends Comparable<K>, V> extends TreeMap<K, V>
 {

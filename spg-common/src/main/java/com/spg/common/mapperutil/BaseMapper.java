@@ -10,14 +10,10 @@ import java.util.Map;
  * 项目名称：spg-common
  * 
  * @description:mybatis dao层基础接口
- * 
- * @author spg
- * 
+ * @author Wind-spg
  * @create_time：2014年9月1日 下午5:31:14
- * 
  * @version V1.0.0
  * @param <T>
- * 
  */
 public interface BaseMapper<T>
 {

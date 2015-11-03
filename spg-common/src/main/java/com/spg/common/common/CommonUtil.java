@@ -18,7 +18,6 @@ import org.apache.commons.logging.LogFactory;
  * @author Wind-spg
  * @create_time：2014年11月19日 下午3:12:00
  * @version V1.0.0
- * 
  */
 public final class CommonUtil
 {

@@ -10,7 +10,6 @@ package com.spg.common.myexception;
  * @author Wind-spg
  * @create_time：2014年11月21日 下午5:27:13
  * @version V1.0.0
- * 
  */
 public class MyRuntimeException extends RuntimeException
 {

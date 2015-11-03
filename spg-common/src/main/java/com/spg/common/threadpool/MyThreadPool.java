@@ -20,7 +20,6 @@ import org.apache.commons.logging.LogFactory;
  * @author Wind-spg
  * @create_time：2014年10月11日 下午3:08:33
  * @version V1.0.0
- * 
  */
 public class MyThreadPool
 {

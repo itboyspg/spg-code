@@ -15,7 +15,6 @@ import org.apache.commons.collections4.CollectionUtils;
  * @author Wind-spg
  * @create_time：2014年11月27日 下午7:03:06
  * @version V1.0.0
- * 
  */
 public final class MyListUtil
 {

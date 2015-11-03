@@ -12,7 +12,6 @@ import java.io.Serializable;
  * @author Wind-spg
  * @create_time：2014年12月12日 上午9:41:58
  * @version V1.0.0
- * 
  */
 public class MyHttpResponse implements Serializable
 {

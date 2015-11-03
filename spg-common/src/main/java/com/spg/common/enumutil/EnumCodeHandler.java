@@ -14,16 +14,12 @@ import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;
 
 /**
- * 项目名称：
+ * 项目名称：spg-common
  * 
  * @description: 自定义mybatis枚举转换handler，对象属性是枚举类型，入库后是code，查出来后是枚举
- * 
- * @author spg
- * 
+ * @author Wind-spg
  * @create_time：2014年5月28日 下午6:49:04
- * 
  * @version V1.0.0
- * 
  */
 public class EnumCodeHandler extends BaseTypeHandler<EnumInterface>
 {

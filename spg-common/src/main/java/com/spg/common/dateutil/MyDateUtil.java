@@ -21,7 +21,6 @@ import org.apache.commons.logging.LogFactory;
  * @author Wind-spg
  * @create_time：2014年11月27日 上午10:00:26
  * @version V1.0.0
- * 
  */
 public final class MyDateUtil
 {

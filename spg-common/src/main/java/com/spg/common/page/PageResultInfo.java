@@ -10,14 +10,10 @@ import java.util.List;
  * 项目名称：spg-common
  * 
  * @description: 分页结果对象,默认当前页为第一页，每页10条记录，总页数会根据总记录数和每页数据大小计算
- * 
  * @author Wind-spg
- * 
  * @create_time：2014年10月15日 上午8:44:19
- * 
  * @version V1.0.0
  * @param <T>
- * 
  */
 public class PageResultInfo<T> implements Serializable
 {

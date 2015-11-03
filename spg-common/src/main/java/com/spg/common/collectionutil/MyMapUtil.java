@@ -19,7 +19,6 @@ import org.apache.commons.collections4.MapUtils;
  * @author Wind-spg
  * @create_time：2014年11月26日 下午4:53:50
  * @version V1.0.0
- * 
  */
 public final class MyMapUtil
 {
