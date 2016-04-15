@@ -24,12 +24,17 @@
 |strutil|N/A|字符串工具|
 |threadpool|N/A|线程池工具|
 
-## apidoc项目-适用swagger实现api接口的示例。
+## apidoc项目
+使用swagger实现api接口的示例。
 
-## configcenter项目-个人实验项目。
+## configcenter项目
+个人实验项目。
 
-## dubbo项目-淘宝开源RPC框架。
+## dubbo项目
+淘宝开源RPC框架。
 
-## spg-common项目-与上面MyCommon基本一致。
+## spg-common项目
+与上面MyCommon基本一致。
 
-## swagger-ui项目-开源swaggerapi项目。
+## swagger-ui项目
+开源swaggerapi项目。
