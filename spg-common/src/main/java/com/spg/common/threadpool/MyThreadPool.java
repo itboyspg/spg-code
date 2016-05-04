@@ -41,7 +41,6 @@ public class MyThreadPool
 
     private MyThreadPool()
     {
-        
     }
 
     public static synchronized MyThreadPool getInstance()
