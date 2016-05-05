@@ -2,6 +2,7 @@ package com.spg.cv.service.impl;
 
 import java.util.List;
 
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Service;
@@ -51,6 +52,22 @@ public class ConfigServiceImpl implements ConfigService
     {
         LOGGER.debug(String.format("enter function， %s", dataType));
         List<String> result = RedisListAPIUtil.queryListData(dataType.getName());
+        LOGGER.debug(String.format("exit function, %s", result));
+        return result;
+    }
+
+    @Override
+    public Long deleteConfigs(DataType dataType, List<PVBean> pvBeans)
+    {
+        LOGGER.debug(String.format("enter function, %s, %s", dataType, pvBeans));
+        Long result = 0L;
+        if (CollectionUtils.isNotEmpty(pvBeans))
+        {
+            for (PVBean bean : pvBeans)
+            {
+                result += deleteConfig(dataType, bean);
+            }
+        }
         LOGGER.debug(String.format("exit function, %s", result));
         return result;
     }

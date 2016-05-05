@@ -20,6 +20,33 @@
 </style>
 <script type="text/javascript" src="js/jQuery/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="<%=basePath%>bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$.ajax({
+			url: "configCtrl/queryConfig",
+			type: "POST",
+			dataType: "json",
+			data: {"dataType": "1"},
+			success: function(returnData){
+				// 拼接table数据
+				var trs = "";
+				$.each(returnData["resultData"], function(i, data){
+					trs += "<tr>";
+					trs += "<td><input type='checkbox' name='checkOne'></td>";
+					trs += "<td>" + (i + 1) + "</td>";
+					trs += "<td>" + data['englishName'] + "</td>";
+					trs += "<td>" + data['chineseDescription'] + "</td>";
+					trs += "</tr>";
+				});
+				$("#pvConfigTable tr:first").parent().append(trs);
+			},
+			error: function(error){
+				$("#error-waring-body").html("系统繁忙，加载数据异常，请稍后再试！");
+				$('#error-warning-modal').modal('show');
+			}
+		});
+	});
+</script>
 </head>
 <body>
 <nav class="navbar navbar-inverse">
@@ -81,12 +108,6 @@
 					<td>1</td>
 					<td>login</td>
 					<td>登陆</td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" name="checkOne"></td>
-					<td>2</td>
-					<td>regist</td>
-					<td>注册</td>
 				</tr>
 			</table>
 			<nav class="navbar navbar-default">
@@ -224,16 +245,24 @@
 				$("#error-waring-body").html("请至少选择一条记录进行删除！");
 				$('#error-warning-modal').modal('show');
 			}else {
+				var deleteDatas = new Array();
+				$.each($("input[name='checkOne']:checked"), function(i, data){
+					var deleteData = {};
+					deleteData["englishName"] = $(this).parent().next().next().text();
+					deleteData["chineseDescription"] = $(this).parent().next().next().next().text();
+					deleteDatas.push(deleteData);
+				});
 				$.ajax({
-					url: "pvCtrl/deletePV",
+					url: "configCtrl/deleteConfig",
 					type: "POST",
 					dataType: "json",
-					data : {},
+					data : {"dataType": "1", "deleteDatas": JSON.stringify(deleteDatas)},
 					success: function(data){
 						if (data["resultCode"] != 0){
 							$("#error-waring-body").html(data["resultMessage"]);
+						}else{
+							$("#error-waring-body").html("成功删除" + data["resultData"] + "条数据！");
 						}
-						$('#add-pv-config-model').modal('toggle')
 						$('#error-warning-modal').modal('toggle')
 					},
 					error: function(error){
