@@ -248,9 +248,9 @@
 						$('#success-modal').modal('toggle');
 					}
 				},
-				error: function(error){
+				error: function(jqXHR, textStatus, errorThrown){
 					$('#add-config-model').modal('toggle');
-					$("#error-waring-body").html(error);
+					$("#error-waring-body").html(textStatus + ", " + errorThrown);
 					$('#error-warning-modal').modal('show');
 				}
 			});
