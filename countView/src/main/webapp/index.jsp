@@ -22,13 +22,24 @@
 <script type="text/javascript" src="<%=basePath%>bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 	$(function(){
+		reloadData(true);
+	});
+	// 重新加载页面数据
+	function reloadData(deleteOldData){
 		$.ajax({
 			url: "configCtrl/queryConfig",
 			type: "POST",
+			asyn: true,
 			dataType: "json",
 			data: {"dataType": "1"},
+			beforeSend: function(){
+				// 是否删除现有表格数据
+				if (deleteOldData && $("#pvConfigTable tbody tr").length > 1){
+					$("#pvConfigTable tbody tr:gt(0)").html("");
+				}
+			},
 			success: function(returnData){
-				// 拼接table数据
+				// 拼接table中tr数据
 				var trs = "";
 				$.each(returnData["resultData"], function(i, data){
 					trs += "<tr>";
@@ -45,7 +56,7 @@
 				$('#error-warning-modal').modal('show');
 			}
 		});
-	});
+	}
 </script>
 </head>
 <body>
@@ -102,12 +113,6 @@
 					<th>序号</th>
 					<th>页面英文名</th>
 					<th>页面中文名</th>
-				</tr>
-				<tr>
-					<td><input type="checkbox" name="checkOne"></td>
-					<td>1</td>
-					<td>login</td>
-					<td>登陆</td>
 				</tr>
 			</table>
 			<nav class="navbar navbar-default">
@@ -211,6 +216,7 @@
 						$("#error-waring-body").html(data["resultMessage"]);
 						$('#error-warning-modal').modal('toggle')
 					}else{
+						reloadData(true);
 						$("#success-body").html("提交数据添加成功！");
 						$('#success-modal').modal('toggle')
 					}
@@ -261,6 +267,7 @@
 						if (data["resultCode"] != 0){
 							$("#error-waring-body").html(data["resultMessage"]);
 						}else{
+							reloadData(true);
 							$("#error-waring-body").html("成功删除" + data["resultData"] + "条数据！");
 						}
 						$('#error-warning-modal').modal('toggle')
