@@ -22,13 +22,24 @@
 <script type="text/javascript" src="<%=basePath%>bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 	$(function(){
+		reloadData(true);
+	});
+	// 重新加载页面数据
+	function reloadData(deleteOldData){
 		$.ajax({
 			url: "configCtrl/queryConfig",
 			type: "POST",
+			asyn: true,
 			dataType: "json",
 			data: {"dataType": "1"},
+			beforeSend: function(){
+				// 是否删除现有表格数据
+				if (deleteOldData && $("#pvConfigTable tbody tr").length > 1){
+					$("#pvConfigTable tbody tr:gt(0)").html("");
+				}
+			},
 			success: function(returnData){
-				// 拼接table数据
+				// 拼接table中tr数据
 				var trs = "";
 				$.each(returnData["resultData"], function(i, data){
 					trs += "<tr>";
@@ -45,7 +56,7 @@
 				$('#error-warning-modal').modal('show');
 			}
 		});
-	});
+	}
 </script>
 </head>
 <body>
@@ -103,12 +114,6 @@
 					<th>页面英文名</th>
 					<th>页面中文名</th>
 				</tr>
-				<tr>
-					<td><input type="checkbox" name="checkOne"></td>
-					<td>1</td>
-					<td>login</td>
-					<td>登陆</td>
-				</tr>
 			</table>
 			<nav class="navbar navbar-default">
 			  <div class="container-fluid">
@@ -119,7 +124,7 @@
 					<button id="delete-btn" type="button" class="btn btn-primary btn-sm navbar-btn navbar-right" data-toggle="modal">
 						<span class="glyphicon glyphicon-minus" aria-hidden="true"></span>删除
 					</button>
-					<button id="add-btn" type="button" class="btn btn-primary btn-sm navbar-btn navbar-right" data-toggle="modal" data-target="#add-pv-config-model">
+					<button id="add-btn" type="button" class="btn btn-primary btn-sm navbar-btn navbar-right" data-toggle="modal" data-target="#add-config-model">
 						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>增加
 					</button>
 			    </div><!-- /.navbar-collapse -->
@@ -130,28 +135,55 @@
 </div>
 <!-- 页面所有modal框start -->
 <!-- 添加PV配置弹出框Modal -->
-<div class="modal fade" id="add-pv-config-model" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="add-config-model" tabindex="-1" role="dialog" aria-labelledby="addModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">新增</h4>
+        <h4 class="modal-title" id="addModalLabel">新增</h4>
       </div>
       <div class="modal-body">
         <form>
           <div class="form-group">
             <label for="recipient-name" class="control-label">页面英文名:</label>
-            <input type="text" class="form-control" id="english-name">
+            <input type="text" class="form-control" id="add-english-name">
           </div>
           <div class="form-group">
             <label for="message-text" class="control-label">中文描述:</label>
-            <input type="text" class="form-control" id="chinese-desc">
+            <input type="text" class="form-control" id="add-chinese-desc">
           </div>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-        <button type="button" class="btn btn-primary" id="modal-submit">保存</button>
+        <button type="button" class="btn btn-primary" id="add-modal-submit">保存</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 修改配置弹出框Modal -->
+<div class="modal fade" id="update-config-model" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="updateModalLabel">修改</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">页面英文名:</label>
+            <input type="text" class="form-control" id="update-english-name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">中文描述:</label>
+            <input type="text" class="form-control" id="update-chinese-desc">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary" id="update-modal-submit">保存</button>
       </div>
     </div>
   </div>
@@ -196,26 +228,28 @@
 <script type="text/javascript">
 	$(function(){
 		// 新增数据提交
-		$("#modal-submit").click(function(){
-			var englishName = $("#english-name").val();
-			var chineseDesc = $("#chinese-desc").val();
-			var modalData = {"dataType": "1", "englishName": englishName, "chineseDesc": chineseDesc, "dataType": "1"};
+		$("#add-modal-submit").click(function(){
+			var englishName = $("#add-english-name").val();
+			var chineseDesc = $("#add-chinese-desc").val();
+			var modalData = {"dataType": "1", "englishName": englishName, "chineseDesc": chineseDesc};
 			$.ajax({
 				url: "configCtrl/addConfig",
 				type: "POST",
 				dataType: "json",
 				data : modalData,
 				success: function(data){
-					$('#add-pv-config-model').modal('toggle')
+					$('#add-config-model').modal('toggle');
 					if (data["resultCode"] != 0){
 						$("#error-waring-body").html(data["resultMessage"]);
-						$('#error-warning-modal').modal('toggle')
+						$('#error-warning-modal').modal('toggle');
 					}else{
+						reloadData(true);
 						$("#success-body").html("提交数据添加成功！");
-						$('#success-modal').modal('toggle')
+						$('#success-modal').modal('toggle');
 					}
 				},
 				error: function(error){
+					$('#add-config-model').modal('toggle');
 					$("#error-waring-body").html(error);
 					$('#error-warning-modal').modal('show');
 				}
@@ -233,10 +267,48 @@
 			}else {
 				var englishName = $($("input[name='checkOne']:checked")[0]).parent().next().next().text();
 				var chineseDesc = $($("input[name='checkOne']:checked")[0]).parent().next().next().next().text();
-				$("#english-name").val(englishName);
-				$("#chinese-desc").val(chineseDesc);
-				$('#add-pv-config-model').modal('show');
+				$("#update-english-name").attr("oldValue", englishName);
+				$("#update-chinese-desc").attr("oldValue", chineseDesc);
+				$("#update-english-name").val(englishName);
+				$("#update-chinese-desc").val(chineseDesc);
+				$('#update-config-model').modal('show');
 			}
+		});
+		// 修改数据提交
+		$("#update-modal-submit").click(function(){
+			var oldEnglishName = $("#update-english-name").attr("oldValue");
+			var oldChineseDesc = $("#update-chinese-desc").attr("oldValue");
+			var englishName = $("#update-english-name").val();
+			var chineseDesc = $("#update-chinese-desc").val();
+			if (oldEnglishName == englishName && oldChineseDesc == chineseDesc){
+				$('#update-config-model').modal('toggle');
+				$("#error-waring-body").html("无数据修改！");
+				$('#error-warning-modal').modal('toggle');
+				return false;
+			}
+			var modalData = {"dataType": "1", "englishName": englishName, "chineseDesc": chineseDesc};
+			$.ajax({
+				url: "configCtrl/updateConfig",
+				type: "POST",
+				dataType: "json",
+				data : modalData,
+				success: function(data){
+					$('#update-config-model').modal('toggle');
+					if (data["resultCode"] != 0){
+						$("#error-waring-body").html(data["resultMessage"]);
+						$('#error-warning-modal').modal('toggle');
+					}else{
+						reloadData(true);
+						$("#success-body").html("提交数据添加成功！");
+						$('#success-modal').modal('toggle');
+					}
+				},
+				error: function(jqXHR, textStatus, errorThrown){
+					$('#update-config-model').modal('toggle');
+					$("#error-waring-body").html(textStatus + ", " + errorThrown);
+					$('#error-warning-modal').modal('show');
+				}
+			});
 		});
 		// 删除按钮
 		$("#delete-btn").click(function(){
@@ -261,6 +333,7 @@
 						if (data["resultCode"] != 0){
 							$("#error-waring-body").html(data["resultMessage"]);
 						}else{
+							reloadData(true);
 							$("#error-waring-body").html("成功删除" + data["resultData"] + "条数据！");
 						}
 						$('#error-warning-modal').modal('toggle')
