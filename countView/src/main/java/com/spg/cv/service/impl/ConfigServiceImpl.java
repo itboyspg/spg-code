@@ -71,4 +71,15 @@ public class ConfigServiceImpl implements ConfigService
         LOGGER.debug(String.format("exit function, %s", result));
         return result;
     }
+
+    @Override
+    public Long updateConfig(DataType dataType, PVBean oldPvBean, PVBean newPvBean)
+    {
+        LOGGER.debug(String.format("enter function, %s, %s, %s", dataType, oldPvBean, newPvBean));
+        Long result = RedisListAPIUtil.updateListData(dataType.getName(),
+                JSON.toJSONString(oldPvBean, CommonConstants.SERIALIZER_FEATURES),
+                JSON.toJSONString(newPvBean, CommonConstants.SERIALIZER_FEATURES));
+        LOGGER.debug(String.format("exit function, %s", result));
+        return result;
+    }
 }

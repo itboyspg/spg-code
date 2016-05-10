@@ -33,8 +33,10 @@ public final class RedisListAPIUtil
     /**
      * @description: 指定list中添加某值
      * @author: Wind-spg
-     * @param key list名
-     * @param values 需要添加的值列表
+     * @param key
+     *            list名
+     * @param values
+     *            需要添加的值列表
      * @return
      */
     public static Long addToList(String key, String... values)
@@ -53,8 +55,10 @@ public final class RedisListAPIUtil
     /**
      * @description: 删除某list中指定的所有值
      * @author: Wind-spg
-     * @param key list名
-     * @param value 需要删除的值
+     * @param key
+     *            list名
+     * @param value
+     *            需要删除的值
      * @return
      */
     public static Long deleteList(String key, String value)
@@ -73,7 +77,8 @@ public final class RedisListAPIUtil
     /**
      * @description: 查询list中所有数据
      * @author: Wind-spg
-     * @param key 需要查询的list
+     * @param key
+     *            需要查询的list
      * @return
      */
     public static List<String> queryListData(String key)
@@ -87,6 +92,32 @@ public final class RedisListAPIUtil
         {
             RedisPoolUtil.release(client);
         }
+    }
+
+    /**
+     * @description: 修改list中所有数据(先删除再新增)
+     * @author: Wind-spg
+     * @param key
+     * @param oldValue
+     * @param newValue
+     * @return
+     */
+    public static Long updateListData(String key, String oldValue, String newValue)
+    {
+        LOGGER.debug(String.format("enter function, %s, %s, %s", key, oldValue, newValue));
+        Jedis client = RedisPoolUtil.getJedis();
+        try
+        {
+            Long deleteCount = client.lrem(key, 0, oldValue);
+            if (deleteCount > 0)
+            {
+                return client.lpush(key, newValue);
+            }
+        } finally
+        {
+            RedisPoolUtil.release(client);
+        }
+        return 0L;
     }
 
 }

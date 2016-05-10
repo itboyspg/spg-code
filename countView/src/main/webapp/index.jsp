@@ -286,7 +286,8 @@
 				$('#error-warning-modal').modal('toggle');
 				return false;
 			}
-			var modalData = {"dataType": "1", "englishName": englishName, "chineseDesc": chineseDesc};
+			var modalData = {"dataType": "1", "englishName": englishName, "chineseDesc": chineseDesc,
+					"oldEnglishName" : oldEnglishName, "oldChineseDesc": oldChineseDesc};
 			$.ajax({
 				url: "configCtrl/updateConfig",
 				type: "POST",

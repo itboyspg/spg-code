@@ -24,6 +24,8 @@ public interface ConfigService
     
     Long deleteConfigs(DataType dataType, List<PVBean> pvBeans);
     
+    Long updateConfig(DataType dataType, PVBean oldPvBean, PVBean newPvBean);
+    
     List<String> getAllConfig(DataType dataType);
     
 }

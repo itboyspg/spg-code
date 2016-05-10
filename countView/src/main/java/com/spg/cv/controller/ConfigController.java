@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.spg.cv.common.CommonEnum.DataType;
 import com.spg.cv.po.PVBean;
 import com.spg.cv.service.ConfigService;
@@ -117,6 +116,50 @@ public class ConfigController extends BaseController
     }
 
     /**
+     * @description: 更新一个埋点配置项
+     * @author: Wind-spg
+     * @param request
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value = "updateConfig", method = RequestMethod.POST, produces =
+    { "application/json;charset=UTF-8" })
+    public String updateConfig(HttpServletRequest request)
+    {
+        String dataType = request.getParameter("dataType");
+        String oldEnglishName = request.getParameter("oldEnglishName");
+        String oldChineseDesc = request.getParameter("oldChineseDesc");
+        String englishName = request.getParameter("englishName");
+        String chineseDesc = request.getParameter("chineseDesc");
+        
+        DataType newDataType = null;
+        if (StringUtils.isNotEmpty(dataType))
+        {
+            try
+            {
+                newDataType = DataType.getEnumByCode(Integer.parseInt(dataType));
+            } catch (Exception e)
+            {
+                LOGGER.error(e);
+                return buildFailedResultInfo(-1, e.getMessage());
+            }
+        } else
+        {
+            return buildFailedResultInfo(-1, "参数中缺少配置类型，请检查！");
+        }
+        if (StringUtils.isEmpty(englishName) || StringUtils.isEmpty(chineseDesc))
+        {
+            return buildFailedResultInfo(-1, "不能修改为空！");
+        } else
+        {
+            PVBean oldPvBean = new PVBean(oldEnglishName, oldChineseDesc);
+            PVBean pvBean = new PVBean(englishName, chineseDesc);
+            Long result = configService.updateConfig(newDataType, oldPvBean, pvBean);
+            return buildSuccessResultInfo(result);
+        }
+    }
+
+    /**
      * @description: 根据配置类型查找当前所有配置项
      * @author: Wind-spg
      * @param request
@@ -144,7 +187,7 @@ public class ConfigController extends BaseController
             return buildFailedResultInfo(-1, "参数中缺少配置类型，请检查！");
         }
         List<String> result = configService.getAllConfig(newDataType);
-        
+
         List<PVBean> listObject = new ArrayList<PVBean>();
         for (String str : result)
         {
