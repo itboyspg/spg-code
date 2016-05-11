@@ -88,13 +88,13 @@
 	<div class="row">
 		<div class="col-md-3">
 			<div class="list-group">
-				<a href="#" class="list-group-item active">
-				  Cras justo odio
+				<a href="pvCtrl/toPvView" class="list-group-item">
+					网站PV量
 				</a>
 				<a href="#" class="list-group-item">Dapibus ac facilisis in</a>
 				<a href="#" class="list-group-item">Morbi leo risus</a>
 				<a href="#" class="list-group-item">Porta ac consectetur ac</a>
-				<a href="#" class="list-group-item">统计项目配置</a>
+				<a href="#" class="list-group-item active">统计项目配置</a>
 			</div>
 		</div>
 		<div class="col-md-9">
@@ -102,8 +102,9 @@
 			  <li role="presentation" class="active">
 			  	<a href="#">PV配置</a>
 			  	</li>
-			  <li role="presentation"><a href="#">Profile</a></li>
-			  <li role="presentation"><a href="#">Messages</a></li>
+			  <li role="presentation"><a href="#">按钮点击配置</a></li>
+			  <li role="presentation"><a href="#">链接访问配置</a></li>
+			  <li role="presentation"><a href="#">用户活跃配置</a></li>
 			</ul>
 			<table class="table table-hover" id="pvConfigTable">
 				<tr>
@@ -300,7 +301,7 @@
 						$('#error-warning-modal').modal('toggle');
 					}else{
 						reloadData(true);
-						$("#success-body").html("提交数据添加成功！");
+						$("#success-body").html("数据修改成功！");
 						$('#success-modal').modal('toggle');
 					}
 				},

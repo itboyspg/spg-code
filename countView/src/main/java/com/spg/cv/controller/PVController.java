@@ -39,6 +39,12 @@ public class PVController extends BaseController
     @Resource
     PageService pageManager;
 
+    @RequestMapping("toPvView")
+    public ModelAndView toPvView()
+    {
+        return new ModelAndView("pageView");
+    }
+    
     @ResponseBody
     @RequestMapping(value = "addPV", method = RequestMethod.POST, produces =
     { "application/json; charset=UTF-8" })
