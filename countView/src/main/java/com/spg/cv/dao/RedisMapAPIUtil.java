@@ -1,5 +1,6 @@
 package com.spg.cv.dao;
 
+import java.util.Map;
 import java.util.Map.Entry;
 
 import org.apache.commons.logging.Log;
@@ -100,6 +101,21 @@ public final class RedisMapAPIUtil
         try
         {
             scanResult = jedis.hget(key, field);
+        } finally
+        {
+            RedisPoolUtil.release(jedis);
+        }
+        return scanResult;
+    }
+    
+    public static Map<String, String> hgetAll(String key)
+    {
+        LOGGER.debug(String.format("enter function, %s", key));
+        Jedis jedis = RedisPoolUtil.getJedis();
+        Map<String, String> scanResult = null;
+        try
+        {
+            scanResult = jedis.hgetAll(key);
         } finally
         {
             RedisPoolUtil.release(jedis);

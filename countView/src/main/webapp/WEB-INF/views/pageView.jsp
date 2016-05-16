@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <%
     String path = request.getContextPath();
@@ -20,6 +21,14 @@
 </style>
 <script type="text/javascript" src="<%=basePath%>js/jQuery/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="<%=basePath%>bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	var xAxis = [];
+	$(function(){
+		<c:forEach var="item" items="${xAxis}">
+			xAxis.push('${item}');
+	 	</c:forEach>
+	});
+</script>
 </head>
 <body>
 <nav class="navbar navbar-inverse">
@@ -74,20 +83,19 @@
 	$(function () {
 	    $('#pv-container').highcharts({
 	        title: {
-	            text: '网站PV量统计图',
+	            text: '页面PV量统计图',
 	            x: 0 //center
 	        },
 	        subtitle: {
-	            text: 'Source: WorldClimate.com',
+	            text: '记录最近半个月各页面访问量',
 	            x: 0
 	        },
 	        xAxis: {
-	            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-	                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+	            categories: xAxis
 	        },
 	        yAxis: {
 	            title: {
-	                text: 'Temperature (°C)'
+	                text: '访问量 (K)'
 	            },
 	            plotLines: [{
 	                value: 0,
@@ -96,27 +104,26 @@
 	            }]
 	        },
 	        tooltip: {
-	            valueSuffix: '°C'
+	            valueSuffix: 'K'
 	        },
 	        legend: {
-	            layout: 'vertical',
-	            align: 'right',
-	            verticalAlign: 'middle',
+	            layout: 'horizontal',
+	            align: 'center',
+	            verticalAlign: 'bottom',
 	            borderWidth: 0
 	        },
-	        series: [{
-	            name: 'Tokyo',
-	            data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
-	        }, {
-	            name: 'New York',
-	            data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
-	        }, {
-	            name: 'Berlin',
-	            data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
-	        }, {
-	            name: 'London',
-	            data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
-	        }]
+	        series: [
+				<c:forEach varStatus="status" var="xKey" items="${xAxisKey}">
+					{
+						name: '${xKey.englishName}',
+						data: [
+							<c:forEach var="data" items="${yAxis['20160508']}">
+								${data},
+							</c:forEach>
+						]
+					},
+				</c:forEach>
+	        ]
 	    });
 	});
 </script>

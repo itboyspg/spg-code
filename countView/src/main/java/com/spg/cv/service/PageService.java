@@ -1,6 +1,8 @@
 
 package com.spg.cv.service;
 
+import java.util.Map;
+
 
 
 /**
@@ -31,5 +33,13 @@ public interface PageService
      * @return
      */
     String queryPVDataByKeyField(String key, String field);
+    
+    /**
+     * @description: 根据key获取所有map数据
+     * @author: Wind-spg
+     * @param key
+     * @return
+     */
+    Map<String, String> getAllPVData(String key);
 }
 

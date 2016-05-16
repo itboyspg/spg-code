@@ -15,7 +15,7 @@ import com.spg.cv.service.UserCountService;
  * @create_time：2016年1月10日 下午2:38:53
  * @version V1.0.0
  */
-@Service("userCountManager")
+@Service("userCountService")
 public class UserCountServiceImpl extends CommonServiceImpl implements UserCountService
 {
     private static final Log LOGGER = LogFactory.getLog(UserCountServiceImpl.class);
