@@ -52,7 +52,7 @@ public class PageServiceImplTest extends BaseTest
     public void testAddPageView()
     {
         DateFormat format = new SimpleDateFormat("yyyyMMdd");
-        // 添加过去15天时间数据（实际量随机）
+        // 添加过去15天时间数据（量随机）
         for (int i = 14; i >= 0; i--)
         {
             String key = format.format(new Date(System.currentTimeMillis() - (i * (24 * 60 * 60 * 1000))));
@@ -64,7 +64,7 @@ public class PageServiceImplTest extends BaseTest
             }
             for (PVBean pvBean : listObject)
             {
-                int count = RandomUtils.nextInt(1, 1000);
+                int count = RandomUtils.nextInt(1, (15 - i)*100);
                 for (int j = 0; j < count; j++)
                 {
                     pageService.addPageView(key + DataType.PAGE_VIEW.getName(), pvBean.getEnglishName());

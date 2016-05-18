@@ -22,6 +22,7 @@
 <script type="text/javascript" src="<%=basePath%>js/jQuery/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="<%=basePath%>bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript">
+	// x轴坐标
 	var xAxis = [];
 	$(function(){
 		<c:forEach var="item" items="${xAxis}">
@@ -82,6 +83,9 @@
 <script type="text/javascript">
 	$(function () {
 	    $('#pv-container').highcharts({
+	    	chart: {
+	            type: 'spline'
+	        },
 	        title: {
 	            text: '页面PV量统计图',
 	            x: 0 //center
@@ -95,7 +99,7 @@
 	        },
 	        yAxis: {
 	            title: {
-	                text: '访问量 (K)'
+	                text: '访问量 (次)'
 	            },
 	            plotLines: [{
 	                value: 0,
@@ -104,7 +108,7 @@
 	            }]
 	        },
 	        tooltip: {
-	            valueSuffix: 'K'
+	            valueSuffix: '次'
 	        },
 	        legend: {
 	            layout: 'horizontal',
@@ -113,14 +117,10 @@
 	            borderWidth: 0
 	        },
 	        series: [
-				<c:forEach varStatus="status" var="xKey" items="${xAxisKey}">
+				<c:forEach varStatus="status" var="xAxisData" items="${yAxisDatas}">
 					{
-						name: '${xKey.englishName}',
-						data: [
-							<c:forEach var="data" items="${yAxis['20160508']}">
-								${data},
-							</c:forEach>
-						]
+						name: '${xAxisData.key}',
+						data: ${xAxisData.value}
 					},
 				</c:forEach>
 	        ]

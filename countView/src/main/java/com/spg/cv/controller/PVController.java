@@ -9,9 +9,9 @@ import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
-import javax.naming.spi.DirStateFactory.Result;
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Controller;
@@ -54,7 +54,7 @@ public class PVController extends BaseController
 
         // X轴
         resultView.addObject("xAxis", getLast15Days("MM/dd"));
-        
+
         List<String> configPvData = configService.getAllConfig(DataType.PAGE_VIEW);
         List<PVBean> pvBeanList = new ArrayList<PVBean>();
         for (String str : configPvData)
@@ -68,18 +68,51 @@ public class PVController extends BaseController
         {
             allPVCountData.put(key, pageService.getAllPVData(key + DataType.PAGE_VIEW.getName()));
         }
-        resultView.addObject("xAxisKey", pvBeanList);
-        resultView.addObject("yAxisKey", last15Day);
-        resultView.addObject("yAxis", allPVCountData);
+        resultView.addObject("yAxisDatas", convertAxisData(pvBeanList, last15Day, allPVCountData));
         return resultView;
     }
 
+    /**
+     * @description: 将数据库数据结构转换为易于页面展示的数据结构<br>
+     * @author: Wind-spg
+     * @param legendList
+     *            页面的中英文对应关系
+     * @param yAxisKeys
+     *            需要展示的时间段数据，如[20160503, 20160504, 20160505, 20160506]
+     * @param sourceData
+     *            某段时间内各页面的访问量数据，注意此处页面为页面英文描述
+     * @return 返回的map中，key为某页面的中文描述，value为这个页面某段时间内的访问量数据
+     */
+    private Map<String, List<String>> convertAxisData(List<PVBean> legendList, List<String> yAxisKeys,
+            Map<String, Map<String, String>> sourceData)
+    {
+        Map<String, List<String>> result = new HashMap<String, List<String>>();
+        for (PVBean pvBean : legendList)
+        {
+            List<String> xAxisData = new ArrayList<String>();
+            String tempData = null;
+            for (String yAxisKey : yAxisKeys)
+            {
+                tempData = sourceData.get(yAxisKey).get(pvBean.getEnglishName());
+                if (StringUtils.isNotEmpty(tempData))
+                {
+                    xAxisData.add(tempData);
+                } else
+                {
+                    xAxisData.add("0");
+                }
+            }
+            result.put(pvBean.getChineseDescription(), xAxisData);
+        }
+        return result;
+    }
+
     @ResponseBody
-    @RequestMapping(value = "addPV", method = RequestMethod.POST, produces =
+    @RequestMapping(value = "addPV", method = RequestMethod.GET, produces =
     { "application/json; charset=UTF-8" })
     public String addPageView(HttpServletRequest request)
     {
-        String pageName = request.getParameter("pageName");
+        String pageName = request.getParameter("pageEnglishName");
         String dataType = request.getParameter("dataType");
         LOGGER.debug(String.format("enter function, %s, %s", dataType, pageName));
         try
