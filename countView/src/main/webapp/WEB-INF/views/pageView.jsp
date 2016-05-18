@@ -66,7 +66,7 @@
 				<a href="#" class="list-group-item">Dapibus ac facilisis in</a>
 				<a href="#" class="list-group-item">Morbi leo risus</a>
 				<a href="#" class="list-group-item">Porta ac consectetur ac</a>
-				<a href="#" class="list-group-item">统计项目配置</a>
+				<a href="<%=basePath%>configCtrl/toConfigView" class="list-group-item">统计项目配置</a>
 			</div>
 		</div>
 		<div class="col-md-9">

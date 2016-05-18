@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.alibaba.fastjson.JSON;
 import com.spg.cv.common.CommonEnum.DataType;
@@ -35,6 +36,12 @@ public class ConfigController extends BaseController
 
     @Resource
     ConfigService configService;
+
+    @RequestMapping("toConfigView")
+    public ModelAndView toConfigView()
+    {
+        return new ModelAndView("configCount");
+    }
 
     /**
      * @description: 增加一个配置
@@ -131,7 +138,7 @@ public class ConfigController extends BaseController
         String oldChineseDesc = request.getParameter("oldChineseDesc");
         String englishName = request.getParameter("englishName");
         String chineseDesc = request.getParameter("chineseDesc");
-        
+
         DataType newDataType = null;
         if (StringUtils.isNotEmpty(dataType))
         {
