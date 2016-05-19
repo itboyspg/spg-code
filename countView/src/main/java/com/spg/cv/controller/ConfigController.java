@@ -38,9 +38,10 @@ public class ConfigController extends BaseController
     ConfigService configService;
 
     @RequestMapping("toConfigView")
-    public ModelAndView toConfigView()
+    public ModelAndView toConfigView(HttpServletRequest request)
     {
-        return new ModelAndView("configCount");
+        String pageName = request.getParameter("pageName");
+        return new ModelAndView(pageName);
     }
 
     /**

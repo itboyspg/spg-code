@@ -14,6 +14,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>index</title>
 <link href="<%=basePath%>bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="<%=basePath%>bootstrap/css/bootstrap-treeview.min.css" rel="stylesheet">
 <style type="text/css">
 	#navbar-buttom button{
 		margin-left: 5px;
@@ -21,7 +22,63 @@
 </style>
 <script type="text/javascript" src="<%=basePath%>js/jQuery/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="<%=basePath%>bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<%=basePath%>bootstrap/js/bootstrap-treeview.min.js"></script>
 <script type="text/javascript">
+	var menuData = [
+   		{
+   			text: '网站PV量统计结果',
+   			href: '<%=basePath%>pvCtrl/toPvView',
+   			color: '#fff', // 图标和字体颜色
+   			backColor: '#428bca', // 背景颜色
+   			tags: ['0']
+   		},
+   		{
+   			text: '按钮点击量统计结果',
+   			href: '<%=basePath%>pvCtrl/toPvView',
+   			tags: ['0']
+   		},
+   		{
+   			text: '链接点击量统计结果',
+   			href: '<%=basePath%>pvCtrl/toPvView',
+   			tags: ['0']
+   		},
+   		{
+   			text: '统计项目配置',
+   			icon: 'glyphicon glyphicon-wrench',
+   			tags: ['1'],
+   			nodes:[{
+	   				text: 'PV配置',
+	   				href: '<%=basePath%>configCtrl/toConfigView?pageName=pvConfig',
+	   				icon: 'glyphicon glyphicon-cog',
+	   				tags: ['0']
+	   			},
+	   			{
+	   				text: '按钮点击配置',
+	   				href: '<%=basePath%>configCtrl/toConfigView?pageName=buttonConfig',
+	   				icon: 'glyphicon glyphicon-cog',
+	   				tags: ['0']
+	   			},
+	   			{
+	   				text: '链接访问配置',
+	   				href: '#链接访问配置',
+	   				icon: 'glyphicon glyphicon-cog',
+	   				tags: ['0']
+	   			}]
+   		}
+   	];
+	$(function(){
+		// 初始化菜单
+		$('#menu-tree').treeview({
+			color: "#428bca",
+			expandIcon: 'glyphicon glyphicon-chevron-right',
+            collapseIcon: 'glyphicon glyphicon-chevron-down',
+            nodeIcon: 'glyphicon glyphicon-stats',
+			enableLinks: true, // 设置菜单链接可用
+			selectedColor: '',
+			selectedBackColor: '',
+            data: menuData
+        });
+	});
 	// x轴坐标
 	var xAxis = [];
 	$(function(){
@@ -59,15 +116,7 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-3">
-			<div class="list-group">
-				<a href="<%=basePath %>pvCtrl/toPvView" class="list-group-item active">
-					网站PV量
-				</a>
-				<a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-				<a href="#" class="list-group-item">Morbi leo risus</a>
-				<a href="#" class="list-group-item">Porta ac consectetur ac</a>
-				<a href="<%=basePath%>configCtrl/toConfigView" class="list-group-item">统计项目配置</a>
-			</div>
+			<div id="menu-tree"></div>
 		</div>
 		<div class="col-md-9">
 			<div class="panel panel-default">

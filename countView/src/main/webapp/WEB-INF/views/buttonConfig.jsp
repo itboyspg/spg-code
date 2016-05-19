@@ -11,7 +11,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>统计信息配置</title>
+<title>按钮统计信息配置</title>
 <link href="<%=basePath%>bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="<%=basePath%>bootstrap/css/bootstrap-treeview.min.css" rel="stylesheet">
 <style type="text/css">
@@ -41,31 +41,40 @@
 		},
 		{
 			text: '统计项目配置',
-			href: '#统计项目配置',
+			icon: 'glyphicon glyphicon-wrench',
 			tags: ['1'],
 			nodes:[{
-				text: 'PV配置',
-				href: '#PV配置',
-				tags: ['0']
-			},
-			{
-				text: '按钮点击配置',
-				href: '#按钮点击配置',
-				tags: ['0']
-			},
-			{
-				text: '链接访问配置',
-				href: '#链接访问配置',
-				tags: ['0']
-			}]
+					text: 'PV配置',
+					href: '<%=basePath%>configCtrl/toConfigView?pageName=pvConfig',
+					icon: 'glyphicon glyphicon-cog',
+					tags: ['0']
+				},
+				{
+					text: '按钮点击配置',
+					href: '<%=basePath%>configCtrl/toConfigView?pageName=buttonConfig',
+					icon: 'glyphicon glyphicon-cog',
+		   			color: '#fff', // 图标和字体颜色
+		   			backColor: '#428bca', // 背景颜色
+					tags: ['0']
+				},
+				{
+					text: '链接访问配置',
+					href: '#链接访问配置',
+					icon: 'glyphicon glyphicon-cog',
+					tags: ['0']
+				}]
 		}
 	];
 	$(function(){
+		// 初始化菜单
 		$('#menu-tree').treeview({
 			color: "#428bca",
 			expandIcon: 'glyphicon glyphicon-chevron-right',
             collapseIcon: 'glyphicon glyphicon-chevron-down',
-            nodeIcon: 'glyphicon glyphicon-bookmark',
+            nodeIcon: 'glyphicon glyphicon-stats',
+			enableLinks: true, // 设置菜单链接可用
+			selectedColor: '',
+			selectedBackColor: '',
             data: menuData
         });
 		reloadData(true);
@@ -137,10 +146,8 @@
 		</div>
 		<div class="col-md-9">
 			<ul class="nav nav-tabs">
-			  <li role="presentation" class="active">
-			  	<a href="#">PV配置</a>
-			  	</li>
-			  <li role="presentation"><a href="#">按钮点击配置</a></li>
+			  <li role="presentation"><a href="#">PV配置</a></li>
+			  <li role="presentation" class="active"><a href="#">按钮点击配置</a></li>
 			  <li role="presentation"><a href="#">链接访问配置</a></li>
 			  <li role="presentation"><a href="#">用户活跃配置</a></li>
 			</ul>
@@ -173,7 +180,7 @@
 	</div>
 </div>
 <!-- 页面所有modal框start -->
-<!-- 添加PV配置弹出框Modal -->
+<!-- 添加配置弹出框Modal -->
 <div class="modal fade" id="add-config-model" tabindex="-1" role="dialog" aria-labelledby="addModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

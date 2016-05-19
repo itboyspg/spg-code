@@ -14,7 +14,7 @@
 <title>index</title>
 <script type="text/javascript">
 	function forward(){
-		window.location.href="<%=basePath%>configCtrl/toConfigView";
+		window.location.href="<%=basePath%>configCtrl/toConfigView?pageName=pvConfig";
 	}
 </script>
 </head>
