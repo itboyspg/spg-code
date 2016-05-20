@@ -1,4 +1,3 @@
-
 package com.spg.cv.common;
 
 import org.apache.commons.logging.Log;
@@ -17,14 +16,15 @@ import com.spg.common.enumutil.EnumInterface;
 public class CommonEnum
 {
     private static final Log LOGGER = LogFactory.getLog(CommonEnum.class);
-    
+
     public enum DataType implements EnumInterface
     {
-        PAGE_VIEW(1, "PageView"), CLICK_COUNT(2, "ClickCount"), USER_ACTIVE(3, "UserActive");
-        
+        PAGE_VIEW(1, "PageView"), BUTTON_CLICK_COUNT(2, "ButtonClickCount"), LINK_CLICK_COUNT(3,
+                "LinkClickCount"), USER_ACTIVE(3, "UserActive");
+
         private int code;
         private String name;
-        
+
         private DataType(int code, String name)
         {
             this.code = code;
@@ -42,7 +42,7 @@ public class CommonEnum
         {
             return this.name;
         }
-        
+
         public static DataType getEnumByCode(int code)
         {
             LOGGER.debug(String.format("enter function,  %d", code));
@@ -57,4 +57,3 @@ public class CommonEnum
         }
     }
 }
-

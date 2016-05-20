@@ -11,7 +11,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>按钮统计信息配置</title>
+<title>按钮点击统计配置</title>
 <link href="<%=basePath%>bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="<%=basePath%>bootstrap/css/bootstrap-treeview.min.css" rel="stylesheet">
 <style type="text/css">
@@ -26,17 +26,17 @@
 	var menuData = [
 		{
 			text: '网站PV量统计结果',
-			href: '<%=basePath%>pvCtrl/toPvView',
+			href: '<%=basePath%>pvCtrl/toPvBtnLinkView?dataType=1',
 			tags: ['0']
 		},
 		{
 			text: '按钮点击量统计结果',
-			href: '<%=basePath%>pvCtrl/toPvView',
+			href: '<%=basePath%>pvCtrl/toPvBtnLinkView?dataType=2',
 			tags: ['0']
 		},
 		{
 			text: '链接点击量统计结果',
-			href: '<%=basePath%>pvCtrl/toPvView',
+			href: '<%=basePath%>pvCtrl/toPvBtnLinkView?dataType=3',
 			tags: ['0']
 		},
 		{
@@ -59,7 +59,13 @@
 				},
 				{
 					text: '链接访问配置',
-					href: '#链接访问配置',
+					href: '<%=basePath%>configCtrl/toConfigView?pageName=linkConfig',
+					icon: 'glyphicon glyphicon-cog',
+					tags: ['0']
+				},
+				{
+					text: '用户活跃配置',
+					href: '#用户活跃配置',
 					icon: 'glyphicon glyphicon-cog',
 					tags: ['0']
 				}]
@@ -86,7 +92,7 @@
 			type: "POST",
 			asyn: true,
 			dataType: "json",
-			data: {"dataType": "1"},
+			data: {"dataType": "2"},
 			beforeSend: function(){
 				// 是否删除现有表格数据
 				if (deleteOldData && $("#pvConfigTable tbody tr").length > 1){
@@ -107,7 +113,7 @@
 				$("#pvConfigTable tr:first").parent().append(trs);
 			},
 			error: function(error){
-				$("#error-waring-body").html("系统繁忙，加载数据异常，请稍后再试！");
+				$("#error-waring-body").html("不好意思，系统太忙啦，请等会儿再试试吧！");
 				$('#error-warning-modal').modal('show');
 			}
 		});
@@ -145,20 +151,14 @@
 			<div id="menu-tree"></div>
 		</div>
 		<div class="col-md-9">
-			<ul class="nav nav-tabs">
-			  <li role="presentation"><a href="#">PV配置</a></li>
-			  <li role="presentation" class="active"><a href="#">按钮点击配置</a></li>
-			  <li role="presentation"><a href="#">链接访问配置</a></li>
-			  <li role="presentation"><a href="#">用户活跃配置</a></li>
-			</ul>
 			<table class="table table-hover" id="pvConfigTable">
 				<tr>
 					<th>
 						<input type="checkbox" id="check-all">选择
 					</th>
 					<th>序号</th>
-					<th>页面英文名</th>
-					<th>页面中文名</th>
+					<th>按钮英文名</th>
+					<th>按钮中文名</th>
 				</tr>
 			</table>
 			<nav class="navbar navbar-default">
@@ -186,16 +186,16 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="addModalLabel">新增</h4>
+        <h4 class="modal-title" id="addModalLabel">新增按钮统计项</h4>
       </div>
       <div class="modal-body">
         <form>
           <div class="form-group">
-            <label for="recipient-name" class="control-label">页面英文名:</label>
+            <label for="recipient-name" class="control-label">按钮英文名:</label>
             <input type="text" class="form-control" id="add-english-name">
           </div>
           <div class="form-group">
-            <label for="message-text" class="control-label">中文描述:</label>
+            <label for="message-text" class="control-label">按钮中文描述:</label>
             <input type="text" class="form-control" id="add-chinese-desc">
           </div>
         </form>
@@ -213,16 +213,16 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="updateModalLabel">修改</h4>
+        <h4 class="modal-title" id="updateModalLabel">修改按钮统计配置项</h4>
       </div>
       <div class="modal-body">
         <form>
           <div class="form-group">
-            <label for="recipient-name" class="control-label">页面英文名:</label>
+            <label for="recipient-name" class="control-label">按钮英文名:</label>
             <input type="text" class="form-control" id="update-english-name">
           </div>
           <div class="form-group">
-            <label for="message-text" class="control-label">中文描述:</label>
+            <label for="message-text" class="control-label">按钮中文描述:</label>
             <input type="text" class="form-control" id="update-chinese-desc">
           </div>
         </form>
@@ -277,7 +277,7 @@
 		$("#add-modal-submit").click(function(){
 			var englishName = $("#add-english-name").val();
 			var chineseDesc = $("#add-chinese-desc").val();
-			var modalData = {"dataType": "1", "englishName": englishName, "chineseDesc": chineseDesc};
+			var modalData = {"dataType": "2", "englishName": englishName, "chineseDesc": chineseDesc};
 			$.ajax({
 				url: "<%=basePath%>configCtrl/addConfig",
 				type: "POST",
@@ -290,7 +290,7 @@
 						$('#error-warning-modal').modal('toggle');
 					}else{
 						reloadData(true);
-						$("#success-body").html("提交数据添加成功！");
+						$("#success-body").html("哇塞，您提交数据保存成功啦！");
 						$('#success-modal').modal('toggle');
 					}
 				},
@@ -305,10 +305,10 @@
 		$("#update-btn").click(function(){
 			var checkedSize = $("input[name='checkOne']:checked").length;
 			if (checkedSize == 0){
-				$("#error-waring-body").html("请至少选择一条记录进行修改！");
+				$("#error-waring-body").html("要修改数据，当然要先选择一条记录啦！");
 				$('#error-warning-modal').modal('show');
 			}else if (checkedSize > 1){
-				$("#error-waring-body").html("只能选择一条记录进行修改！");
+				$("#error-waring-body").html("哦 No!! 每次只能修改一条记录哦！");
 				$('#error-warning-modal').modal('show');
 			}else {
 				var englishName = $($("input[name='checkOne']:checked")[0]).parent().next().next().text();
@@ -328,11 +328,11 @@
 			var chineseDesc = $("#update-chinese-desc").val();
 			if (oldEnglishName == englishName && oldChineseDesc == chineseDesc){
 				$('#update-config-model').modal('toggle');
-				$("#error-waring-body").html("无数据修改！");
+				$("#error-waring-body").html("没有啥可修改的！");
 				$('#error-warning-modal').modal('toggle');
 				return false;
 			}
-			var modalData = {"dataType": "1", "englishName": englishName, "chineseDesc": chineseDesc,
+			var modalData = {"dataType": "2", "englishName": englishName, "chineseDesc": chineseDesc,
 					"oldEnglishName" : oldEnglishName, "oldChineseDesc": oldChineseDesc};
 			$.ajax({
 				url: "<%=basePath%>configCtrl/updateConfig",
@@ -346,7 +346,7 @@
 						$('#error-warning-modal').modal('toggle');
 					}else{
 						reloadData(true);
-						$("#success-body").html("数据修改成功！");
+						$("#success-body").html("哇塞，数据修改成功啦！");
 						$('#success-modal').modal('toggle');
 					}
 				},
@@ -361,7 +361,7 @@
 		$("#delete-btn").click(function(){
 			var checkedSize = $("input[name='checkOne']:checked").length;
 			if (checkedSize <= 0){
-				$("#error-waring-body").html("请至少选择一条记录进行删除！");
+				$("#error-waring-body").html("肯定是先选择一条记录再删除啦！");
 				$('#error-warning-modal').modal('show');
 			}else {
 				var deleteDatas = new Array();
@@ -375,18 +375,18 @@
 					url: "<%=basePath%>configCtrl/deleteConfig",
 					type: "POST",
 					dataType: "json",
-					data : {"dataType": "1", "deleteDatas": JSON.stringify(deleteDatas)},
+					data : {"dataType": "2", "deleteDatas": JSON.stringify(deleteDatas)},
 					success: function(data){
 						if (data["resultCode"] != 0){
 							$("#error-waring-body").html(data["resultMessage"]);
 						}else{
 							reloadData(true);
-							$("#error-waring-body").html("成功删除" + data["resultData"] + "条数据！");
+							$("#error-waring-body").html("恭喜，您成功删除了" + data["resultData"] + "条数据！");
 						}
 						$('#error-warning-modal').modal('toggle')
 					},
 					error: function(error){
-						$("#error-waring-body").html("系统繁忙，请稍后再试！");
+						$("#error-waring-body").html("不好意思，系统太忙啦，请等会儿再试试吧！");
 						$('#error-warning-modal').modal('show');
 					}
 				});

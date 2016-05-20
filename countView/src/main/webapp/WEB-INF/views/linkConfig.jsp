@@ -11,7 +11,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>页面访问统计配置</title>
+<title>链接访问统计配置</title>
 <link href="<%=basePath%>bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="<%=basePath%>bootstrap/css/bootstrap-treeview.min.css" rel="stylesheet">
 <style type="text/css">
@@ -47,8 +47,6 @@
 					text: 'PV配置',
 					href: '<%=basePath%>configCtrl/toConfigView?pageName=pvConfig',
 					icon: 'glyphicon glyphicon-cog',
-		   			color: '#fff', // 图标和字体颜色
-		   			backColor: '#428bca', // 背景颜色
 					tags: ['0']
 				},
 				{
@@ -61,6 +59,8 @@
 					text: '链接访问配置',
 					href: '<%=basePath%>configCtrl/toConfigView?pageName=linkConfig',
 					icon: 'glyphicon glyphicon-cog',
+		   			color: '#fff', // 图标和字体颜色
+		   			backColor: '#428bca', // 背景颜色
 					tags: ['0']
 				},
 				{
@@ -92,7 +92,7 @@
 			type: "POST",
 			asyn: true,
 			dataType: "json",
-			data: {"dataType": "1"},
+			data: {"dataType": "3"},
 			beforeSend: function(){
 				// 是否删除现有表格数据
 				if (deleteOldData && $("#pvConfigTable tbody tr").length > 1){
@@ -157,8 +157,8 @@
 						<input type="checkbox" id="check-all">选择
 					</th>
 					<th>序号</th>
-					<th>页面英文名</th>
-					<th>页面中文名</th>
+					<th>按钮英文名</th>
+					<th>按钮中文名</th>
 				</tr>
 			</table>
 			<nav class="navbar navbar-default">
@@ -180,22 +180,22 @@
 	</div>
 </div>
 <!-- 页面所有modal框start -->
-<!-- 添加PV配置弹出框Modal -->
+<!-- 添加配置弹出框Modal -->
 <div class="modal fade" id="add-config-model" tabindex="-1" role="dialog" aria-labelledby="addModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="addModalLabel">新增页面访问配置</h4>
+        <h4 class="modal-title" id="addModalLabel">新增链接点击统计项</h4>
       </div>
       <div class="modal-body">
         <form>
           <div class="form-group">
-            <label for="recipient-name" class="control-label">页面英文名:</label>
+            <label for="recipient-name" class="control-label">链接英文名:</label>
             <input type="text" class="form-control" id="add-english-name">
           </div>
           <div class="form-group">
-            <label for="message-text" class="control-label">页面中文描述:</label>
+            <label for="message-text" class="control-label">链接中文描述:</label>
             <input type="text" class="form-control" id="add-chinese-desc">
           </div>
         </form>
@@ -213,16 +213,16 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="updateModalLabel">修改页面访问配置</h4>
+        <h4 class="modal-title" id="updateModalLabel">修改链接访问配置项</h4>
       </div>
       <div class="modal-body">
         <form>
           <div class="form-group">
-            <label for="recipient-name" class="control-label">页面英文名:</label>
+            <label for="recipient-name" class="control-label">链接英文名:</label>
             <input type="text" class="form-control" id="update-english-name">
           </div>
           <div class="form-group">
-            <label for="message-text" class="control-label">中文描述:</label>
+            <label for="message-text" class="control-label">链接中文描述:</label>
             <input type="text" class="form-control" id="update-chinese-desc">
           </div>
         </form>
@@ -277,7 +277,7 @@
 		$("#add-modal-submit").click(function(){
 			var englishName = $("#add-english-name").val();
 			var chineseDesc = $("#add-chinese-desc").val();
-			var modalData = {"dataType": "1", "englishName": englishName, "chineseDesc": chineseDesc};
+			var modalData = {"dataType": "3", "englishName": englishName, "chineseDesc": chineseDesc};
 			$.ajax({
 				url: "<%=basePath%>configCtrl/addConfig",
 				type: "POST",
@@ -332,7 +332,7 @@
 				$('#error-warning-modal').modal('toggle');
 				return false;
 			}
-			var modalData = {"dataType": "1", "englishName": englishName, "chineseDesc": chineseDesc,
+			var modalData = {"dataType": "3", "englishName": englishName, "chineseDesc": chineseDesc,
 					"oldEnglishName" : oldEnglishName, "oldChineseDesc": oldChineseDesc};
 			$.ajax({
 				url: "<%=basePath%>configCtrl/updateConfig",
@@ -375,7 +375,7 @@
 					url: "<%=basePath%>configCtrl/deleteConfig",
 					type: "POST",
 					dataType: "json",
-					data : {"dataType": "1", "deleteDatas": JSON.stringify(deleteDatas)},
+					data : {"dataType": "3", "deleteDatas": JSON.stringify(deleteDatas)},
 					success: function(data){
 						if (data["resultCode"] != 0){
 							$("#error-waring-body").html(data["resultMessage"]);

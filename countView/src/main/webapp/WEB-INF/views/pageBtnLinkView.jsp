@@ -27,19 +27,29 @@
 	var menuData = [
    		{
    			text: '网站PV量统计结果',
-   			href: '<%=basePath%>pvCtrl/toPvView',
-   			color: '#fff', // 图标和字体颜色
-   			backColor: '#428bca', // 背景颜色
+   			href: '<%=basePath%>pvCtrl/toPvBtnLinkView?dataType=1',
+			<c:if test="${strDataType eq '1'}">
+	   			color: '#fff', // 图标和字体颜色
+	   			backColor: '#428bca', // 背景颜色
+   			</c:if>
    			tags: ['0']
    		},
    		{
    			text: '按钮点击量统计结果',
-   			href: '<%=basePath%>pvCtrl/toPvView',
+   			href: '<%=basePath%>pvCtrl/toPvBtnLinkView?dataType=2',
+   			<c:if test="${strDataType eq '2'}">
+	   			color: '#fff', // 图标和字体颜色
+	   			backColor: '#428bca', // 背景颜色
+			</c:if>
    			tags: ['0']
    		},
    		{
    			text: '链接点击量统计结果',
-   			href: '<%=basePath%>pvCtrl/toPvView',
+   			href: '<%=basePath%>pvCtrl/toPvBtnLinkView?dataType=3',
+   			<c:if test="${strDataType eq '3'}">
+	   			color: '#fff', // 图标和字体颜色
+	   			backColor: '#428bca', // 背景颜色
+			</c:if>
    			tags: ['0']
    		},
    		{
@@ -60,10 +70,16 @@
 	   			},
 	   			{
 	   				text: '链接访问配置',
-	   				href: '#链接访问配置',
+	   				href: '<%=basePath%>configCtrl/toConfigView?pageName=linkConfig',
 	   				icon: 'glyphicon glyphicon-cog',
 	   				tags: ['0']
-	   			}]
+	   			},
+				{
+					text: '用户活跃配置',
+					href: '#用户活跃配置',
+					icon: 'glyphicon glyphicon-cog',
+					tags: ['0']
+				}]
    		}
    	];
 	$(function(){
@@ -131,16 +147,32 @@
 <script src="<%=basePath%>js/Highcharts/modules/exporting.js"></script>
 <script type="text/javascript">
 	$(function () {
+		var title = "页面PV量统计结果";
+		var subtitle = "记录最近半个月各页面访问量";
+		<c:choose>
+			<c:when test="${strDataType eq '1' }">
+				title = "页面PV量统计结果";
+				subtitle = "记录最近半个月各页面访问量";
+			</c:when>
+			<c:when test="${strDataType eq '2' }">
+				title = "按钮点击量统计结果";
+				subtitle = "记录最近半个月按钮点击量";
+			</c:when>
+			<c:when test="${strDataType eq '3' }">
+				title = "链接访问量统计结果";
+				subtitle = "记录最近半个月各链接访问量";
+			</c:when>
+		</c:choose>
 	    $('#pv-container').highcharts({
 	    	chart: {
 	            type: 'spline'
 	        },
 	        title: {
-	            text: '页面PV量统计图',
+	            text: title,
 	            x: 0 //center
 	        },
 	        subtitle: {
-	            text: '记录最近半个月各页面访问量',
+	            text: subtitle,
 	            x: 0
 	        },
 	        xAxis: {

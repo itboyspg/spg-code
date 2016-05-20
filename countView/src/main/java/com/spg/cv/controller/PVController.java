@@ -47,15 +47,17 @@ public class PVController extends BaseController
     @Resource
     ConfigService configService;
 
-    @RequestMapping("toPvView")
-    public ModelAndView toPvView()
+    @RequestMapping("toPvBtnLinkView")
+    public ModelAndView toPvBtnLinkView(HttpServletRequest request)
     {
-        ModelAndView resultView = new ModelAndView("pageView");
+        String strDataType = request.getParameter("dataType");
+        ModelAndView resultView = new ModelAndView("pageBtnLinkView");
 
         // X轴
         resultView.addObject("xAxis", getLast15Days("MM/dd"));
 
-        List<String> configPvData = configService.getAllConfig(DataType.PAGE_VIEW);
+        DataType dataType = DataType.getEnumByCode(Integer.parseInt(strDataType));
+        List<String> configPvData = configService.getAllConfig(dataType);
         List<PVBean> pvBeanList = new ArrayList<PVBean>();
         for (String str : configPvData)
         {
@@ -66,9 +68,10 @@ public class PVController extends BaseController
         List<String> last15Day = getLast15Days("yyyyMMdd");
         for (String key : last15Day)
         {
-            allPVCountData.put(key, pageService.getAllPVData(key + DataType.PAGE_VIEW.getName()));
+            allPVCountData.put(key, pageService.getAllPVData(key + dataType.getName()));
         }
         resultView.addObject("yAxisDatas", convertAxisData(pvBeanList, last15Day, allPVCountData));
+        resultView.addObject("strDataType", strDataType);
         return resultView;
     }
 
@@ -128,50 +131,6 @@ public class PVController extends BaseController
         }
     }
 
-    /**
-     * @description: 查询PV量
-     * @author: Wind-spg
-     * @param request
-     * @return
-     */
-    @RequestMapping("pv")
-    public ModelAndView queryPv(HttpServletRequest request)
-    {
-        ModelAndView view = new ModelAndView("pageView");
-        // 获取x轴数据
-        List<Integer> xData = getBeforeDaysList();
-        view.addObject("xData", xData);
-
-        view.addObject("legendMap", CommonConstants.COUNT_DATA_RELATION_MAP);
-        // 每天统计数据
-        List<String> everyDayData = null;
-        // 每个统计维度下的统计结果
-        Map<String, List<String>> resultData = new HashMap<String, List<String>>();
-
-        String tempKey = null;
-        String tempValue = null;
-        for (String key : CommonConstants.COUNT_DATA_RELATION_MAP.keySet())
-        {
-            everyDayData = new ArrayList<String>();
-            for (Integer days : xData)
-            {
-                tempKey = MyDateUtil.getFormatDate(new Date(System.currentTimeMillis()), "yyyyMM");
-                if (days < 10)
-                {
-                    tempValue = pageService.queryPVDataByKeyField(
-                            tempKey + "0" + days + DataType.PAGE_VIEW.getName(), key);
-                } else
-                {
-                    tempValue = pageService.queryPVDataByKeyField(
-                            tempKey + days + DataType.PAGE_VIEW.getName(), key);
-                }
-                everyDayData.add(tempValue);
-            }
-            resultData.put(key, everyDayData);
-        }
-        view.addObject("viewData", resultData);
-        return view;
-    }
 
     /**
      * @description:根据时间格式获取最近15天时间
