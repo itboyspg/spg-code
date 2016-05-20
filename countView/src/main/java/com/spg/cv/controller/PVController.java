@@ -22,7 +22,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.alibaba.fastjson.JSON;
 import com.spg.common.dateutil.MyDateUtil;
-import com.spg.cv.common.CommonConstants;
 import com.spg.cv.common.CommonEnum.DataType;
 import com.spg.cv.po.PVBean;
 import com.spg.cv.service.ConfigService;
@@ -130,7 +129,6 @@ public class PVController extends BaseController
             return buildFailedResultInfo(-1, e.getMessage());
         }
     }
-
 
     /**
      * @description:根据时间格式获取最近15天时间
