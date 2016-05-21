@@ -5,7 +5,7 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Service;
 
 import com.spg.cv.dao.RedisMapAPIUtil;
-import com.spg.cv.service.UserCountService;
+import com.spg.cv.service.UserActiveService;
 
 /**
  * 项目名称：countView
@@ -15,10 +15,10 @@ import com.spg.cv.service.UserCountService;
  * @create_time：2016年1月10日 下午2:38:53
  * @version V1.0.0
  */
-@Service("userCountService")
-public class UserCountServiceImpl extends CommonServiceImpl implements UserCountService
+@Service("userActiveService")
+public class UserActiveServiceImpl extends CommonServiceImpl implements UserActiveService
 {
-    private static final Log LOGGER = LogFactory.getLog(UserCountServiceImpl.class);
+    private static final Log LOGGER = LogFactory.getLog(UserActiveServiceImpl.class);
 
     @Override
     public Long addActiveUser(String key, String sessionId)

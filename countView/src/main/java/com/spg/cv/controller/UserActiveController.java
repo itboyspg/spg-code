@@ -16,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.spg.common.dateutil.MyDateUtil;
 import com.spg.cv.common.CommonEnum.DataType;
-import com.spg.cv.service.UserCountService;
+import com.spg.cv.service.UserActiveService;
 
 /**
  * 项目名称：countView
@@ -27,14 +27,14 @@ import com.spg.cv.service.UserCountService;
  * @version V1.0.0
  */
 @Controller
-@RequestMapping(value="userCtrl")
-public class UserCountController extends BaseController
+@RequestMapping(value = "userCtrl")
+public class UserActiveController extends BaseController
 {
-    private static final Log LOGGER = LogFactory.getLog(UserCountController.class);
+    private static final Log LOGGER = LogFactory.getLog(UserActiveController.class);
 
     @Resource
-    UserCountService userCountManager;
-    
+    UserActiveService userActiveService;
+
     /**
      * @description: 一次用户活跃
      * @author: Wind-spg
@@ -51,7 +51,7 @@ public class UserCountController extends BaseController
         {
             String key = MyDateUtil.getFormatDate(new Date(System.currentTimeMillis()), "yyyyMMdd")
                     + DataType.USER_ACTIVE.getName();
-            Long result = userCountManager.addActiveUser(key, sessionId);
+            Long result = userActiveService.addActiveUser(key, sessionId);
             return buildSuccessResultInfo(result);
         } catch (Exception e)
         {
@@ -59,41 +59,33 @@ public class UserCountController extends BaseController
             return buildFailedResultInfo(-100, e.getMessage());
         }
     }
-    
+
     /**
      * @description: 查询活跃用户量
      * @author: Wind-spg
      * @param request
      * @return
      */
-    @RequestMapping("queryActiveUser")
+    @RequestMapping("queryUserActive")
     public ModelAndView queryActiveUser(HttpServletRequest request)
     {
-        ModelAndView view = new ModelAndView("activeUser");
+        ModelAndView view = new ModelAndView("userActiveView");
+
         // 获取x轴数据
-        List<Integer> xData = getBeforeDaysList();
-        view.addObject("xData", xData);
+        List<String> xAxis = getLast15Days("MM/dd");
+        view.addObject("xAxis", xAxis);
 
-        // 某天用户活跃数量
-        List<Long> resultData = new ArrayList<Long>();
+        List<String> last15Day = getLast15Days("yyyyMMdd");
 
-        String tempKey = null;
+        List<Long> userActiveData = new ArrayList<Long>();
         Long userCount = 0L;
-        for (Integer days : xData)
+        for (String key : last15Day)
         {
-            tempKey = MyDateUtil.getFormatDate(new Date(System.currentTimeMillis()), "yyyyMM");
-            if (days < 10)
-            {
-                userCount = userCountManager.queryOneDayActiveUserCount(
-                        tempKey + "0" + days + DataType.USER_ACTIVE.getName());
-            } else
-            {
-                userCount = userCountManager.queryOneDayActiveUserCount(
-                        tempKey + days + DataType.USER_ACTIVE.getName());
-            }
-            resultData.add(userCount);
+            userCount = userActiveService.queryOneDayActiveUserCount(key + DataType.USER_ACTIVE.getName());
+            userActiveData.add(userCount);
         }
-        view.addObject("resultData", resultData);
+
+        view.addObject("yAxis", userActiveData);
         return view;
     }
 }

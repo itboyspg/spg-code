@@ -53,6 +53,11 @@
    			tags: ['0']
    		},
    		{
+   			text: '用户活跃量统计结果',
+   			href: '<%=basePath%>userCtrl/queryUserActive',
+   			tags: ['0']
+   		},
+   		{
    			text: '统计项目配置',
    			icon: 'glyphicon glyphicon-wrench',
    			tags: ['1'],

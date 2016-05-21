@@ -18,13 +18,9 @@ import org.junit.Test;
 import redis.clients.jedis.Jedis;
 
 import com.alibaba.fastjson.JSON;
-import com.spg.common.dateutil.MyDateUtil;
 import com.spg.cv.BaseTest;
-import com.spg.cv.common.CommonConstants;
 import com.spg.cv.common.CommonEnum.DataType;
 import com.spg.cv.common.RedisPoolUtil;
-import com.spg.cv.dao.RedisListAPIUtil;
-import com.spg.cv.dao.RedisMapAPIUtil;
 import com.spg.cv.po.PVBean;
 import com.spg.cv.service.ConfigService;
 import com.spg.cv.service.PageService;
@@ -77,7 +73,7 @@ public class PageServiceImplTest extends BaseTest
     public void testDelete()
     {
         Jedis client = RedisPoolUtil.getJedis();
-        Set<String> keys = client.keys("201605*");
+        Set<String> keys = client.keys("*UserActive");
         for (String str : keys)
         {
             client.del(str);

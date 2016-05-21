@@ -3,8 +3,11 @@
  */
 package com.spg.cv.controller;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -62,7 +65,7 @@ public class BaseController
         BaseResultVo resultVo = new BaseResultVo(resultCode, failedMsg);
         return JSON.toJSONString(resultVo, CommonConstants.SERIALIZER_FEATURES);
     }
-    
+
     protected String object2JsonString(Object object)
     {
         return JSON.toJSONString(object, CommonConstants.SERIALIZER_FEATURES);
@@ -83,6 +86,7 @@ public class BaseController
 
     /**
      * 获取当前月份的当前日期前所有日期，如，当前为11月7号，则返回1,2,3,4,5,6,7
+     * 
      * @description:
      * @author: Wind-spg
      * @return
@@ -90,7 +94,7 @@ public class BaseController
     public List<Integer> getBeforeDaysList()
     {
         Calendar cal = Calendar.getInstance();
-        
+
         int nowDay = cal.get(Calendar.DAY_OF_MONTH);
         List<Integer> result = new ArrayList<Integer>(nowDay);
         for (int i = 1; i <= nowDay; i++)
@@ -99,5 +103,22 @@ public class BaseController
         }
         return result;
     }
-    
+
+    /**
+     * @description:根据时间格式获取最近15天时间
+     * @author: Wind-spg
+     * @param pattern
+     *            时间格式
+     * @return
+     */
+    protected List<String> getLast15Days(String pattern)
+    {
+        List<String> result = new ArrayList<String>();
+        DateFormat format = new SimpleDateFormat(pattern);
+        for (int i = 14; i >= 0; i--)
+        {
+            result.add(format.format(new Date(System.currentTimeMillis() - (i * (24 * 60 * 60 * 1000)))));
+        }
+        return result;
+    }
 }

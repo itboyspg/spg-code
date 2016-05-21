@@ -1,7 +1,5 @@
 package com.spg.cv.controller;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -130,21 +128,4 @@ public class PVController extends BaseController
         }
     }
 
-    /**
-     * @description:根据时间格式获取最近15天时间
-     * @author: Wind-spg
-     * @param pattern
-     *            时间格式
-     * @return
-     */
-    private List<String> getLast15Days(String pattern)
-    {
-        List<String> result = new ArrayList<String>();
-        DateFormat format = new SimpleDateFormat(pattern);
-        for (int i = 14; i >= 0; i--)
-        {
-            result.add(format.format(new Date(System.currentTimeMillis() - (i * (24 * 60 * 60 * 1000)))));
-        }
-        return result;
-    }
 }

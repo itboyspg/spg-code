@@ -10,7 +10,7 @@ package com.spg.cv.service;
  * @create_time：2016年1月10日 下午2:31:07
  * @version V1.0.0
  */
-public interface UserCountService
+public interface UserActiveService
 {
 
     /**
