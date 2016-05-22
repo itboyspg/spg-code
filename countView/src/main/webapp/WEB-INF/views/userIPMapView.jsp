@@ -271,5 +271,5 @@
     <script src="<%=basePath%>js/Highcharts/highmaps.js"></script>
     <script src="<%=basePath%>js/Highcharts/modules/data.js"></script>
     <script src="<%=basePath%>js/Highcharts/modules/drilldown.js"></script>
-    <script src="<%=basePath%>js/Highcharts/mapdata/cn-all-sar-taiwan.js"></script>
+    <script src="<%=basePath%>js/Highcharts/mapdata/cn-all-sar-taiwan-pretty.js"></script>
 </html>
