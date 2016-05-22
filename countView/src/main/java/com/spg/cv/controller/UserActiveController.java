@@ -88,4 +88,11 @@ public class UserActiveController extends BaseController
         view.addObject("yAxis", userActiveData);
         return view;
     }
+
+    @RequestMapping(value = "userIpMap")
+    public ModelAndView userIpMap(HttpServletRequest request)
+    {
+        ModelAndView view = new ModelAndView("userIPMapView");
+        return view;
+    }
 }

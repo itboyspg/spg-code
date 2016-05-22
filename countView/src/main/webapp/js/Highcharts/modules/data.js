@@ -1,5 +1,5 @@
 /*
- Highcharts JS v4.2.5 (2016-05-06)
+ Highmaps JS v4.2.5 (2016-05-06)
  Data module
 
  (c) 2012-2016 Torstein Honsi
