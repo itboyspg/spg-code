@@ -138,7 +138,7 @@
 	
 	        // Set drilldown pointers
 	        $.each(data, function (i) {
-	            this.drilldown = this.properties['hc-key'];
+	            this.drilldown = this.properties['dd-key'];
 	            this.value = i; // Non-random bogus data
 	        });
 	
@@ -149,25 +149,24 @@
 	                    drilldown: function (e) {
 	                        if (!e.seriesOptions) {
 	                            var chart = this,
-	                                mapKey = 'countries/cn/' + e.point.drilldown + '-all',
-	                                // Handle error, the timeout is cleared on success
-	                                fail = setTimeout(function () {
-	                                    if (!Highcharts.maps[mapKey]) {
-	                                        chart.showLoading('<i class="icon-frown"></i> Failed loading ' + e.point.name);
-	
-	                                        fail = setTimeout(function () {
-	                                            chart.hideLoading();
-	                                        }, 1000);
-	                                    }
-	                                }, 3000);
+	                            mapKey = 'js/Highcharts/mapdata/mapjson/' + e.point.drilldown + '.geo.json',
+	                            // Handle error, the timeout is cleared on success
+	                            fail = setTimeout(function () {
+	                            	alert(mapKey);
+		                            if (!Highcharts.maps[mapKey]) {
+			                            chart.showLoading('<i class="icon-frown"></i> Failed loading ' + e.point.name);
+			                            fail = setTimeout(function () {
+			                            	chart.hideLoading();
+			                            }, 1000);
+		                            }
+	                            }, 3000);
 	
 	                            // Show the spinner
 	                            chart.showLoading('<i class="icon-spinner icon-spin icon-3x"></i>'); // Font Awesome spinner
-	
 	                            // Load the drilldown map
-	                            $.getScript('https://code.highcharts.com/mapdata/' + mapKey + '.js', function () {
-	
-	                                data = Highcharts.geojson(Highcharts.maps[mapKey]);
+	                            $.getJSON("<%=basePath%>" + mapKey, function (geojson) {
+	                                //data = Highcharts.geojson(Highcharts.maps[mapKey]);
+	                                data = Highcharts.geojson(geojson);
 	
 	                                // Set a non-random bogus value
 	                                $.each(data, function (i) {
@@ -191,7 +190,7 @@
 	                        this.setTitle(null, { text: e.point.name });
 	                    },
 	                    drillup: function () {
-	                        this.setTitle(null, { text: 'USA' });
+	                        this.setTitle(null, { text: '中国' });
 	                    }
 	                }
 	            },
