@@ -204,7 +204,8 @@
 	                text: '中国',
 	                floating: true,
 	                align: 'right',
-	                y: 50,
+	                y: 55,
+	                x: -35,
 	                style: {
 	                    fontSize: '16px'
 	                }
