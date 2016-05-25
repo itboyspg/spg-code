@@ -132,6 +132,7 @@
     <!-- Heighcharts图表 -->
     <script type="text/javascript">
 	    $(function () {
+	    	// 此处路径为页面引入的js中定义的路径，如当前页引入的cn-all-sat-taiwan-pretty.js中定义的Highcharts.maps['']
 	        var data = Highcharts.geojson(Highcharts.maps['countries/cn/custom/cn-all-sar-taiwan']),
             // Some responsiveness
             small = $('#container').width() < 400;

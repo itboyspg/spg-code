@@ -1,1 +1,541 @@
-{"type":"FeatureCollection","features":[{"type":"Feature","id":"8100","properties":{"name":"香港","cp":[114.2784,22.3057],"childNum":1},"geometry":{"type":"Polygon","coordinates":[[[114.3333,22.1457],[114.2894,22.1457],[114.2592,22.1361],[114.2413,22.1457],[113.9447,22.1457],[113.9268,22.134],[113.9008,22.1395],[113.8376,22.1807],[113.8225,22.2144],[113.8445,22.2645],[113.8527,22.27],[113.8733,22.3304],[113.8747,22.4258],[113.9529,22.4691],[113.9996,22.5076],[114.0038,22.5069],[114.0134,22.4993],[114.0175,22.4979],[114.0271,22.4993],[114.0285,22.5014],[114.0326,22.5034],[114.0395,22.5021],[114.0491,22.5021],[114.0573,22.4993],[114.0614,22.5014],[114.0628,22.5082],[114.0683,22.5137],[114.0793,22.5144],[114.0807,22.513],[114.082,22.5124],[114.0875,22.5158],[114.0903,22.5192],[114.0903,22.5213],[114.0848,22.5247],[114.0834,22.5268],[114.0848,22.5282],[114.0903,22.5302],[114.0944,22.5336],[114.0971,22.5343],[114.1026,22.5316],[114.1081,22.5323],[114.1081,22.5288],[114.1095,22.5295],[114.1109,22.5323],[114.1122,22.5316],[114.1136,22.5336],[114.115,22.5336],[114.115,22.5282],[114.1177,22.5268],[114.1205,22.5282],[114.1219,22.5323],[114.126,22.5316],[114.126,22.533],[114.1273,22.533],[114.1273,22.5357],[114.1301,22.5378],[114.1328,22.5371],[114.1342,22.5391],[114.137,22.5398],[114.1397,22.5385],[114.1425,22.5405],[114.1438,22.5412],[114.1493,22.5391],[114.1493,22.5385],[114.1521,22.5391],[114.1534,22.5391],[114.1534,22.5419],[114.1562,22.5439],[114.1562,22.5453],[114.1548,22.5446],[114.1548,22.546],[114.1548,22.5481],[114.1562,22.5488],[114.1576,22.5522],[114.1617,22.5529],[114.1644,22.5577],[114.1658,22.5591],[114.1685,22.5563],[114.1727,22.5584],[114.1754,22.557],[114.1823,22.557],[114.1837,22.5529],[114.1864,22.5515],[114.1864,22.5529],[114.1919,22.5515],[114.1933,22.5529],[114.1946,22.5515],[114.1974,22.5529],[114.2194,22.5522],[114.2221,22.5529],[114.2249,22.5508],[114.2262,22.5488],[114.229,22.5481],[114.2303,22.546],[114.2303,22.5426],[114.2317,22.5412],[114.2331,22.5412],[114.2358,22.5433],[114.2358,22.5453],[114.2482,22.5501],[114.2812,22.5625],[114.3375,22.5659],[114.4391,22.5591],[114.4597,22.5426],[114.4597,22.4657],[114.4748,22.4334],[114.4981,22.4176],[114.5064,22.4155],[114.5187,22.4155],[114.5407,22.4217],[114.5627,22.4306],[114.5586,22.4203],[114.5613,22.4135],[114.5641,22.408],[114.5929,22.3915],[114.6066,22.3448],[114.5943,22.3057],[114.5641,22.2528],[114.5311,22.2013],[114.4995,22.1629],[114.4556,22.1299],[114.4171,22.1237],[114.3333,22.1457]]]}}],"srcSize":{"left":283.8225,"top":67.4341,"width":0.7841,"height":0.4422}}
+{"type":"FeatureCollection","features":[{
+        "type": "Feature",
+        "id": "CN.6657",
+        "properties": {
+            "hc-group": "admin1",
+            "hc-middle-x": 0.47,
+            "hc-middle-y": 0.22,
+            "hc-key": "cn-6657",
+            "hc-a2": "SO",
+            "labelrank": "20",
+            "hasc": "HK.",
+            "alt-name": null ,
+            "woe-id": "24703130",
+            "subregion": null ,
+            "fips": null ,
+            "postal-code": null ,
+            "name": "Southern",
+            "country": "Hong Kong S.A.R.",
+            "type-en": null ,
+            "region": "Hong Kong Island",
+            "longitude": "114.204",
+            "woe-name": "Southern",
+            "latitude": "22.2402",
+            "woe-label": null ,
+            "type": null 
+        },
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[6378, 2363], [6369, 2350], [6349, 2368], [6352, 2368], [6360, 2365], [6362, 2365], [6365, 2366], [6374, 2365], [6378, 2363]]]
+        }
+    }, {
+        "type": "Feature",
+        "id": "CN.6663",
+        "properties": {
+            "hc-group": "admin1",
+            "hc-middle-x": 0.43,
+            "hc-middle-y": 0.46,
+            "hc-key": "cn-6663",
+            "hc-a2": "SK",
+            "labelrank": "20",
+            "hasc": "HK.",
+            "alt-name": null ,
+            "woe-id": "24703139",
+            "subregion": null ,
+            "fips": null ,
+            "postal-code": null ,
+            "name": "Sai Kung",
+            "country": "Hong Kong S.A.R.",
+            "type-en": null ,
+            "region": "The New Territories",
+            "longitude": "114.249",
+            "woe-name": "Sai Kung",
+            "latitude": "22.3463",
+            "woe-label": null ,
+            "type": null 
+        },
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[6402, 2407], [6390, 2374], [6376, 2372], [6376, 2379], [6374, 2382], [6372, 2387], [6375, 2392], [6378, 2396], [6392, 2401], [6402, 2407]]]
+        }
+    }, {
+        "type": "Feature",
+        "id": "CN.6665",
+        "properties": {
+            "hc-group": "admin1",
+            "hc-middle-x": 0.51,
+            "hc-middle-y": 0.38,
+            "hc-key": "cn-6665",
+            "hc-a2": "KT",
+            "labelrank": "20",
+            "hasc": "HK.",
+            "alt-name": null ,
+            "woe-id": "24703132",
+            "subregion": null ,
+            "fips": null ,
+            "postal-code": null ,
+            "name": "Kwai Tsing",
+            "country": "Hong Kong S.A.R.",
+            "type-en": null ,
+            "region": "The New Territories",
+            "longitude": "114.14",
+            "woe-name": "Kwai Tsing",
+            "latitude": "22.351",
+            "woe-label": null ,
+            "type": null 
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [[[[6354, 2378], [6353, 2378], [6355, 2378], [6354, 2378]]], [[[6356, 2382], [6349, 2386], [6349, 2387], [6355, 2389], [6357, 2389], [6358, 2387], [6359, 2384], [6357, 2383], [6356, 2382]]]]
+        }
+    }, {
+        "type": "Feature",
+        "id": "CN.6666",
+        "properties": {
+            "hc-group": "admin1",
+            "hc-middle-x": 0.57,
+            "hc-middle-y": 0.40,
+            "hc-key": "cn-6666",
+            "hc-a2": "TW",
+            "labelrank": "20",
+            "hasc": "HK.",
+            "alt-name": null ,
+            "woe-id": "24703140",
+            "subregion": null ,
+            "fips": null ,
+            "postal-code": null ,
+            "name": "Tsuen Wan",
+            "country": "Hong Kong S.A.R.",
+            "type-en": null ,
+            "region": "The New Territories",
+            "longitude": "114.12",
+            "woe-name": "Tsuen Wan",
+            "latitude": "22.3869",
+            "woe-label": null ,
+            "type": null 
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [[[[6357, 2389], [6355, 2389], [6349, 2387], [6342, 2389], [6330, 2386], [6330, 2391], [6333, 2393], [6341, 2396], [6354, 2399], [6358, 2401], [6361, 2401], [6362, 2396], [6357, 2389]]], [[[6325, 2378], [6340, 2385], [6332, 2378], [6325, 2378]]]]
+        }
+    }, {
+        "type": "Feature",
+        "id": "CN.6667",
+        "properties": {
+            "hc-group": "admin1",
+            "hc-middle-x": 0.52,
+            "hc-middle-y": 0.43,
+            "hc-key": "cn-6667",
+            "hc-a2": "TM",
+            "labelrank": "20",
+            "hasc": "HK.",
+            "alt-name": null ,
+            "woe-id": "24703141",
+            "subregion": null ,
+            "fips": null ,
+            "postal-code": null ,
+            "name": "Tuen Mun",
+            "country": "Hong Kong S.A.R.",
+            "type-en": null ,
+            "region": "The New Territories",
+            "longitude": "113.991",
+            "woe-name": "Tuen Mun",
+            "latitude": "22.3846",
+            "woe-label": null ,
+            "type": null 
+        },
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[6333, 2393], [6330, 2391], [6330, 2386], [6300, 2393], [6314, 2403], [6323, 2398], [6333, 2393]]]
+        }
+    }, {
+        "type": "Feature",
+        "id": "CN.6669",
+        "properties": {
+            "hc-group": "admin1",
+            "hc-middle-x": 0.49,
+            "hc-middle-y": 0.37,
+            "hc-key": "cn-6669",
+            "hc-a2": "NO",
+            "labelrank": "20",
+            "hasc": "HK.",
+            "alt-name": null ,
+            "woe-id": "24703142",
+            "subregion": null ,
+            "fips": null ,
+            "postal-code": null ,
+            "name": "North",
+            "country": "Hong Kong S.A.R.",
+            "type-en": null ,
+            "region": "The New Territories",
+            "longitude": "114.148",
+            "woe-name": "North",
+            "latitude": "22.5063",
+            "woe-label": null ,
+            "type": null 
+        },
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[6344, 2424], [6343, 2426], [6359, 2433], [6373, 2432], [6386, 2432], [6395, 2422], [6370, 2419], [6355, 2412], [6347, 2413], [6344, 2424]]]
+        }
+    }, {
+        "type": "Feature",
+        "id": "CN.6670",
+        "properties": {
+            "hc-group": "admin1",
+            "hc-middle-x": 0.43,
+            "hc-middle-y": 0.35,
+            "hc-key": "cn-6670",
+            "hc-a2": "TP",
+            "labelrank": "20",
+            "hasc": "HK.",
+            "alt-name": null ,
+            "woe-id": "24703144",
+            "subregion": null ,
+            "fips": null ,
+            "postal-code": null ,
+            "name": "Tai Po",
+            "country": "Hong Kong S.A.R.",
+            "type-en": null ,
+            "region": "The New Territories",
+            "longitude": "114.154",
+            "woe-name": "Tai Po",
+            "latitude": "22.4447",
+            "woe-label": null ,
+            "type": null 
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [[[[6402, 2407], [6392, 2401], [6378, 2396], [6378, 2400], [6378, 2404], [6393, 2415], [6402, 2407]]], [[[6361, 2401], [6358, 2401], [6354, 2399], [6352, 2408], [6355, 2412], [6370, 2419], [6395, 2422], [6378, 2408], [6368, 2402], [6364, 2401], [6361, 2401]]]]
+        }
+    }, {
+        "type": "Feature",
+        "id": "CN.6671",
+        "properties": {
+            "hc-group": "admin1",
+            "hc-middle-x": 0.50,
+            "hc-middle-y": 0.48,
+            "hc-key": "cn-6671",
+            "hc-a2": "IS",
+            "labelrank": "20",
+            "hasc": "HK.",
+            "alt-name": null ,
+            "woe-id": "24703127",
+            "subregion": null ,
+            "fips": null ,
+            "postal-code": null ,
+            "name": "Islands",
+            "country": "Hong Kong S.A.R.",
+            "type-en": null ,
+            "region": "The New Territories",
+            "longitude": "113.954",
+            "woe-name": "Islands",
+            "latitude": "22.2597",
+            "woe-label": null ,
+            "type": null 
+        },
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[6325, 2378], [6332, 2378], [6329, 2358], [6294, 2352], [6304, 2373], [6325, 2378]]]
+        }
+    }, {
+        "type": "Feature",
+        "id": "CN.3682",
+        "properties": {
+            "hc-group": "admin1",
+            "hc-middle-x": 0.53,
+            "hc-middle-y": 0.42,
+            "hc-key": "cn-3682",
+            "hc-a2": "CA",
+            "labelrank": "20",
+            "hasc": "HK.",
+            "alt-name": null ,
+            "woe-id": "24703128",
+            "subregion": null ,
+            "fips": null ,
+            "postal-code": null ,
+            "name": "Central and Western",
+            "country": "Hong Kong S.A.R.",
+            "type-en": null ,
+            "region": "Hong Kong Island",
+            "longitude": "114.144",
+            "woe-name": "Central and Western",
+            "latitude": "22.2741",
+            "woe-label": null ,
+            "type": null 
+        },
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[6349, 2368], [6355, 2372], [6360, 2370], [6360, 2365], [6352, 2368], [6349, 2368]]]
+        }
+    }, {
+        "type": "Feature",
+        "id": "CN.6655",
+        "properties": {
+            "hc-group": "admin1",
+            "hc-middle-x": 0.50,
+            "hc-middle-y": 0.50,
+            "hc-key": "cn-6655",
+            "hc-a2": "WC",
+            "labelrank": "20",
+            "hasc": "HK.",
+            "alt-name": null ,
+            "woe-id": "24703129",
+            "subregion": null ,
+            "fips": null ,
+            "postal-code": null ,
+            "name": "Wan Chai",
+            "country": "Hong Kong S.A.R.",
+            "type-en": null ,
+            "region": "Hong Kong Island",
+            "longitude": "114.178",
+            "woe-name": "Wan Chai",
+            "latitude": "22.2699",
+            "woe-label": null ,
+            "type": null 
+        },
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[6360, 2365], [6360, 2370], [6363, 2370], [6366, 2369], [6365, 2366], [6362, 2365], [6360, 2365]]]
+        }
+    }, {
+        "type": "Feature",
+        "id": "CN.6656",
+        "properties": {
+            "hc-group": "admin1",
+            "hc-middle-x": 0.51,
+            "hc-middle-y": 0.37,
+            "hc-key": "cn-6656",
+            "hc-a2": "EA",
+            "labelrank": "20",
+            "hasc": "HK.",
+            "alt-name": null ,
+            "woe-id": "24703131",
+            "subregion": null ,
+            "fips": null ,
+            "postal-code": null ,
+            "name": "Eastern",
+            "country": "Hong Kong S.A.R.",
+            "type-en": null ,
+            "region": "Hong Kong Island",
+            "longitude": "114.213",
+            "woe-name": "Eastern",
+            "latitude": "22.2706",
+            "woe-label": null ,
+            "type": null 
+        },
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[6365, 2366], [6366, 2369], [6363, 2370], [6375, 2370], [6378, 2363], [6374, 2365], [6365, 2366]]]
+        }
+    }, {
+        "type": "Feature",
+        "id": "CN.6658",
+        "properties": {
+            "hc-group": "admin1",
+            "hc-middle-x": 0.84,
+            "hc-middle-y": 0.42,
+            "hc-key": "cn-6658",
+            "hc-a2": "YT",
+            "labelrank": "20",
+            "hasc": "HK.",
+            "alt-name": null ,
+            "woe-id": "24703134",
+            "subregion": null ,
+            "fips": null ,
+            "postal-code": null ,
+            "name": "Yau Tsim Mong",
+            "country": "Hong Kong S.A.R.",
+            "type-en": null ,
+            "region": "Kowloon",
+            "longitude": "114.169",
+            "woe-name": "Yau Tsim Mong",
+            "latitude": "22.3128",
+            "woe-label": null ,
+            "type": null 
+        },
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[6362, 2373], [6361, 2376], [6359, 2380], [6362, 2380], [6363, 2376], [6362, 2373]]]
+        }
+    }, {
+        "type": "Feature",
+        "id": "CN.6659",
+        "properties": {
+            "hc-group": "admin1",
+            "hc-middle-x": 0.52,
+            "hc-middle-y": 0.48,
+            "hc-key": "cn-6659",
+            "hc-a2": "KC",
+            "labelrank": "20",
+            "hasc": "HK.",
+            "alt-name": null ,
+            "woe-id": "24703135",
+            "subregion": null ,
+            "fips": null ,
+            "postal-code": null ,
+            "name": "Kowloon City",
+            "country": "Hong Kong S.A.R.",
+            "type-en": null ,
+            "region": "Kowloon",
+            "longitude": "114.19",
+            "woe-name": "Kowloon City",
+            "latitude": "22.3268",
+            "woe-label": null ,
+            "type": null 
+        },
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[6370, 2377], [6366, 2379], [6362, 2373], [6363, 2376], [6362, 2380], [6362, 2383], [6361, 2385], [6364, 2385], [6366, 2382], [6368, 2382], [6369, 2380], [6370, 2377]]]
+        }
+    }, {
+        "type": "Feature",
+        "id": "CN.6660",
+        "properties": {
+            "hc-group": "admin1",
+            "hc-middle-x": 0.61,
+            "hc-middle-y": 0.37,
+            "hc-key": "cn-6660",
+            "hc-a2": "SS",
+            "labelrank": "20",
+            "hasc": "HK.",
+            "alt-name": null ,
+            "woe-id": "24703133",
+            "subregion": null ,
+            "fips": null ,
+            "postal-code": null ,
+            "name": "Sham Shui Po",
+            "country": "Hong Kong S.A.R.",
+            "type-en": null ,
+            "region": "Kowloon",
+            "longitude": "114.164",
+            "woe-name": "Sham Shui Po",
+            "latitude": "22.3331",
+            "woe-label": null ,
+            "type": null 
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [[[[6355, 2378], [6356, 2378], [6354, 2378], [6355, 2378]]], [[[6362, 2380], [6359, 2380], [6357, 2381], [6356, 2382], [6357, 2383], [6359, 2384], [6361, 2385], [6362, 2383], [6362, 2380]]]]
+        }
+    }, {
+        "type": "Feature",
+        "id": "CN.6661",
+        "properties": {
+            "hc-group": "admin1",
+            "hc-middle-x": 0.50,
+            "hc-middle-y": 0.66,
+            "hc-key": "cn-6661",
+            "hc-a2": "WT",
+            "labelrank": "20",
+            "hasc": "HK.",
+            "alt-name": null ,
+            "woe-id": "24703137",
+            "subregion": null ,
+            "fips": null ,
+            "postal-code": null ,
+            "name": "Wong Tai Sin",
+            "country": "Hong Kong S.A.R.",
+            "type-en": null ,
+            "region": "Kowloon",
+            "longitude": "114.215",
+            "woe-name": "Wong Tai Sin",
+            "latitude": "22.3432",
+            "woe-label": null ,
+            "type": null 
+        },
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[6368, 2382], [6366, 2382], [6364, 2385], [6372, 2387], [6374, 2382], [6368, 2382]]]
+        }
+    }, {
+        "type": "Feature",
+        "id": "CN.6662",
+        "properties": {
+            "hc-group": "admin1",
+            "hc-middle-x": 0.61,
+            "hc-middle-y": 0.47,
+            "hc-key": "cn-6662",
+            "hc-a2": "KT",
+            "labelrank": "20",
+            "hasc": "HK.",
+            "alt-name": null ,
+            "woe-id": "24703136",
+            "subregion": null ,
+            "fips": null ,
+            "postal-code": null ,
+            "name": "Kwun Tong",
+            "country": "Hong Kong S.A.R.",
+            "type-en": null ,
+            "region": "Kowloon",
+            "longitude": "114.225",
+            "woe-name": "Kwun Tong",
+            "latitude": "22.3159",
+            "woe-label": null ,
+            "type": null 
+        },
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[6376, 2372], [6375, 2371], [6370, 2377], [6369, 2380], [6368, 2382], [6374, 2382], [6376, 2379], [6376, 2372]]]
+        }
+    }, {
+        "type": "Feature",
+        "id": "CN.6664",
+        "properties": {
+            "hc-group": "admin1",
+            "hc-middle-x": 0.52,
+            "hc-middle-y": 0.48,
+            "hc-key": "cn-6664",
+            "hc-a2": "ST",
+            "labelrank": "20",
+            "hasc": "HK.",
+            "alt-name": null ,
+            "woe-id": "24703138",
+            "subregion": null ,
+            "fips": null ,
+            "postal-code": null ,
+            "name": "Sha Tin",
+            "country": "Hong Kong S.A.R.",
+            "type-en": null ,
+            "region": "The New Territories",
+            "longitude": "114.2",
+            "woe-name": "Sha Tin",
+            "latitude": "22.3807",
+            "woe-label": null ,
+            "type": null 
+        },
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[6378, 2396], [6375, 2392], [6372, 2387], [6364, 2385], [6361, 2385], [6359, 2384], [6358, 2387], [6357, 2389], [6362, 2396], [6361, 2401], [6364, 2401], [6368, 2402], [6371, 2397], [6378, 2404], [6378, 2400], [6378, 2396]]]
+        }
+    }, {
+        "type": "Feature",
+        "id": "CN.6668",
+        "properties": {
+            "hc-group": "admin1",
+            "hc-middle-x": 0.52,
+            "hc-middle-y": 0.58,
+            "hc-key": "cn-6668",
+            "hc-a2": "YL",
+            "labelrank": "20",
+            "hasc": "HK.",
+            "alt-name": null ,
+            "woe-id": "24703143",
+            "subregion": null ,
+            "fips": null ,
+            "postal-code": null ,
+            "name": "Yuen Long",
+            "country": "Hong Kong S.A.R.",
+            "type-en": null ,
+            "region": "The New Territories",
+            "longitude": "114.058",
+            "woe-name": "Yuen Long",
+            "latitude": "22.4415",
+            "woe-label": null ,
+            "type": null 
+        },
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[6354, 2399], [6341, 2396], [6333, 2393], [6323, 2398], [6314, 2403], [6326, 2417], [6344, 2424], [6347, 2413], [6355, 2412], [6352, 2408], [6354, 2399]]]
+        }
+    }],"srcSize":{"left":283.8225,"top":67.4341,"width":0.7841,"height":0.4422}}

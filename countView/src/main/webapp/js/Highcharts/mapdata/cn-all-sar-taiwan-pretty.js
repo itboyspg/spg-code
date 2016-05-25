@@ -24,6 +24,37 @@ Highcharts.maps["countries/cn/custom/cn-all-sar-taiwan"] = {
     },
     "features": [{
         "type": "Feature",
+        "id": "CN.TW",
+        "properties": {
+            "hc-group": "admin1",
+            "hc-middle-x": 0.70,
+            "hc-middle-y": 0.61,
+            "hc-key": "tw-tw",
+            "dd-key": "cn-taiwan",
+            "hc-a2": "TW",
+            "labelrank": "9",
+            "hasc": "CN.TW",
+            "alt-name": null ,
+            "woe-id": "20070568",
+            "subregion": null ,
+            "fips": null ,
+            "postal-code": "台湾",
+            "name": "台湾",
+            "country": "China",
+            "type-en": "County",
+            "region": "Special Municipality",
+            "longitude": "121.0295",
+            "woe-name": "台湾",
+            "latitude": "23.6082",
+            "woe-label": null ,
+            "type": "zhixiashi"
+        },
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[7477, 2683],[7484, 2676],[7473, 2673],[7469, 2681],[7477, 2683]],[[7234, 2879],[7234, 2858],[7201, 2854],[7200, 2871],[7234, 2879]],[[7523, 3257],[7529, 3258],[7521, 3253],[7519, 3256],[7523, 3257]],[[7875, 3008],[7842, 3038],[7862, 3059],[7882, 3019],[7875, 3008]],[[7638, 2670],[7651, 2672],[7663, 2661],[7652, 2656],[7638, 2670]],[[7652, 2442],[7615, 2480],[7598, 2540],[7651, 2543],[7695, 2610],[7705, 2625],[7756, 2667],[7764, 2665],[7768, 2659],[7763, 2643],[7776, 2629],[7750, 2615],[7740, 2529],[7661, 2521],[7652, 2442]],[[7726, 2950],[7732, 2966],[7733, 2974],[7760, 2958],[7744, 2944],[7740, 2942],[7726, 2950]],[[7744, 2944],[7760, 2958],[7733, 2974],[7741, 2986],[7744, 2996],[7813, 2957],[7837, 2921],[7832, 2904],[7819, 2885],[7817, 2885],[7808, 2883],[7768, 2897],[7744, 2944]],[[7887, 3052],[7890, 3049],[7902, 3046],[7905, 3030],[7887, 3052]],[[7744, 2944],[7768, 2897],[7808, 2883],[7726, 2848],[7677, 2883],[7692, 2917],[7726, 2950],[7740, 2942],[7744, 2944]],[[7837, 2921],[7813, 2957],[7744, 2996],[7761, 3019],[7806, 3038],[7822, 2978],[7851, 2941],[7847, 2927],[7837, 2921]],[[7606, 2742],[7624, 2784],[7650, 2826],[7674, 2805],[7691, 2786],[7685, 2769],[7689, 2731],[7634, 2742],[7606, 2742]],[[7911, 2864],[7887, 2796],[7863, 2663],[7823, 2589],[7776, 2629],[7763, 2643],[7768, 2659],[7808, 2699],[7827, 2840],[7843, 2860],[7848, 2872],[7879, 2864],[7911, 2864]],[[7808, 2699],[7768, 2659],[7764, 2665],[7756, 2667],[7729, 2668],[7709, 2697],[7688, 2702],[7689, 2731],[7685, 2769],[7691, 2786],[7791, 2836],[7827, 2840],[7827, 2840],[7828, 2835],[7808, 2699]],[[7827, 2840],[7791, 2836],[7691, 2786],[7674, 2805],[7650, 2826],[7667, 2871],[7677, 2883],[7726, 2848],[7808, 2883],[7817, 2885],[7819, 2885],[7823, 2877],[7848, 2872],[7843, 2860],[7827, 2840],[7827, 2840]],[[7689, 2731],[7688, 2702],[7709, 2697],[7638, 2696],[7584, 2670],[7595, 2728],[7606, 2742],[7634, 2742],[7689, 2731]],[[7750, 2391],[7746, 2317],[7717, 2325],[7686, 2419],[7652, 2442],[7661, 2521],[7740, 2529],[7724, 2419],[7750, 2391]],[[7750, 2391],[7724, 2419],[7740, 2529],[7750, 2615],[7776, 2629],[7823, 2589],[7863, 2663],[7849, 2598],[7776, 2484],[7750, 2391]],[[7695, 2610],[7651, 2543],[7598, 2540],[7574, 2588],[7584, 2625],[7649, 2649],[7695, 2610]],[[7911, 2864],[7879, 2864],[7848, 2872],[7823, 2877],[7819, 2885],[7832, 2904],[7837, 2921],[7847, 2927],[7851, 2941],[7908, 2986],[7947, 3014],[7915, 2972],[7925, 2900],[7911, 2864]],[[7902, 3046],[7929, 3041],[7947, 3014],[7908, 2986],[7851, 2941],[7822, 2978],[7806, 3038],[7868, 3073],[7887, 3052],[7905, 3030],[7902, 3046]],[[7875, 3008],[7882, 3019],[7862, 3059],[7842, 3038],[7875, 3008]],[[7756, 2667],[7705, 2625],[7695, 2610],[7695, 2610],[7649, 2649],[7584, 2625],[7593, 2635],[7584, 2670],[7638, 2696],[7709, 2697],[7729, 2668],[7756, 2667]],[[7638, 2670],[7652, 2656],[7663, 2661],[7651, 2672],[7638, 2670]]]
+        }
+    }, {
+        "type": "Feature",
         "id": "TW.PH",
         "properties": {
             "hc-group": "admin1",
@@ -37,7 +68,7 @@ Highcharts.maps["countries/cn/custom/cn-all-sar-taiwan"] = {
             "woe-id": "22695856",
             "subregion": null ,
             "fips": null ,
-            "postal-code": "澎湖县",
+            "postal-code": null,
             "name": "澎湖县",
             "country": "Taiwan",
             "type-en": "County",
@@ -98,7 +129,7 @@ Highcharts.maps["countries/cn/custom/cn-all-sar-taiwan"] = {
             "woe-id": "28760735",
             "subregion": null ,
             "fips": null ,
-            "postal-code": "金门县",
+            "postal-code": null,
             "name": "金门县",
             "country": "Taiwan",
             "type-en": "County",
@@ -159,7 +190,7 @@ Highcharts.maps["countries/cn/custom/cn-all-sar-taiwan"] = {
             "woe-id": "28760734",
             "subregion": null ,
             "fips": null ,
-            "postal-code": "连江县",
+            "postal-code": null,
             "name": "连江县",
             "country": "Taiwan",
             "type-en": "County",
@@ -299,363 +330,34 @@ Highcharts.maps["countries/cn/custom/cn-all-sar-taiwan"] = {
         }
     }, {
         "type": "Feature",
-        "id": "TW.TW",
-        "properties": {
-            "hc-group": "admin1",
-            "hc-middle-x": 0.55,
-            "hc-middle-y": 0.55,
-            "hc-key": "tw-tw",
-            "hc-a2": "TW",
-            "labelrank": "9",
-            "hasc": "TW.TP.TC",
-            "alt-name": "Taibei Shi",
-            "woe-id": "20070568",
-            "subregion": null ,
-            "fips": "TW03",
-            "postal-code": "TW",
-            "name": "Taipei City",
-            "country": "Taiwan",
-            "type-en": "Special Municipality",
-            "region": "Special Municipalities",
-            "longitude": "121.559",
-            "woe-name": "Taipei City",
-            "latitude": "25.0904",
-            "woe-label": null ,
-            "type": "Zhixiashi"
-        },
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [[[7875, 3008], [7864, 3007], [7842, 3038], [7862, 3059], [7882, 3019], [7875, 3008]]]
-        }
-    }, {
-        "type": "Feature",
-        "id": "TW.CS",
-        "properties": {
-            "hc-group": "admin1",
-            "hc-middle-x": 0.50,
-            "hc-middle-y": 0.43,
-            "hc-key": "tw-cs",
-            "hc-a2": "CS",
-            "labelrank": "9",
-            "hasc": "TW.TW.CS",
-            "alt-name": "Jiayi Shi|Chiai City",
-            "woe-id": "28751583",
-            "subregion": null ,
-            "fips": null ,
-            "postal-code": "CS",
-            "name": "Chiayi City",
-            "country": "Taiwan",
-            "type-en": "Provincial City",
-            "region": "Taiwan Province",
-            "longitude": "120.441",
-            "woe-name": "Chiayi City",
-            "latitude": "23.4822",
-            "woe-label": null ,
-            "type": "Shi"
-        },
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [[[7638, 2670], [7651, 2672], [7663, 2661], [7652, 2656], [7638, 2670]]]
-        }
-    }, {
-        "type": "Feature",
-        "id": "CN.6657",
-        "properties": {
-            "hc-group": "admin1",
-            "hc-middle-x": 0.47,
-            "hc-middle-y": 0.22,
-            "hc-key": "cn-6657",
-            "hc-a2": "SO",
-            "labelrank": "20",
-            "hasc": "HK.",
-            "alt-name": null ,
-            "woe-id": "24703130",
-            "subregion": null ,
-            "fips": null ,
-            "postal-code": null ,
-            "name": "Southern",
-            "country": "Hong Kong S.A.R.",
-            "type-en": null ,
-            "region": "Hong Kong Island",
-            "longitude": "114.204",
-            "woe-name": "Southern",
-            "latitude": "22.2402",
-            "woe-label": null ,
-            "type": null 
-        },
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [[[6378, 2363], [6369, 2350], [6349, 2368], [6352, 2368], [6360, 2365], [6362, 2365], [6365, 2366], [6374, 2365], [6378, 2363]]]
-        }
-    }, {
-        "type": "Feature",
-        "id": "CN.6663",
-        "properties": {
-            "hc-group": "admin1",
-            "hc-middle-x": 0.43,
-            "hc-middle-y": 0.46,
-            "hc-key": "cn-6663",
-            "hc-a2": "SK",
-            "labelrank": "20",
-            "hasc": "HK.",
-            "alt-name": null ,
-            "woe-id": "24703139",
-            "subregion": null ,
-            "fips": null ,
-            "postal-code": null ,
-            "name": "Sai Kung",
-            "country": "Hong Kong S.A.R.",
-            "type-en": null ,
-            "region": "The New Territories",
-            "longitude": "114.249",
-            "woe-name": "Sai Kung",
-            "latitude": "22.3463",
-            "woe-label": null ,
-            "type": null 
-        },
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [[[6402, 2407], [6390, 2374], [6376, 2372], [6376, 2379], [6374, 2382], [6372, 2387], [6375, 2392], [6378, 2396], [6392, 2401], [6402, 2407]]]
-        }
-    }, {
-        "type": "Feature",
-        "id": "CN.6665",
-        "properties": {
-            "hc-group": "admin1",
-            "hc-middle-x": 0.51,
-            "hc-middle-y": 0.38,
-            "hc-key": "cn-6665",
-            "hc-a2": "KT",
-            "labelrank": "20",
-            "hasc": "HK.",
-            "alt-name": null ,
-            "woe-id": "24703132",
-            "subregion": null ,
-            "fips": null ,
-            "postal-code": null ,
-            "name": "Kwai Tsing",
-            "country": "Hong Kong S.A.R.",
-            "type-en": null ,
-            "region": "The New Territories",
-            "longitude": "114.14",
-            "woe-name": "Kwai Tsing",
-            "latitude": "22.351",
-            "woe-label": null ,
-            "type": null 
-        },
-        "geometry": {
-            "type": "MultiPolygon",
-            "coordinates": [[[[6354, 2378], [6353, 2378], [6355, 2378], [6354, 2378]]], [[[6356, 2382], [6349, 2386], [6349, 2387], [6355, 2389], [6357, 2389], [6358, 2387], [6359, 2384], [6357, 2383], [6356, 2382]]]]
-        }
-    }, {
-        "type": "Feature",
-        "id": "CN.6666",
+        "id": "CN.XG",
         "properties": {
             "hc-group": "admin1",
             "hc-middle-x": 0.57,
-            "hc-middle-y": 0.40,
-            "hc-key": "cn-6666",
-            "hc-a2": "TW",
-            "labelrank": "20",
-            "hasc": "HK.",
-            "alt-name": null ,
-            "woe-id": "24703140",
-            "subregion": null ,
-            "fips": null ,
-            "postal-code": null ,
-            "name": "Tsuen Wan",
-            "country": "Hong Kong S.A.R.",
-            "type-en": null ,
-            "region": "The New Territories",
-            "longitude": "114.12",
-            "woe-name": "Tsuen Wan",
-            "latitude": "22.3869",
-            "woe-label": null ,
-            "type": null 
-        },
-        "geometry": {
-            "type": "MultiPolygon",
-            "coordinates": [[[[6357, 2389], [6355, 2389], [6349, 2387], [6342, 2389], [6330, 2386], [6330, 2391], [6333, 2393], [6341, 2396], [6354, 2399], [6358, 2401], [6361, 2401], [6362, 2396], [6357, 2389]]], [[[6325, 2378], [6340, 2385], [6332, 2378], [6325, 2378]]]]
-        }
-    }, {
-        "type": "Feature",
-        "id": "CN.6667",
-        "properties": {
-            "hc-group": "admin1",
-            "hc-middle-x": 0.52,
-            "hc-middle-y": 0.43,
-            "hc-key": "cn-6667",
-            "hc-a2": "TM",
-            "labelrank": "20",
-            "hasc": "HK.",
-            "alt-name": null ,
-            "woe-id": "24703141",
-            "subregion": null ,
-            "fips": null ,
-            "postal-code": null ,
-            "name": "Tuen Mun",
-            "country": "Hong Kong S.A.R.",
-            "type-en": null ,
-            "region": "The New Territories",
-            "longitude": "113.991",
-            "woe-name": "Tuen Mun",
-            "latitude": "22.3846",
-            "woe-label": null ,
-            "type": null 
+            "hc-middle-y": 0.42,
+            "hc-key": "cn-hk",
+            "dd-key": "cn-xianggang",
+            "hc-a2": "HK",
+            "labelrank": "2",
+            "hasc": "CN.HK",
+            "alt-name": "XIANGGANG",
+            "woe-id": "24703130",
+            "subregion": null,
+            "fips": null,
+            "postal-code": "香港",
+            "name": "香港",
+            "country": "China",
+            "type-en": "Province",
+            "region": "Hong Kong Island",
+            "longitude": "114.204",
+            "woe-name": "香港",
+            "latitude": "22.2402",
+            "woe-label": "香港, CN, China",
+            "type": "Sh?ng"
         },
         "geometry": {
             "type": "Polygon",
-            "coordinates": [[[6333, 2393], [6330, 2391], [6330, 2386], [6300, 2393], [6314, 2403], [6323, 2398], [6333, 2393]]]
-        }
-    }, {
-        "type": "Feature",
-        "id": "CN.6669",
-        "properties": {
-            "hc-group": "admin1",
-            "hc-middle-x": 0.49,
-            "hc-middle-y": 0.37,
-            "hc-key": "cn-6669",
-            "hc-a2": "NO",
-            "labelrank": "20",
-            "hasc": "HK.",
-            "alt-name": null ,
-            "woe-id": "24703142",
-            "subregion": null ,
-            "fips": null ,
-            "postal-code": null ,
-            "name": "North",
-            "country": "Hong Kong S.A.R.",
-            "type-en": null ,
-            "region": "The New Territories",
-            "longitude": "114.148",
-            "woe-name": "North",
-            "latitude": "22.5063",
-            "woe-label": null ,
-            "type": null 
-        },
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [[[6344, 2424], [6343, 2426], [6359, 2433], [6373, 2432], [6386, 2432], [6395, 2422], [6370, 2419], [6355, 2412], [6347, 2413], [6344, 2424]]]
-        }
-    }, {
-        "type": "Feature",
-        "id": "CN.6670",
-        "properties": {
-            "hc-group": "admin1",
-            "hc-middle-x": 0.43,
-            "hc-middle-y": 0.35,
-            "hc-key": "cn-6670",
-            "hc-a2": "TP",
-            "labelrank": "20",
-            "hasc": "HK.",
-            "alt-name": null ,
-            "woe-id": "24703144",
-            "subregion": null ,
-            "fips": null ,
-            "postal-code": null ,
-            "name": "Tai Po",
-            "country": "Hong Kong S.A.R.",
-            "type-en": null ,
-            "region": "The New Territories",
-            "longitude": "114.154",
-            "woe-name": "Tai Po",
-            "latitude": "22.4447",
-            "woe-label": null ,
-            "type": null 
-        },
-        "geometry": {
-            "type": "MultiPolygon",
-            "coordinates": [[[[6402, 2407], [6392, 2401], [6378, 2396], [6378, 2400], [6378, 2404], [6393, 2415], [6402, 2407]]], [[[6361, 2401], [6358, 2401], [6354, 2399], [6352, 2408], [6355, 2412], [6370, 2419], [6395, 2422], [6378, 2408], [6368, 2402], [6364, 2401], [6361, 2401]]]]
-        }
-    }, {
-        "type": "Feature",
-        "id": "CN.6671",
-        "properties": {
-            "hc-group": "admin1",
-            "hc-middle-x": 0.50,
-            "hc-middle-y": 0.48,
-            "hc-key": "cn-6671",
-            "hc-a2": "IS",
-            "labelrank": "20",
-            "hasc": "HK.",
-            "alt-name": null ,
-            "woe-id": "24703127",
-            "subregion": null ,
-            "fips": null ,
-            "postal-code": null ,
-            "name": "Islands",
-            "country": "Hong Kong S.A.R.",
-            "type-en": null ,
-            "region": "The New Territories",
-            "longitude": "113.954",
-            "woe-name": "Islands",
-            "latitude": "22.2597",
-            "woe-label": null ,
-            "type": null 
-        },
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [[[6325, 2378], [6332, 2378], [6329, 2358], [6294, 2352], [6304, 2373], [6325, 2378]]]
-        }
-    }, {
-        "type": "Feature",
-        "id": "TW.KH",
-        "properties": {
-            "hc-group": "admin1",
-            "hc-middle-x": 0.22,
-            "hc-middle-y": 0.74,
-            "hc-key": "tw-kh",
-            "hc-a2": "KH",
-            "labelrank": "9",
-            "hasc": "TW.KH.KC",
-            "alt-name": "Gaoxiong Shi",
-            "woe-id": "20070571",
-            "subregion": null ,
-            "fips": null ,
-            "postal-code": "KH",
-            "name": "Kaohsiung City",
-            "country": "Taiwan",
-            "type-en": "Special Municipality",
-            "region": "Special Municipalities",
-            "longitude": "120.609",
-            "woe-name": "Kaohsiung City",
-            "latitude": "23.0157",
-            "woe-label": null ,
-            "type": "Zhixiashi"
-        },
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [[[7652, 2442], [7635, 2449], [7615, 2480], [7598, 2540], [7635, 2533], [7651, 2543], [7695, 2610], [7705, 2625], [7756, 2667], [7764, 2665], [7768, 2659], [7763, 2643], [7776, 2629], [7750, 2615], [7740, 2529], [7715, 2535], [7661, 2521], [7652, 2442]]]
-        }
-    }, {
-        "type": "Feature",
-        "id": "TW.HS",
-        "properties": {
-            "hc-group": "admin1",
-            "hc-middle-x": 0.43,
-            "hc-middle-y": 0.58,
-            "hc-key": "tw-hs",
-            "hc-a2": "HS",
-            "labelrank": "9",
-            "hasc": "TW.TW.HS",
-            "alt-name": "Xinzhu Shi",
-            "woe-id": "28751582",
-            "subregion": null ,
-            "fips": null ,
-            "postal-code": "HS",
-            "name": "Hsinchu City",
-            "country": "Taiwan",
-            "type-en": "Provincial City",
-            "region": "Taiwan Province",
-            "longitude": "120.959",
-            "woe-name": "Hsinchu City",
-            "latitude": "24.7757",
-            "woe-label": null ,
-            "type": "Shi"
-        },
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [[[7726, 2950], [7732, 2966], [7733, 2974], [7760, 2958], [7744, 2944], [7740, 2942], [7726, 2950]]]
+            "coordinates": [[[6378, 2363],[6369, 2350],[6349, 2368],[6352, 2368],[6360, 2365],[6362, 2365],[6365, 2366],[6374, 2365],[6378, 2363]],[[6402, 2407],[6390, 2374],[6376, 2372],[6376, 2379],[6374, 2382],[6372, 2387],[6375, 2392],[6378, 2396],[6392, 2401],[6402, 2407]],[[6354, 2378],[6353, 2378],[6355, 2378],[6354, 2378]],[[6356, 2382],[6349, 2386],[6349, 2387],[6355, 2389],[6357, 2389],[6358, 2387],[6359, 2384],[6357, 2383],[6356, 2382]],[[6357, 2389],[6355, 2389],[6349, 2387],[6342, 2389],[6330, 2386],[6330, 2391],[6333, 2393],[6341, 2396],[6354, 2399],[6358, 2401],[6361, 2401],[6362, 2396],[6357, 2389]],[[6325, 2378],[6340, 2385],[6332, 2378],[6325, 2378]],[[6333, 2393],[6330, 2391],[6330, 2386],[6300, 2393],[6314, 2403],[6323, 2398],[6333, 2393]],[[6344, 2424],[6343, 2426],[6359, 2433],[6373, 2432],[6386, 2432],[6395, 2422],[6370, 2419],[6355, 2412],[6347, 2413],[6344, 2424]],[[6402, 2407],[6392, 2401],[6378, 2396],[6378, 2400],[6378, 2404],[6393, 2415],[6402, 2407]],[[6361, 2401],[6358, 2401],[6354, 2399],[6352, 2408],[6355, 2412],[6370, 2419],[6395, 2422],[6378, 2408],[6368, 2402],[6364, 2401],[6361, 2401]],[[6325, 2378],[6332, 2378],[6294, 2352],[6325, 2378]],[[6349, 2368],[6355, 2372],[6360, 2370],[6360, 2365],[6352, 2368],[6349, 2368]],[[6360, 2365],[6360, 2370],[6363, 2370],[6366, 2369],[6365, 2366],[6362, 2365],[6360, 2365]],[[6365, 2366],[6366, 2369],[6363, 2370],[6375, 2370],[6378, 2363],[6374, 2365],[6365, 2366]],[[6362, 2373],[6361, 2376],[6359, 2380],[6362, 2380],[6363, 2376],[6362, 2373]],[[6370, 2377],[6366, 2379],[6362, 2373],[6363, 2376],[6362, 2380],[6362, 2383],[6361, 2385],[6364, 2385],[6366, 2382],[6368, 2382],[6369, 2380],[6370, 2377]],[[6355, 2378],[6356, 2378],[6354, 2378],[6355, 2378]],[[6362, 2380],[6359, 2380],[6357, 2381],[6356, 2382],[6357, 2383],[6359, 2384],[6361, 2385],[6362, 2383],[6362, 2380]],[[6368, 2382],[6366, 2382],[6364, 2385],[6372, 2387],[6374, 2382],[6368, 2382]],[[6376, 2372],[6375, 2371],[6370, 2377],[6369, 2380],[6368, 2382],[6374, 2382],[6376, 2379],[6376, 2372]],[[6378, 2396],[6375, 2392],[6372, 2387],[6364, 2385],[6361, 2385],[6359, 2384],[6358, 2387],[6357, 2389],[6362, 2396],[6361, 2401],[6364, 2401],[6368, 2402],[6371, 2397],[6378, 2404],[6378, 2400],[6378, 2396]],[[6354, 2399],[6341, 2396],[6333, 2393],[6323, 2398],[6314, 2403],[6326, 2417],[6344, 2424],[6347, 2413],[6355, 2412],[6352, 2408],[6354, 2399]]]
         }
     }, {
         "type": "Feature",
@@ -721,96 +423,6 @@ Highcharts.maps["countries/cn/custom/cn-all-sar-taiwan"] = {
         }
     }, {
         "type": "Feature",
-        "id": "TW.HH",
-        "properties": {
-            "hc-group": "admin1",
-            "hc-middle-x": 0.43,
-            "hc-middle-y": 0.54,
-            "hc-key": "tw-hh",
-            "hc-a2": "HH",
-            "labelrank": "9",
-            "hasc": "TW.TW.HH",
-            "alt-name": "Xinzhu",
-            "woe-id": "2347334",
-            "subregion": null ,
-            "fips": null ,
-            "postal-code": "HH",
-            "name": "Hsinchu",
-            "country": "Taiwan",
-            "type-en": "County",
-            "region": "Taiwan Province",
-            "longitude": "121.163",
-            "woe-name": "Hsinchu County",
-            "latitude": "24.6748",
-            "woe-label": null ,
-            "type": "Hsien"
-        },
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [[[7744, 2944], [7760, 2958], [7733, 2974], [7741, 2986], [7744, 2996], [7757, 2997], [7813, 2957], [7811, 2934], [7837, 2921], [7832, 2904], [7819, 2885], [7817, 2885], [7808, 2883], [7796, 2902], [7768, 2897], [7769, 2918], [7744, 2944]]]
-        }
-    }, {
-        "type": "Feature",
-        "id": "TW.CL",
-        "properties": {
-            "hc-group": "admin1",
-            "hc-middle-x": 0.60,
-            "hc-middle-y": 0.39,
-            "hc-key": "tw-cl",
-            "hc-a2": "CL",
-            "labelrank": "9",
-            "hasc": "TW.TW.CL",
-            "alt-name": "Jilong Shi|Chilung City",
-            "woe-id": "22695855",
-            "subregion": null ,
-            "fips": null ,
-            "postal-code": "CL",
-            "name": "Keelung City",
-            "country": "Taiwan",
-            "type-en": "Provincial City",
-            "region": "Taiwan Province",
-            "longitude": "121.704",
-            "woe-name": "Keelung City",
-            "latitude": "25.1131",
-            "woe-label": null ,
-            "type": "Shi"
-        },
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [[[7887, 3052], [7890, 3049], [7902, 3046], [7905, 3030], [7876, 3045], [7887, 3052]]]
-        }
-    }, {
-        "type": "Feature",
-        "id": "TW.ML",
-        "properties": {
-            "hc-group": "admin1",
-            "hc-middle-x": 0.49,
-            "hc-middle-y": 0.60,
-            "hc-key": "tw-ml",
-            "hc-a2": "ML",
-            "labelrank": "9",
-            "hasc": "TW.TW.ML",
-            "alt-name": null ,
-            "woe-id": "2347338",
-            "subregion": null ,
-            "fips": null ,
-            "postal-code": "ML",
-            "name": "Miaoli",
-            "country": "Taiwan",
-            "type-en": "County",
-            "region": "Taiwan Province",
-            "longitude": "120.942",
-            "woe-name": "Miaoli County",
-            "latitude": "24.5253",
-            "woe-label": null ,
-            "type": "Hsien"
-        },
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [[[7744, 2944], [7769, 2918], [7768, 2897], [7796, 2902], [7808, 2883], [7765, 2853], [7744, 2860], [7726, 2848], [7677, 2883], [7692, 2917], [7726, 2950], [7740, 2942], [7744, 2944]]]
-        }
-    }, {
-        "type": "Feature",
         "id": "CN.NX",
         "properties": {
             "hc-group": "admin1",
@@ -870,126 +482,6 @@ Highcharts.maps["countries/cn/custom/cn-all-sar-taiwan"] = {
         "geometry": {
             "type": "Polygon",
             "coordinates": [[[5076, 5740], [5084, 5760], [5069, 5794], [5087, 5861], [5124, 5900], [5142, 5900], [5152, 5919], [5202, 5902], [5221, 5865], [5275, 5864], [5356, 5872], [5360, 5924], [5371, 5943], [5393, 5928], [5408, 5971], [5395, 5992], [5402, 6023], [5435, 6071], [5464, 6088], [5485, 6123], [5506, 6126], [5533, 6178], [5560, 6188], [5587, 6217], [5626, 6240], [5615, 6274], [5636, 6273], [5656, 6247], [5685, 6260], [5711, 6229], [5750, 6280], [5781, 6303], [5800, 6306], [5785, 6269], [5798, 6260], [5818, 6242], [5798, 6185], [5775, 6171], [5771, 6127], [5750, 6082], [5746, 6043], [5682, 5985], [5681, 5927], [5723, 5882], [5730, 5834], [5700, 5796], [5706, 5770], [5680, 5738], [5649, 5680], [5661, 5641], [5652, 5631], [5669, 5610], [5660, 5506], [5670, 5447], [5679, 5438], [5689, 5380], [5634, 5289], [5618, 5231], [5615, 5166], [5631, 5155], [5628, 5124], [5656, 5088], [5647, 5073], [5682, 5050], [5686, 5008], [5676, 4985], [5705, 4967], [5713, 4945], [5746, 4920], [5754, 4868], [5746, 4844], [5715, 4828], [5703, 4806], [5674, 4819], [5664, 4841], [5641, 4825], [5603, 4822], [5577, 4835], [5494, 4849], [5466, 4844], [5454, 4824], [5511, 4807], [5507, 4772], [5538, 4768], [5575, 4750], [5588, 4700], [5555, 4685], [5532, 4695], [5485, 4696], [5470, 4654], [5455, 4643], [5476, 4610], [5488, 4571], [5476, 4545], [5472, 4502], [5421, 4496], [5369, 4551], [5318, 4577], [5267, 4613], [5260, 4625], [5213, 4630], [5177, 4623], [5167, 4606], [5137, 4625], [5103, 4663], [5064, 4669], [5063, 4695], [5015, 4681], [4990, 4698], [4991, 4740], [4924, 4750], [4902, 4736], [4829, 4721], [4797, 4750], [4808, 4783], [4764, 4782], [4750, 4762], [4704, 4759], [4692, 4800], [4719, 4793], [4768, 4812], [4776, 4870], [4745, 4885], [4740, 4907], [4763, 4931], [4811, 4956], [4829, 4942], [4872, 4953], [4891, 4935], [4903, 4947], [4890, 4971], [4881, 5017], [4900, 5064], [4915, 5070], [4910, 5103], [4929, 5096], [4934, 5126], [4902, 5159], [4877, 5160], [4868, 5175], [4903, 5209], [4915, 5237], [4906, 5276], [4920, 5286], [4987, 5286], [5012, 5273], [5041, 5238], [5062, 5248], [5095, 5243], [5109, 5252], [5158, 5253], [5131, 5311], [5145, 5332], [5186, 5308], [5223, 5322], [5286, 5316], [5311, 5343], [5309, 5379], [5293, 5415], [5291, 5456], [5327, 5484], [5332, 5511], [5323, 5535], [5334, 5565], [5317, 5583], [5286, 5591], [5271, 5611], [5212, 5625], [5185, 5663], [5150, 5680], [5074, 5704], [5076, 5740]]]
-        }
-    }, {
-        "type": "Feature",
-        "id": "TW.TY",
-        "properties": {
-            "hc-group": "admin1",
-            "hc-middle-x": 0.66,
-            "hc-middle-y": 0.46,
-            "hc-key": "tw-ty",
-            "hc-a2": "TY",
-            "labelrank": "9",
-            "hasc": "TW.TW.TY",
-            "alt-name": null ,
-            "woe-id": "2347345",
-            "subregion": null ,
-            "fips": null ,
-            "postal-code": "TY",
-            "name": "Taoyuan",
-            "country": "Taiwan",
-            "type-en": "County",
-            "region": "Taiwan Province",
-            "longitude": "121.227",
-            "woe-name": "Taoyuan County",
-            "latitude": "24.961",
-            "woe-label": null ,
-            "type": "Hsien"
-        },
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [[[7837, 2921], [7811, 2934], [7813, 2957], [7757, 2997], [7744, 2996], [7761, 3019], [7806, 3038], [7832, 3020], [7816, 3004], [7822, 2978], [7842, 2966], [7851, 2941], [7847, 2927], [7837, 2921]]]
-        }
-    }, {
-        "type": "Feature",
-        "id": "CN.3682",
-        "properties": {
-            "hc-group": "admin1",
-            "hc-middle-x": 0.53,
-            "hc-middle-y": 0.42,
-            "hc-key": "cn-3682",
-            "hc-a2": "CA",
-            "labelrank": "20",
-            "hasc": "HK.",
-            "alt-name": null ,
-            "woe-id": "24703128",
-            "subregion": null ,
-            "fips": null ,
-            "postal-code": null ,
-            "name": "Central and Western",
-            "country": "Hong Kong S.A.R.",
-            "type-en": null ,
-            "region": "Hong Kong Island",
-            "longitude": "114.144",
-            "woe-name": "Central and Western",
-            "latitude": "22.2741",
-            "woe-label": null ,
-            "type": null 
-        },
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [[[6349, 2368], [6355, 2372], [6360, 2370], [6360, 2365], [6352, 2368], [6349, 2368]]]
-        }
-    }, {
-        "type": "Feature",
-        "id": "TW.CG",
-        "properties": {
-            "hc-group": "admin1",
-            "hc-middle-x": 0.56,
-            "hc-middle-y": 0.48,
-            "hc-key": "tw-cg",
-            "hc-a2": "CG",
-            "labelrank": "9",
-            "hasc": "TW.TW.CG",
-            "alt-name": "Zhanghua|Changhwa",
-            "woe-id": "20070572",
-            "subregion": null ,
-            "fips": null ,
-            "postal-code": "CG",
-            "name": "Changhua",
-            "country": "Taiwan",
-            "type-en": "County",
-            "region": "Taiwan Province",
-            "longitude": "120.464",
-            "woe-name": "Changhua County",
-            "latitude": "24.0016",
-            "woe-label": null ,
-            "type": "Hsien"
-        },
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [[[7606, 2742], [7624, 2784], [7650, 2826], [7674, 2805], [7691, 2786], [7685, 2769], [7689, 2731], [7634, 2742], [7606, 2742]]]
-        }
-    }, {
-        "type": "Feature",
-        "id": "CN.6655",
-        "properties": {
-            "hc-group": "admin1",
-            "hc-middle-x": 0.50,
-            "hc-middle-y": 0.50,
-            "hc-key": "cn-6655",
-            "hc-a2": "WC",
-            "labelrank": "20",
-            "hasc": "HK.",
-            "alt-name": null ,
-            "woe-id": "24703129",
-            "subregion": null ,
-            "fips": null ,
-            "postal-code": null ,
-            "name": "Wan Chai",
-            "country": "Hong Kong S.A.R.",
-            "type-en": null ,
-            "region": "Hong Kong Island",
-            "longitude": "114.178",
-            "woe-name": "Wan Chai",
-            "latitude": "22.2699",
-            "woe-label": null ,
-            "type": null 
-        },
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [[[6360, 2365], [6360, 2370], [6363, 2370], [6366, 2369], [6365, 2366], [6362, 2365], [6360, 2365]]]
         }
     }, {
         "type": "Feature",
@@ -1055,186 +547,6 @@ Highcharts.maps["countries/cn/custom/cn-all-sar-taiwan"] = {
         }
     }, {
         "type": "Feature",
-        "id": "TW.HL",
-        "properties": {
-            "hc-group": "admin1",
-            "hc-middle-x": 0.51,
-            "hc-middle-y": 0.48,
-            "hc-key": "tw-hl",
-            "hc-a2": "HL",
-            "labelrank": "9",
-            "hasc": "TW.TW.HL",
-            "alt-name": "Hualian",
-            "woe-id": "2347335",
-            "subregion": null ,
-            "fips": null ,
-            "postal-code": "花莲县",
-            "name": "Hualien",
-            "country": "Taiwan",
-            "type-en": "County",
-            "region": "Taiwan Province",
-            "longitude": "121.381",
-            "woe-name": "Hualien County",
-            "latitude": "23.7743",
-            "woe-label": null ,
-            "type": "Hsien"
-        },
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [[[7911, 2864], [7882, 2807], [7887, 2796], [7869, 2713], [7863, 2663], [7835, 2602], [7823, 2589], [7776, 2629], [7763, 2643], [7768, 2659], [7808, 2699], [7805, 2736], [7825, 2807], [7826, 2826], [7827, 2840], [7843, 2860], [7848, 2872], [7879, 2864], [7911, 2864]]]
-        }
-    }, {
-        "type": "Feature",
-        "id": "TW.TH",
-        "properties": {
-            "hc-group": "admin1",
-            "hc-middle-x": 0.08,
-            "hc-middle-y": 0.51,
-            "hc-key": "tw-th",
-            "hc-a2": "TH",
-            "labelrank": "9",
-            "hasc": "TW.TW.TG",
-            "alt-name": "Taizhong Shi",
-            "woe-id": "28751584",
-            "subregion": null ,
-            "fips": null ,
-            "postal-code": "TH",
-            "name": "Taichung City",
-            "country": "Taiwan",
-            "type-en": "Special Municipality",
-            "region": "Special Municipalities",
-            "longitude": "120.966",
-            "woe-name": "Taichung City",
-            "latitude": "24.238",
-            "woe-label": null ,
-            "type": "Zhixiashi"
-        },
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [[[7827, 2840], [7791, 2836], [7754, 2812], [7723, 2807], [7715, 2789], [7691, 2786], [7674, 2805], [7650, 2826], [7667, 2871], [7677, 2883], [7726, 2848], [7744, 2860], [7765, 2853], [7808, 2883], [7817, 2885], [7819, 2885], [7823, 2877], [7848, 2872], [7843, 2860], [7827, 2840], [7827, 2840]]]
-        }
-    }, {
-        "type": "Feature",
-        "id": "CN.6656",
-        "properties": {
-            "hc-group": "admin1",
-            "hc-middle-x": 0.51,
-            "hc-middle-y": 0.37,
-            "hc-key": "cn-6656",
-            "hc-a2": "EA",
-            "labelrank": "20",
-            "hasc": "HK.",
-            "alt-name": null ,
-            "woe-id": "24703131",
-            "subregion": null ,
-            "fips": null ,
-            "postal-code": null ,
-            "name": "Eastern",
-            "country": "Hong Kong S.A.R.",
-            "type-en": null ,
-            "region": "Hong Kong Island",
-            "longitude": "114.213",
-            "woe-name": "Eastern",
-            "latitude": "22.2706",
-            "woe-label": null ,
-            "type": null 
-        },
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [[[6365, 2366], [6366, 2369], [6363, 2370], [6375, 2370], [6378, 2363], [6374, 2365], [6365, 2366]]]
-        }
-    }, {
-        "type": "Feature",
-        "id": "TW.NT",
-        "properties": {
-            "hc-group": "admin1",
-            "hc-middle-x": 0.46,
-            "hc-middle-y": 0.46,
-            "hc-key": "tw-nt",
-            "hc-a2": "NT",
-            "labelrank": "9",
-            "hasc": "TW.TW.NT",
-            "alt-name": null ,
-            "woe-id": "2347339",
-            "subregion": null ,
-            "fips": null ,
-            "postal-code": "NT",
-            "name": "Nantou",
-            "country": "Taiwan",
-            "type-en": "County",
-            "region": "Taiwan Province",
-            "longitude": "120.988",
-            "woe-name": "Nantou County",
-            "latitude": "23.7977",
-            "woe-label": null ,
-            "type": "Hsien"
-        },
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [[[7805, 2736], [7808, 2699], [7768, 2659], [7764, 2665], [7756, 2667], [7729, 2668], [7727, 2692], [7709, 2697], [7688, 2702], [7689, 2731], [7685, 2769], [7691, 2786], [7715, 2789], [7723, 2807], [7754, 2812], [7791, 2836], [7827, 2840], [7827, 2840], [7828, 2835], [7826, 2826], [7805, 2736]]]
-        }
-    }, {
-        "type": "Feature",
-        "id": "CN.6658",
-        "properties": {
-            "hc-group": "admin1",
-            "hc-middle-x": 0.84,
-            "hc-middle-y": 0.42,
-            "hc-key": "cn-6658",
-            "hc-a2": "YT",
-            "labelrank": "20",
-            "hasc": "HK.",
-            "alt-name": null ,
-            "woe-id": "24703134",
-            "subregion": null ,
-            "fips": null ,
-            "postal-code": null ,
-            "name": "Yau Tsim Mong",
-            "country": "Hong Kong S.A.R.",
-            "type-en": null ,
-            "region": "Kowloon",
-            "longitude": "114.169",
-            "woe-name": "Yau Tsim Mong",
-            "latitude": "22.3128",
-            "woe-label": null ,
-            "type": null 
-        },
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [[[6362, 2373], [6361, 2376], [6359, 2380], [6362, 2380], [6363, 2376], [6362, 2373]]]
-        }
-    }, {
-        "type": "Feature",
-        "id": "CN.6659",
-        "properties": {
-            "hc-group": "admin1",
-            "hc-middle-x": 0.52,
-            "hc-middle-y": 0.48,
-            "hc-key": "cn-6659",
-            "hc-a2": "KC",
-            "labelrank": "20",
-            "hasc": "HK.",
-            "alt-name": null ,
-            "woe-id": "24703135",
-            "subregion": null ,
-            "fips": null ,
-            "postal-code": null ,
-            "name": "Kowloon City",
-            "country": "Hong Kong S.A.R.",
-            "type-en": null ,
-            "region": "Kowloon",
-            "longitude": "114.19",
-            "woe-name": "Kowloon City",
-            "latitude": "22.3268",
-            "woe-label": null ,
-            "type": null 
-        },
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [[[6370, 2377], [6366, 2379], [6362, 2373], [6363, 2376], [6362, 2380], [6362, 2383], [6361, 2385], [6364, 2385], [6366, 2382], [6368, 2382], [6369, 2380], [6370, 2377]]]
-        }
-    }, {
-        "type": "Feature",
         "id": "CN.CQ",
         "properties": {
             "hc-group": "admin1",
@@ -1294,276 +606,6 @@ Highcharts.maps["countries/cn/custom/cn-all-sar-taiwan"] = {
         "geometry": {
             "type": "Polygon",
             "coordinates": [[[5385, 3775], [5377, 3803], [5392, 3897], [5379, 3910], [5406, 3951], [5426, 4005], [5462, 4023], [5477, 4020], [5496, 4048], [5560, 4058], [5610, 4027], [5623, 4043], [5656, 4053], [5638, 4074], [5632, 4108], [5648, 4117], [5681, 4111], [5687, 4126], [5785, 4109], [5818, 4085], [5888, 4082], [5918, 4068], [5975, 4025], [5987, 3995], [6020, 4018], [6060, 4014], [6107, 4051], [6117, 4029], [6115, 3984], [6154, 3977], [6211, 4044], [6245, 4070], [6235, 4027], [6257, 4024], [6273, 3970], [6245, 3938], [6258, 3900], [6307, 3887], [6307, 3862], [6354, 3824], [6348, 3786], [6337, 3774], [6361, 3761], [6371, 3739], [6363, 3713], [6344, 3705], [6329, 3671], [6309, 3652], [6273, 3643], [6266, 3607], [6238, 3556], [6246, 3506], [6259, 3497], [6296, 3501], [6277, 3455], [6304, 3411], [6292, 3385], [6299, 3346], [6343, 3329], [6340, 3301], [6311, 3238], [6359, 3249], [6369, 3238], [6334, 3215], [6330, 3185], [6307, 3144], [6322, 3106], [6311, 3076], [6291, 3056], [6241, 3049], [6167, 3089], [6104, 3048], [6100, 3031], [6126, 3032], [6116, 3017], [6120, 2969], [6083, 2964], [6054, 3003], [6013, 3014], [5957, 3012], [5944, 2967], [5948, 2932], [5918, 2920], [5903, 2929], [5851, 2931], [5820, 2900], [5802, 2909], [5811, 2934], [5803, 3004], [5772, 3014], [5742, 2991], [5722, 2964], [5707, 2988], [5715, 3016], [5740, 3035], [5751, 3063], [5782, 3093], [5780, 3124], [5810, 3187], [5776, 3173], [5759, 3195], [5772, 3267], [5711, 3293], [5697, 3267], [5666, 3268], [5632, 3283], [5628, 3257], [5588, 3233], [5568, 3204], [5546, 3221], [5525, 3218], [5531, 3243], [5505, 3254], [5472, 3190], [5452, 3187], [5438, 3224], [5409, 3221], [5399, 3273], [5378, 3283], [5401, 3333], [5380, 3376], [5427, 3404], [5412, 3414], [5425, 3431], [5412, 3466], [5370, 3472], [5355, 3456], [5343, 3468], [5313, 3445], [5282, 3459], [5368, 3537], [5382, 3535], [5411, 3562], [5417, 3582], [5400, 3607], [5390, 3673], [5402, 3720], [5385, 3734], [5385, 3775]]]
-        }
-    }, {
-        "type": "Feature",
-        "id": "TW.YL",
-        "properties": {
-            "hc-group": "admin1",
-            "hc-middle-x": 0.44,
-            "hc-middle-y": 0.38,
-            "hc-key": "tw-yl",
-            "hc-a2": "YL",
-            "labelrank": "9",
-            "hasc": "TW.TW.YL",
-            "alt-name": "Yüanlin",
-            "woe-id": "2347346",
-            "subregion": null ,
-            "fips": null ,
-            "postal-code": "YL",
-            "name": "Yunlin",
-            "country": "Taiwan",
-            "type-en": "County",
-            "region": "Taiwan Province",
-            "longitude": "120.427",
-            "woe-name": "Yunlin County",
-            "latitude": "23.7253",
-            "woe-label": null ,
-            "type": "Hsien"
-        },
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [[[7689, 2731], [7688, 2702], [7709, 2697], [7677, 2689], [7638, 2696], [7607, 2671], [7584, 2670], [7595, 2728], [7606, 2742], [7634, 2742], [7689, 2731]]]
-        }
-    }, {
-        "type": "Feature",
-        "id": "CN.6660",
-        "properties": {
-            "hc-group": "admin1",
-            "hc-middle-x": 0.61,
-            "hc-middle-y": 0.37,
-            "hc-key": "cn-6660",
-            "hc-a2": "SS",
-            "labelrank": "20",
-            "hasc": "HK.",
-            "alt-name": null ,
-            "woe-id": "24703133",
-            "subregion": null ,
-            "fips": null ,
-            "postal-code": null ,
-            "name": "Sham Shui Po",
-            "country": "Hong Kong S.A.R.",
-            "type-en": null ,
-            "region": "Kowloon",
-            "longitude": "114.164",
-            "woe-name": "Sham Shui Po",
-            "latitude": "22.3331",
-            "woe-label": null ,
-            "type": null 
-        },
-        "geometry": {
-            "type": "MultiPolygon",
-            "coordinates": [[[[6355, 2378], [6356, 2378], [6354, 2378], [6355, 2378]]], [[[6362, 2380], [6359, 2380], [6357, 2381], [6356, 2382], [6357, 2383], [6359, 2384], [6361, 2385], [6362, 2383], [6362, 2380]]]]
-        }
-    }, {
-        "type": "Feature",
-        "id": "CN.6661",
-        "properties": {
-            "hc-group": "admin1",
-            "hc-middle-x": 0.50,
-            "hc-middle-y": 0.66,
-            "hc-key": "cn-6661",
-            "hc-a2": "WT",
-            "labelrank": "20",
-            "hasc": "HK.",
-            "alt-name": null ,
-            "woe-id": "24703137",
-            "subregion": null ,
-            "fips": null ,
-            "postal-code": null ,
-            "name": "Wong Tai Sin",
-            "country": "Hong Kong S.A.R.",
-            "type-en": null ,
-            "region": "Kowloon",
-            "longitude": "114.215",
-            "woe-name": "Wong Tai Sin",
-            "latitude": "22.3432",
-            "woe-label": null ,
-            "type": null 
-        },
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [[[6368, 2382], [6366, 2382], [6364, 2385], [6372, 2387], [6374, 2382], [6368, 2382]]]
-        }
-    }, {
-        "type": "Feature",
-        "id": "CN.6662",
-        "properties": {
-            "hc-group": "admin1",
-            "hc-middle-x": 0.61,
-            "hc-middle-y": 0.47,
-            "hc-key": "cn-6662",
-            "hc-a2": "KT",
-            "labelrank": "20",
-            "hasc": "HK.",
-            "alt-name": null ,
-            "woe-id": "24703136",
-            "subregion": null ,
-            "fips": null ,
-            "postal-code": null ,
-            "name": "Kwun Tong",
-            "country": "Hong Kong S.A.R.",
-            "type-en": null ,
-            "region": "Kowloon",
-            "longitude": "114.225",
-            "woe-name": "Kwun Tong",
-            "latitude": "22.3159",
-            "woe-label": null ,
-            "type": null 
-        },
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [[[6376, 2372], [6375, 2371], [6370, 2377], [6369, 2380], [6368, 2382], [6374, 2382], [6376, 2379], [6376, 2372]]]
-        }
-    }, {
-        "type": "Feature",
-        "id": "CN.6664",
-        "properties": {
-            "hc-group": "admin1",
-            "hc-middle-x": 0.52,
-            "hc-middle-y": 0.48,
-            "hc-key": "cn-6664",
-            "hc-a2": "ST",
-            "labelrank": "20",
-            "hasc": "HK.",
-            "alt-name": null ,
-            "woe-id": "24703138",
-            "subregion": null ,
-            "fips": null ,
-            "postal-code": null ,
-            "name": "Sha Tin",
-            "country": "Hong Kong S.A.R.",
-            "type-en": null ,
-            "region": "The New Territories",
-            "longitude": "114.2",
-            "woe-name": "Sha Tin",
-            "latitude": "22.3807",
-            "woe-label": null ,
-            "type": null 
-        },
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [[[6378, 2396], [6375, 2392], [6372, 2387], [6364, 2385], [6361, 2385], [6359, 2384], [6358, 2387], [6357, 2389], [6362, 2396], [6361, 2401], [6364, 2401], [6368, 2402], [6371, 2397], [6378, 2404], [6378, 2400], [6378, 2396]]]
-        }
-    }, {
-        "type": "Feature",
-        "id": "CN.6668",
-        "properties": {
-            "hc-group": "admin1",
-            "hc-middle-x": 0.52,
-            "hc-middle-y": 0.58,
-            "hc-key": "cn-6668",
-            "hc-a2": "YL",
-            "labelrank": "20",
-            "hasc": "HK.",
-            "alt-name": null ,
-            "woe-id": "24703143",
-            "subregion": null ,
-            "fips": null ,
-            "postal-code": null ,
-            "name": "Yuen Long",
-            "country": "Hong Kong S.A.R.",
-            "type-en": null ,
-            "region": "The New Territories",
-            "longitude": "114.058",
-            "woe-name": "Yuen Long",
-            "latitude": "22.4415",
-            "woe-label": null ,
-            "type": null 
-        },
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [[[6354, 2399], [6341, 2396], [6333, 2393], [6323, 2398], [6314, 2403], [6326, 2417], [6344, 2424], [6347, 2413], [6355, 2412], [6352, 2408], [6354, 2399]]]
-        }
-    }, {
-        "type": "Feature",
-        "id": "TW.PT",
-        "properties": {
-            "hc-group": "admin1",
-            "hc-middle-x": 0.50,
-            "hc-middle-y": 0.50,
-            "hc-key": "tw-pt",
-            "hc-a2": "PT",
-            "labelrank": "9",
-            "hasc": "TW.TW.PT",
-            "alt-name": "Pingdong",
-            "woe-id": "2347340",
-            "subregion": null ,
-            "fips": null ,
-            "postal-code": "PT",
-            "name": "Pingtung",
-            "country": "Taiwan",
-            "type-en": "County",
-            "region": "Taiwan Province",
-            "longitude": "120.661",
-            "woe-name": "Pingtung County",
-            "latitude": "22.5344",
-            "woe-label": null ,
-            "type": "Hsien"
-        },
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [[[7750, 2391], [7746, 2317], [7717, 2325], [7714, 2362], [7686, 2419], [7652, 2442], [7661, 2521], [7715, 2535], [7740, 2529], [7749, 2498], [7721, 2471], [7724, 2419], [7750, 2391]]]
-        }
-    }, {
-        "type": "Feature",
-        "id": "TW.TT",
-        "properties": {
-            "hc-group": "admin1",
-            "hc-middle-x": 0.10,
-            "hc-middle-y": 0.72,
-            "hc-key": "tw-tt",
-            "hc-a2": "TT",
-            "labelrank": "9",
-            "hasc": "TW.TW.TT",
-            "alt-name": "Taidong",
-            "woe-id": "2347344",
-            "subregion": null ,
-            "fips": null ,
-            "postal-code": "TT",
-            "name": "Taitung",
-            "country": "Taiwan",
-            "type-en": "County",
-            "region": "Taiwan Province",
-            "longitude": "121.54",
-            "woe-name": "Taitung County",
-            "latitude": "22.0499",
-            "woe-label": null ,
-            "type": "Hsien"
-        },
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [[[7750, 2391], [7724, 2419], [7721, 2471], [7749, 2498], [7740, 2529], [7750, 2615], [7776, 2629], [7823, 2589], [7835, 2602], [7863, 2663], [7849, 2598], [7800, 2506], [7776, 2484], [7751, 2420], [7750, 2391]]]
-        }
-    }, {
-        "type": "Feature",
-        "id": "TW.TN",
-        "properties": {
-            "hc-group": "admin1",
-            "hc-middle-x": 0.42,
-            "hc-middle-y": 0.48,
-            "hc-key": "tw-tn",
-            "hc-a2": "TN",
-            "labelrank": "9",
-            "hasc": "TW.TW.TN",
-            "alt-name": "Tainan Shi",
-            "woe-id": "28751581",
-            "subregion": null ,
-            "fips": null ,
-            "postal-code": "TN",
-            "name": "Tainan City",
-            "country": "Taiwan",
-            "type-en": "Special Municipality",
-            "region": "Special Municipalities",
-            "longitude": "120.182",
-            "woe-name": "Tainan City",
-            "latitude": "23.0464",
-            "woe-label": null ,
-            "type": "Zhixiashi"
-        },
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [[[7695, 2610], [7651, 2543], [7635, 2533], [7598, 2540], [7574, 2588], [7584, 2625], [7601, 2622], [7625, 2643], [7649, 2649], [7669, 2631], [7675, 2608], [7695, 2610]]]
         }
     }, {
         "type": "Feature",
@@ -1629,66 +671,6 @@ Highcharts.maps["countries/cn/custom/cn-all-sar-taiwan"] = {
         }
     }, {
         "type": "Feature",
-        "id": "TW.IL",
-        "properties": {
-            "hc-group": "admin1",
-            "hc-middle-x": 0.57,
-            "hc-middle-y": 0.47,
-            "hc-key": "tw-il",
-            "hc-a2": "IL",
-            "labelrank": "9",
-            "hasc": "TW.TW.IL",
-            "alt-name": "Ilan",
-            "woe-id": "2347336",
-            "subregion": null ,
-            "fips": null ,
-            "postal-code": "IL",
-            "name": "Yilan",
-            "country": "Taiwan",
-            "type-en": "County",
-            "region": "Taiwan Province",
-            "longitude": "121.644",
-            "woe-name": "Yilan County",
-            "latitude": "24.5913",
-            "woe-label": null ,
-            "type": "Hsien"
-        },
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [[[7819, 2885], [7832, 2904], [7837, 2921], [7847, 2927], [7851, 2941], [7873, 2965], [7908, 2986], [7921, 3007], [7947, 3014], [7915, 2972], [7925, 2900], [7911, 2864], [7879, 2864], [7848, 2872], [7823, 2877], [7819, 2885]]]
-        }
-    }, {
-        "type": "Feature",
-        "id": "TW.TP",
-        "properties": {
-            "hc-group": "admin1",
-            "hc-middle-x": 0.43,
-            "hc-middle-y": 0.39,
-            "hc-key": "tw-tp",
-            "hc-a2": "TP",
-            "labelrank": "9",
-            "hasc": "TW.TW.TP",
-            "alt-name": "Xinbei Shi",
-            "woe-id": "20070569",
-            "subregion": null ,
-            "fips": "TW03",
-            "postal-code": "TP",
-            "name": "New Taipei City",
-            "country": "Taiwan",
-            "type-en": "Special Municipality",
-            "region": "Special Municipalities",
-            "longitude": "121.646",
-            "woe-name": "Taipei County",
-            "latitude": "24.911",
-            "woe-label": null ,
-            "type": "Zhixiashi"
-        },
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [[[7902, 3046], [7929, 3041], [7947, 3014], [7921, 3007], [7908, 2986], [7873, 2965], [7851, 2941], [7842, 2966], [7822, 2978], [7816, 3004], [7832, 3020], [7806, 3038], [7831, 3046], [7835, 3065], [7868, 3073], [7887, 3052], [7876, 3045], [7905, 3030], [7902, 3046]], [[7875, 3008], [7882, 3019], [7862, 3059], [7842, 3038], [7864, 3007], [7875, 3008]]]
-        }
-    }, {
-        "type": "Feature",
         "id": "CN.SD",
         "properties": {
             "hc-group": "admin1",
@@ -1717,36 +699,6 @@ Highcharts.maps["countries/cn/custom/cn-all-sar-taiwan"] = {
         "geometry": {
             "type": "Polygon",
             "coordinates": [[[6777, 5156], [6756, 5141], [6734, 5139], [6722, 5150], [6671, 5139], [6619, 5140], [6598, 5162], [6597, 5186], [6556, 5198], [6548, 5223], [6515, 5238], [6484, 5239], [6487, 5277], [6504, 5286], [6527, 5324], [6557, 5332], [6607, 5393], [6630, 5405], [6676, 5451], [6708, 5460], [6716, 5492], [6688, 5473], [6598, 5444], [6576, 5415], [6577, 5451], [6593, 5466], [6600, 5504], [6565, 5577], [6602, 5642], [6629, 5651], [6671, 5713], [6693, 5775], [6745, 5791], [6738, 5808], [6762, 5845], [6775, 5812], [6845, 5898], [6959, 5902], [6985, 5949], [7007, 5955], [7034, 6002], [7080, 5973], [7104, 5975], [7165, 5958], [7185, 5977], [7220, 5980], [7273, 5911], [7297, 5893], [7300, 5870], [7259, 5880], [7249, 5854], [7244, 5800], [7250, 5777], [7283, 5755], [7339, 5743], [7400, 5752], [7422, 5776], [7414, 5801], [7451, 5821], [7494, 5860], [7495, 5875], [7573, 5918], [7608, 5916], [7629, 5892], [7648, 5890], [7659, 5861], [7693, 5871], [7714, 5839], [7735, 5830], [7799, 5842], [7832, 5867], [7845, 5834], [7939, 5837], [7918, 5820], [7931, 5786], [7909, 5776], [7892, 5740], [7916, 5747], [7914, 5727], [7878, 5697], [7852, 5702], [7867, 5714], [7824, 5732], [7750, 5692], [7751, 5673], [7717, 5674], [7663, 5651], [7640, 5631], [7606, 5644], [7626, 5600], [7611, 5581], [7589, 5599], [7570, 5566], [7582, 5525], [7518, 5499], [7507, 5503], [7518, 5534], [7473, 5536], [7470, 5510], [7488, 5476], [7461, 5451], [7455, 5424], [7443, 5431], [7438, 5400], [7420, 5404], [7390, 5389], [7373, 5341], [7350, 5327], [7339, 5275], [7324, 5269], [7304, 5276], [7286, 5262], [7246, 5258], [7228, 5191], [7214, 5176], [7175, 5176], [7160, 5119], [7118, 5108], [7114, 5142], [7094, 5165], [7045, 5164], [7042, 5135], [6985, 5122], [6959, 5147], [6930, 5115], [6906, 5174], [6883, 5213], [6861, 5230], [6794, 5216], [6777, 5156]]]
-        }
-    }, {
-        "type": "Feature",
-        "id": "TW.CH",
-        "properties": {
-            "hc-group": "admin1",
-            "hc-middle-x": 0.50,
-            "hc-middle-y": 0.50,
-            "hc-key": "tw-ch",
-            "hc-a2": "CH",
-            "labelrank": "9",
-            "hasc": "TW.TW.CH",
-            "alt-name": "Jiayi|Chiai",
-            "woe-id": "7153409",
-            "subregion": null ,
-            "fips": null ,
-            "postal-code": "CH",
-            "name": "Chiayi",
-            "country": "Taiwan",
-            "type-en": "County",
-            "region": "Taiwan Province",
-            "longitude": "120.26",
-            "woe-name": "Chiayi County",
-            "latitude": "23.4465",
-            "woe-label": null ,
-            "type": "Hsien"
-        },
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [[[7756, 2667], [7705, 2625], [7695, 2610], [7695, 2610], [7675, 2608], [7669, 2631], [7649, 2649], [7625, 2643], [7601, 2622], [7584, 2625], [7593, 2635], [7584, 2670], [7607, 2671], [7638, 2696], [7677, 2689], [7709, 2697], [7727, 2692], [7729, 2668], [7756, 2667]], [[7638, 2670], [7652, 2656], [7663, 2661], [7651, 2672], [7638, 2670]]]
         }
     }, {
         "type": "Feature",
