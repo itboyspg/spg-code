@@ -58,6 +58,11 @@
    			tags: ['0']
    		},
    		{
+   			text: '活跃用户地图分布',
+   			href: '<%=basePath%>userCtrl/userIpMap',
+   			tags: ['0']
+   		},
+   		{
    			text: '统计项目配置',
    			icon: 'glyphicon glyphicon-wrench',
    			tags: ['1'],

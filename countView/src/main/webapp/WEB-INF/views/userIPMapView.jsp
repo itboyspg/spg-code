@@ -43,6 +43,11 @@
    		{
    			text: '用户活跃量统计结果',
    			href: '<%=basePath%>userCtrl/queryUserActive',
+   			tags: ['0']
+   		},
+   		{
+   			text: '活跃用户地图分布',
+   			href: '<%=basePath%>userCtrl/userIpMap',
    			color: '#fff', // 图标和字体颜色
    			backColor: '#428bca', // 背景颜色
    			tags: ['0']
