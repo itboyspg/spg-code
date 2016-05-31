@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.spg.common.common.CommonUtil;
 import com.spg.common.dateutil.MyDateUtil;
 import com.spg.cv.common.CommonEnum.DataType;
 import com.spg.cv.service.UserActiveService;
@@ -94,5 +95,14 @@ public class UserActiveController extends BaseController
     {
         ModelAndView view = new ModelAndView("userIPMapView");
         return view;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "addUserIp", produces =
+    { "application/json; charset=UTF-8" })
+    public String addUserIp(HttpServletRequest request)
+    {
+        String userIp = CommonUtil.getRealIpAddr(request);
+        return buildSuccessResultInfo(0);
     }
 }
