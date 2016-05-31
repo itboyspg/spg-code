@@ -70,7 +70,7 @@
            	        		    </c:forEach>
            	        		]
            	        	},
-           	        </c:forEach>         
+           	        </c:forEach>
     	        ]
     	    });
     	});
