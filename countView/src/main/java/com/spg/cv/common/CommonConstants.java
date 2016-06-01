@@ -1,8 +1,5 @@
 package com.spg.cv.common;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 import com.alibaba.fastjson.parser.Feature;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 
@@ -32,22 +29,7 @@ public final class CommonConstants
     public static final Feature[] DESERIALIZER_FEATURES =
     { Feature.DisableCircularReferenceDetect };
 
-    // 所要统计的数据维度
-    public static final Map<String, String> COUNT_DATA_RELATION_MAP = new LinkedHashMap<String, String>();
-
-    static
-    {
-        COUNT_DATA_RELATION_MAP.put("goodsMgr", "商品管理");
-        COUNT_DATA_RELATION_MAP.put("userMgr", "用户管理");
-        COUNT_DATA_RELATION_MAP.put("home", "主页");
-        COUNT_DATA_RELATION_MAP.put("queryGoods", "查询商品");
-        COUNT_DATA_RELATION_MAP.put("addGoods", "添加商品");
-        COUNT_DATA_RELATION_MAP.put("addUser", "添加用户");
-        COUNT_DATA_RELATION_MAP.put("queryUser", "查询用户");
-        COUNT_DATA_RELATION_MAP.put("deleteUser", "删除用户");
-        COUNT_DATA_RELATION_MAP.put("registUser", "注册用户");
-        COUNT_DATA_RELATION_MAP.put("deleteGoods", "删除商品");
-        COUNT_DATA_RELATION_MAP.put("updateGoods", "更新商品");
-        COUNT_DATA_RELATION_MAP.put("updateUser", "更新用户");
-    }
+    // 淘宝IP地址解析，形如http://ip.taobao.com/service/getIpInfo.php?ip=101.233.200.196
+    // 查询频率限制 10qps
+    public static final String TAOBAO_IP_ANALYSE_URL = "http://ip.taobao.com/service/getIpInfo.php";
 }

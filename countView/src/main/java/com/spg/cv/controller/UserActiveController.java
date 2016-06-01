@@ -1,5 +1,7 @@
 package com.spg.cv.controller;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -9,13 +11,19 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.alibaba.fastjson.JSONObject;
 import com.spg.common.common.CommonUtil;
 import com.spg.common.dateutil.MyDateUtil;
+import com.spg.common.httputil.MyHttpUtil;
+import com.spg.common.pojo.MyHttpResponse;
+import com.spg.cv.common.CommonConstants;
 import com.spg.cv.common.CommonEnum.DataType;
 import com.spg.cv.service.UserActiveService;
 
@@ -97,12 +105,51 @@ public class UserActiveController extends BaseController
         return view;
     }
 
+    /**
+     * @description: 用户IP地址解析并入库
+     * @author: Wind-spg
+     * @param request
+     * @return
+     */
     @ResponseBody
     @RequestMapping(value = "addUserIp", produces =
     { "application/json; charset=UTF-8" })
     public String addUserIp(HttpServletRequest request)
     {
         String userIp = CommonUtil.getRealIpAddr(request);
+        List<NameValuePair> params = new ArrayList<NameValuePair>();
+        params.add(new BasicNameValuePair("ip", userIp));
+        MyHttpResponse response = null;
+        try
+        {
+            response = MyHttpUtil.doHttpGet(CommonConstants.TAOBAO_IP_ANALYSE_URL, params, 3000, 0);
+        } catch (URISyntaxException e)
+        {
+            LOGGER.error("analyse ip error!", e);
+        } catch (IOException e)
+        {
+            LOGGER.error("analyse ip error!", e);
+        }
+        if (null != response)
+        {
+            String responseBody = response.getResponseBody();
+            JSONObject responseJson = JSONObject.parseObject(responseBody);
+            // 0表示成功，1表示失败
+            if (null != responseJson && 0 == responseJson.getInteger("code"))
+            {
+                // 国家，CN表示中国
+                String countryId = responseJson.getJSONObject("data").getString("country_id");
+                // 省
+                String region = responseJson.getJSONObject("data").getString("region");
+                // 市
+                String city = responseJson.getJSONObject("data").getString("city");
+                // 目前只处理中国的IP
+                if ("CN".equalsIgnoreCase(countryId))
+                {
+                    
+                }
+            }
+        }
         return buildSuccessResultInfo(0);
     }
 }
