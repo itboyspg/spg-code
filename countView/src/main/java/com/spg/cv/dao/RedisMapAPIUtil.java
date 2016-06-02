@@ -107,6 +107,21 @@ public final class RedisMapAPIUtil
         }
         return scanResult;
     }
+
+    public static Long hset(String key, String field, String value)
+    {
+        LOGGER.debug(String.format("enter function, %s, %s", key, field));
+        Jedis jedis = RedisPoolUtil.getJedis();
+        Long scanResult = null;
+        try
+        {
+            scanResult = jedis.hset(key, field, value);
+        } finally
+        {
+            RedisPoolUtil.release(jedis);
+        }
+        return scanResult;
+    }
     
     public static Map<String, String> hgetAll(String key)
     {
