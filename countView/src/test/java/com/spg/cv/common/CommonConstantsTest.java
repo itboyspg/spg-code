@@ -1,12 +1,8 @@
 package com.spg.cv.common;
 
-import java.util.Iterator;
-import java.util.Map.Entry;
-
 import org.junit.Test;
 
 import com.spg.cv.BaseTest;
-import com.spg.cv.dao.RedisMapAPIUtil;
 
 /**
  * 项目名称：countView
@@ -28,11 +24,11 @@ public class CommonConstantsTest extends BaseTest
     @Test
     public void initProvince()
     {
-        for (Iterator<Entry<String, String>> iterator = CommonConstants.CN_PROVINCE.entrySet().iterator(); iterator
-                .hasNext();)
-        {
-            Entry<String, String> entry = iterator.next();
-            RedisMapAPIUtil.hset("China_Province", entry.getKey(), entry.getValue());
-        }
+//        for (Iterator<Entry<String, String>> iterator = CommonConstants.CN_PROVINCE.entrySet().iterator(); iterator
+//                .hasNext();)
+//        {
+//            Entry<String, String> entry = iterator.next();
+//            RedisMapAPIUtil.hset("China_Province", entry.getKey(), entry.getValue());
+//        }
     }
 }

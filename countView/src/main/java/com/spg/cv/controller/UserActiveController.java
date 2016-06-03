@@ -25,6 +25,8 @@ import com.spg.common.httputil.MyHttpUtil;
 import com.spg.common.pojo.MyHttpResponse;
 import com.spg.cv.common.CommonConstants;
 import com.spg.cv.common.CommonEnum.DataType;
+import com.spg.cv.dao.RedisListAPIUtil;
+import com.spg.cv.dao.RedisMapAPIUtil;
 import com.spg.cv.service.UserActiveService;
 
 /**
@@ -139,6 +141,7 @@ public class UserActiveController extends BaseController
             {
                 // 国家，CN表示中国
                 String countryId = responseJson.getJSONObject("data").getString("country_id");
+                String country = responseJson.getJSONObject("data").getString("country");
                 // 省
                 String region = responseJson.getJSONObject("data").getString("region");
                 // 市
@@ -146,7 +149,22 @@ public class UserActiveController extends BaseController
                 // 目前只处理中国的IP
                 if ("CN".equalsIgnoreCase(countryId))
                 {
-                    
+                    // 先保存国家
+                    if (!RedisListAPIUtil.isInList("Country", countryId + "_" + country))
+                    {
+                        RedisListAPIUtil.addToList("Country", countryId + "_" + country);
+                    }
+                    // 再保存国家_省
+                    if (!RedisListAPIUtil.isInList(countryId + "_" + country, countryId + "_" + region))
+                    {
+                        RedisListAPIUtil.addToList(countryId + "_" + country, countryId + "_" + region);
+                    }
+                    // 再保存省_市
+                    if (!RedisListAPIUtil.isInList(countryId + "_" + region, city))
+                    {
+                        RedisListAPIUtil.addToList(countryId + "_" + region, city);
+                    }
+                    RedisMapAPIUtil.hsetAndIncre(countryId + "_" + region + "UserIpMap", city, 1L);
                 }
             }
         }

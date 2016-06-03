@@ -53,6 +53,39 @@ public final class RedisListAPIUtil
     }
 
     /**
+     * @description: 判断key是否存在
+     * @author: Wind-spg
+     * @param key
+     * @return
+     */
+    public static Boolean existKey(String key)
+    {
+        LOGGER.debug(String.format("enter function, %s", key));
+        Jedis client = RedisPoolUtil.getJedis();
+        try
+        {
+            return client.exists(key);
+        } finally
+        {
+            RedisPoolUtil.release(client);
+        }
+    }
+
+    /**
+     * @description: 判断list中是否包含某值，注意：数据量过大时慎用
+     * @author: Wind-spg
+     * @param key
+     * @param field
+     * @return
+     */
+    public static boolean isInList(String key, String field)
+    {
+        LOGGER.debug(String.format("enter function, %s", key));
+        List<String> allData = queryListData(key);
+        return allData.contains(field);
+    }
+
+    /**
      * @description: 删除某list中指定的所有值
      * @author: Wind-spg
      * @param key
