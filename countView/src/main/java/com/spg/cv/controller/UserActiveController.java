@@ -164,10 +164,19 @@ public class UserActiveController extends BaseController
                     {
                         RedisListAPIUtil.addToList(countryId + "_" + region, city);
                     }
-                    RedisMapAPIUtil.hsetAndIncre(countryId + "_" + region + "UserIpMap", city, 1L);
+                    Long addResult = RedisMapAPIUtil.hsetAndIncre(countryId + "_" + region + "UserIpMap",
+                            city, 1L);
+                    return buildSuccessResultInfo(addResult);
+                } else
+                {
+                    return buildFailedResultInfo(-1, "目前暂时只支持记录中国IP地址");
                 }
+            }else {
+                return buildFailedResultInfo(-1, "IP地址解析失败！");
             }
+        } else
+        {
+            return buildFailedResultInfo(-1, "IP地址解析失败！");
         }
-        return buildSuccessResultInfo(0);
     }
 }
