@@ -134,142 +134,166 @@
 			</div>
 		</div>
 	</div>
-    <!-- Heighcharts图表 -->
-    <script type="text/javascript">
-	    $(function () {
-	    	// 此处路径为页面引入的js中定义的路径，如当前页引入的cn-all-sat-taiwan-pretty.js中定义的Highcharts.maps['']
-	        var data = Highcharts.geojson(Highcharts.maps['countries/cn/custom/cn-all-sar-taiwan']),
-            // Some responsiveness
-            small = $('#container').width() < 400;
+<!-- Heighcharts图表 -->
+<script type="text/javascript">
+	$(function () {
+		Highcharts.setOptions({
+		    lang:{
+		       contextButtonTitle:"图表导出菜单",
+		       decimalPoint:".",
+		       downloadJPEG:"下载JPEG图片",
+		       downloadPDF:"下载PDF文件",
+		       downloadPNG:"下载PNG文件",
+		       downloadSVG:"下载SVG文件",
+		       drillUpText:"返回 {series.name}",
+		       loading:"加载中",
+		       months:["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"],
+		       noData:"没有数据",
+		       numericSymbols: [ "千" , "兆" , "G" , "T" , "P" , "E"],
+		       printChart:"打印图表",
+		       resetZoom:"恢复缩放",
+		       resetZoomTitle:"恢复图表",
+		       shortMonths: [ "Jan" , "Feb" , "Mar" , "Apr" , "May" , "Jun" , "Jul" , "Aug" , "Sep" , "Oct" , "Nov" , "Dec"],
+		       thousandsSep:",",
+		       weekdays: ["星期一", "星期二", "星期三", "星期三", "星期四", "星期五", "星期六","星期天"]
+		    }
+		});
+		// 此处路径为页面引入的js中定义的路径，如当前页引入的cn-all-sat-taiwan-pretty.js中定义的Highcharts.maps['']
+	    var data = Highcharts.geojson(Highcharts.maps['countries/cn/custom/cn-all-sar-taiwan']),
+		// Some responsiveness
+		small = $('#container').width() < 400;
 	
-	        // Set drilldown pointers
-	        var ipMapDataJson = $.parseJSON('${userIpMapData}');
-	        
-	        $.each(data, function (i) {
-	            this.drilldown = this.properties['dd-key'];
-	            this.value = ipMapDataJson[this.properties['name']];
-	        });
+	    // Set drilldown pointers
+	    var ipMapDataJson = $.parseJSON('${userIpMapData}');
+	    
+	    $.each(data, function (i) {
+	        this.drilldown = this.properties['dd-key'];
+	        this.value = ipMapDataJson[this.properties['name']];
+	    });
 	
-	        // Instanciate the map
-	        $('#container').highcharts('Map', {
-	            chart : {
-	                events: {
-	                    drilldown: function (e) {
-	                        if (!e.seriesOptions) {
-	                            var chart = this,
-	                            mapKey = 'js/Highcharts/mapdata/mapjson/' + e.point.drilldown + '.geo.json',
-	                            // Handle error, the timeout is cleared on success
-	                            fail = setTimeout(function () {
-	                            	alert(mapKey);
-		                            if (!Highcharts.maps[mapKey]) {
-			                            chart.showLoading('<i class="icon-frown"></i> Failed loading ' + e.point.name);
-			                            fail = setTimeout(function () {
-			                            	chart.hideLoading();
-			                            }, 1000);
-		                            }
-	                            }, 3000);
+	    // Instanciate the map
+	    $('#container').highcharts('Map', {
+	    	credits: {
+	    		enabled: false
+	    	},
+	        chart : {
+	            events: {
+	                drilldown: function (e) {
+	                    if (!e.seriesOptions) {
+	                        var chart = this,
+	                        mapKey = 'js/Highcharts/mapdata/mapjson/' + e.point.drilldown + '.geo.json',
+	                        // Handle error, the timeout is cleared on success
+	                        fail = setTimeout(function () {
+								alert(mapKey);
+								if (!Highcharts.maps[mapKey]) {
+									chart.showLoading('<i class="icon-frown"></i> Failed loading ' + e.point.name);
+									fail = setTimeout(function () {
+										chart.hideLoading();
+									}, 1000);
+								}
+							}, 3000);
 	
-	                            // Show the spinner
-	                            chart.showLoading('<i class="icon-spinner icon-spin icon-3x"></i>'); // Font Awesome spinner
-	                            // Load the drilldown map
-	                            $.getJSON("<%=basePath%>" + mapKey, function (geojson) {
-	                                //data = Highcharts.geojson(Highcharts.maps[mapKey]);
-	                                data = Highcharts.geojson(geojson);
+	                        // Show the spinner
+	                        chart.showLoading('<i class="icon-spinner icon-spin icon-3x"></i>'); // Font Awesome spinner
+	                        // Load the drilldown map
+	                        $.getJSON("<%=basePath%>" + mapKey, function (geojson) {
+	                            //data = Highcharts.geojson(Highcharts.maps[mapKey]);
+	                            data = Highcharts.geojson(geojson);
 	
-	                                // Set a non-random bogus value
-	                                $.each(data, function (i) {
-	                                    this.value = i;
-	                                });
-	
-	                                // Hide loading and add series
-	                                chart.hideLoading();
-	                                clearTimeout(fail);
-	                                chart.addSeriesAsDrilldown(e.point, {
-	                                    name: e.point.name,
-	                                    data: data,
-	                                    dataLabels: {
-	                                        enabled: true,
-	                                        format: '{point.name}'
-	                                    }
-	                                });
+	                            // Set a non-random bogus value
+	                            $.each(data, function (i) {
+	                                this.value = i;
 	                            });
-	                        }
 	
-	                        this.setTitle(null, { text: e.point.name });
-	                    },
-	                    drillup: function () {
-	                        this.setTitle(null, { text: '中国' });
+	                            // Hide loading and add series
+	                            chart.hideLoading();
+	                            clearTimeout(fail);
+	                            chart.addSeriesAsDrilldown(e.point, {
+	                                name: e.point.name,
+	                                data: data,
+	                                dataLabels: {
+	                                    enabled: true,
+	                                    format: '{point.name}'
+	                                }
+	                            });
+	                        });
 	                    }
-	                }
-	            },
 	
-	            title : {
-	                text : '用户IP地图分布'
-	            },
-	            subtitle: {
-	                text: '中国',
-	                floating: true,
-	                align: 'right',
-	                y: 55,
-	                x: -35,
-	                style: {
-	                    fontSize: '16px'
-	                }
-	            },
-	            legend: small ? {} : {
-	                layout: 'vertical',
-	                align: 'right',
-	                verticalAlign: 'middle'
-	            },
-	            colorAxis: {
-	                min: 0,
-	                minColor: '#E6E7E8',
-	                maxColor: '#005645'
-	            },
-	            mapNavigation: {
-	                enabled: true,
-	                buttonOptions: {
-	                    verticalAlign: 'bottom'
-	                }
-	            },
-	
-	            plotOptions: {
-	                map: {
-	                    states: {
-	                        hover: {
-	                            color: '#EEDD66'
-	                        }
-	                    }
-	                }
-	            },
-	
-	            series : [{
-	                data : data,
-	                name: '中国',
-	                dataLabels: {
-	                    enabled: true,
-	                    format: '{point.properties.postal-code}'
-	                }
-	            }],
-	
-	            drilldown: {
-	                //series: drilldownSeries,
-	                activeDataLabelStyle: {
-	                    color: '#FFFFFF',
-	                    textDecoration: 'none',
-	                    textShadow: '0 0 3px #000000'
+	                    this.setTitle(null, { text: e.point.name });
 	                },
-	                drillUpButton: {
-	                    relativeTo: 'spacingBox',
-	                    position: {
-	                        x: 0,
-	                        y: 60
+	                drillup: function () {
+	                    this.setTitle(null, { text: '中国' });
+	                }
+	            }
+	        },
+	
+	        title : {
+	            text : '用户IP地图分布'
+	        },
+	        subtitle: {
+	            text: '中国',
+	            floating: true,
+	            align: 'right',
+	            y: 55,
+	            x: -35,
+	            style: {
+	                fontSize: '16px'
+	            }
+	        },
+	        legend: small ? {} : {
+	            layout: 'vertical',
+	            align: 'right',
+	            verticalAlign: 'middle'
+	        },
+	        colorAxis: {
+	            min: 0,
+	            minColor: '#E6E7E8',
+	            maxColor: '#005645'
+	        },
+	        mapNavigation: {
+	            enabled: true,
+	            buttonOptions: {
+	                verticalAlign: 'bottom'
+	            }
+	        },
+	
+	        plotOptions: {
+	            map: {
+	                states: {
+	                    hover: {
+	                        color: '#EEDD66'
 	                    }
 	                }
 	            }
-	        });
+	        },
+	
+	        series : [{
+	            data : data,
+	            name: '中国',
+	            dataLabels: {
+	                enabled: true,
+	                format: '{point.properties.postal-code}'
+	            }
+	        }],
+	
+	        drilldown: {
+	            //series: drilldownSeries,
+	            activeDataLabelStyle: {
+	                color: '#FFFFFF',
+	                textDecoration: 'none',
+	                textShadow: '0 0 3px #000000'
+	            },
+	            drillUpButton: {
+	                relativeTo: 'spacingBox',
+	                position: {
+	                    x: 0,
+	                    y: 60
+	                }
+	            }
+	        }
 	    });
-    </script>
+	});
+</script>
 </body>
     <!-- Highcharts -->
     <script src="<%=basePath%>js/Highcharts/highmaps.js"></script>
