@@ -167,8 +167,8 @@
 		});
 	    $('#container').highcharts({
 	    	credits: {
-     		enabled: false
-     	},
+     			enabled: false
+     		},
 	    	chart: {
 	            type: 'spline'
 	        },
@@ -205,10 +205,10 @@
 	        series: [{
         		name: '活跃用户数',
         		data: [
-		<c:forEach var="data" items="${yAxis}">
-			${data},
-		</c:forEach>
-	]
+					<c:forEach var="data" items="${yAxis}">
+						${data},
+					</c:forEach>
+				]
 	        }]
 	    });
 	});
