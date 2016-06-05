@@ -4,7 +4,11 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -18,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.spg.common.common.CommonUtil;
 import com.spg.common.dateutil.MyDateUtil;
@@ -104,6 +109,32 @@ public class UserActiveController extends BaseController
     public ModelAndView userIpMap(HttpServletRequest request)
     {
         ModelAndView view = new ModelAndView("userIPMapView");
+        List<String> countrys = RedisListAPIUtil.queryListData("IpMapCountry");
+        Map<String, Long> userIpMapData = new HashMap<String, Long>();
+        for (String country : countrys)
+        {
+            List<String> citys = RedisListAPIUtil.queryListData("IpMap" + country);
+            for (String city : citys)
+            {
+                Map<String, String> cityIpCount = RedisMapAPIUtil.hgetAll("IpMap" + city);
+                Long count = 0L;
+                Entry<String, String> entry = null;
+                for (Iterator<Entry<String, String>> iterator = cityIpCount.entrySet().iterator(); iterator
+                        .hasNext();)
+                {
+                    entry = iterator.next();
+                    count += Long.valueOf(entry.getValue());
+                }
+                if (city.contains("_"))
+                {
+                    userIpMapData.put(city.split("_")[1], count);
+                } else
+                {
+                    userIpMapData.put(city, count);
+                }
+            }
+        }
+        view.addObject("userIpMapData", JSON.toJSONString(userIpMapData));
         return view;
     }
 
@@ -147,36 +178,53 @@ public class UserActiveController extends BaseController
                 // 市
                 String city = responseJson.getJSONObject("data").getString("city");
                 // 目前只处理中国的IP
-                if ("CN".equalsIgnoreCase(countryId))
+                if ("CN".equalsIgnoreCase(countryId) || "TW".equalsIgnoreCase(countryId)
+                        || "HK".equalsIgnoreCase(countryId) || "MO".equalsIgnoreCase(countryId))
                 {
-                    // 先保存国家
-                    if (!RedisListAPIUtil.isInList("Country", countryId + "_" + country))
-                    {
-                        RedisListAPIUtil.addToList("Country", countryId + "_" + country);
-                    }
-                    // 再保存国家_省
-                    if (!RedisListAPIUtil.isInList(countryId + "_" + country, countryId + "_" + region))
-                    {
-                        RedisListAPIUtil.addToList(countryId + "_" + country, countryId + "_" + region);
-                    }
-                    // 再保存省_市
-                    if (!RedisListAPIUtil.isInList(countryId + "_" + region, city))
-                    {
-                        RedisListAPIUtil.addToList(countryId + "_" + region, city);
-                    }
-                    Long addResult = RedisMapAPIUtil.hsetAndIncre(countryId + "_" + region + "UserIpMap",
-                            city, 1L);
+                    Long addResult = saveUserCity(countryId, country, region, city);
                     return buildSuccessResultInfo(addResult);
                 } else
                 {
                     return buildFailedResultInfo(-1, "目前暂时只支持记录中国IP地址");
                 }
-            }else {
+            } else
+            {
                 return buildFailedResultInfo(-1, "IP地址解析失败！");
             }
         } else
         {
             return buildFailedResultInfo(-1, "IP地址解析失败！");
         }
+    }
+
+    /**
+     * @description: 保存用户IP所在城市信息
+     * @author: Wind-spg
+     * @param countryId
+     * @param country
+     * @param region
+     * @param city
+     * @return
+     */
+    private Long saveUserCity(String countryId, String country, String region, String city)
+    {
+        if ("TW".equalsIgnoreCase(countryId) || "HK".equalsIgnoreCase(countryId)
+                || "MO".equalsIgnoreCase(countryId))
+        {
+            city = region;
+        }
+        // 先保存国家
+        if (!RedisListAPIUtil.isInList("IpMapCountry", countryId + "_" + country))
+        {
+            RedisListAPIUtil.addToList("IpMapCountry", countryId + "_" + country);
+        }
+        // 再保存国家_省
+        if (!RedisListAPIUtil.isInList("IpMap" + countryId + "_" + country, countryId + "_" + region))
+        {
+            RedisListAPIUtil.addToList("IpMap" + countryId + "_" + country, countryId + "_" + region);
+        }
+        // 再保存省_市IP数量
+        Long addResult = RedisMapAPIUtil.hsetAndIncre("IpMap" + countryId + "_" + region, city, 1L);
+        return addResult;
     }
 }

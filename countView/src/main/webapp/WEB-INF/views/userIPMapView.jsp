@@ -143,9 +143,11 @@
             small = $('#container').width() < 400;
 	
 	        // Set drilldown pointers
+	        var ipMapDataJson = $.parseJSON('${userIpMapData}');
+	        
 	        $.each(data, function (i) {
 	            this.drilldown = this.properties['dd-key'];
-	            this.value = i; // Non-random bogus data
+	            this.value = ipMapDataJson[this.properties['name']];
 	        });
 	
 	        // Instanciate the map
