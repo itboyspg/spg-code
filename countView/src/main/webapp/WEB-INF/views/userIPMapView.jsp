@@ -206,7 +206,6 @@
 	            title : {
 	                text : '用户IP地图分布'
 	            },
-	
 	            subtitle: {
 	                text: '中国',
 	                floating: true,
@@ -217,19 +216,16 @@
 	                    fontSize: '16px'
 	                }
 	            },
-	
 	            legend: small ? {} : {
 	                layout: 'vertical',
 	                align: 'right',
 	                verticalAlign: 'middle'
 	            },
-	
 	            colorAxis: {
 	                min: 0,
 	                minColor: '#E6E7E8',
 	                maxColor: '#005645'
 	            },
-	
 	            mapNavigation: {
 	                enabled: true,
 	                buttonOptions: {
