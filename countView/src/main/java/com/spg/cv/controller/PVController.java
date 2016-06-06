@@ -44,6 +44,12 @@ public class PVController extends BaseController
     @Resource
     ConfigService configService;
 
+    /**
+     * @description: 根据dataType跳转到pv、按钮、点击量的统计结果页面
+     * @author: Wind-spg
+     * @param request
+     * @return
+     */
     @RequestMapping("toPvBtnLinkView")
     public ModelAndView toPvBtnLinkView(HttpServletRequest request)
     {
@@ -107,19 +113,25 @@ public class PVController extends BaseController
         return result;
     }
 
+    /**
+     * @description: 产生一个页面事件（如PV、按钮点击、链接点击），保存数据
+     * @author: Wind-spg
+     * @param request
+     * @return
+     */
     @ResponseBody
-    @RequestMapping(value = "addPV", method = RequestMethod.GET, produces =
+    @RequestMapping(value = "addPageEvent", method = RequestMethod.GET, produces =
     { "application/json; charset=UTF-8" })
-    public String addPageView(HttpServletRequest request)
+    public String addPageEvent(HttpServletRequest request)
     {
-        String pageName = request.getParameter("pageEnglishName");
+        String name = request.getParameter("englishName");
         String dataType = request.getParameter("dataType");
-        LOGGER.debug(String.format("enter function, %s, %s", dataType, pageName));
+        LOGGER.debug(String.format("enter function, %s, %s", dataType, name));
         try
         {
             String key = MyDateUtil.getFormatDate(new Date(System.currentTimeMillis()), "yyyyMMdd")
                     + DataType.getEnumByCode(Integer.parseInt(dataType)).getName();
-            Long result = pageService.addPageView(key, pageName);
+            Long result = pageService.addPageView(key, name);
             return buildSuccessResultInfo(result);
         } catch (Exception e)
         {
