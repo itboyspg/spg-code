@@ -3,7 +3,7 @@
  */
 ;
 // 项目基础URL，如http://localhost:8080/countview/
-var baseUrl = "";
+var baseUrl = "http://localhost:8080/countview/";
 function doHttpGet(url)
 {
 	$.ajax({url: baseUrl + url});
