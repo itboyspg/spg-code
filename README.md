@@ -39,3 +39,6 @@
 
 ## swagger-ui项目
 开源swaggerapi项目。
+
+## countView项目
+简易埋点系统，可实现网站PV量、按钮点击量、链接点击量、用户活跃量、用户IP分布等的统计。
