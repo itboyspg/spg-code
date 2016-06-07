@@ -60,10 +60,11 @@ public class PageServiceImplTest extends BaseTest
             }
             for (PVBean pvBean : listObject)
             {
-                int count = RandomUtils.nextInt(1, (15 - i)*100);
+                int count = RandomUtils.nextInt(1, (15 - i) * 100);
                 for (int j = 0; j < count; j++)
                 {
-                    pageService.addPageView(key + DataType.PAGE_VIEW.getName(), pvBean.getEnglishName());
+                    pageService.addPageEvent(DataType.PAGE_VIEW, key + DataType.PAGE_VIEW.getConfigName(),
+                            pvBean.getEnglishName());
                 }
             }
         }

@@ -129,9 +129,10 @@ public class PVController extends BaseController
         LOGGER.debug(String.format("enter function, %s, %s", dataType, name));
         try
         {
+            DataType dataTypeEnum = DataType.getEnumByCode(Integer.parseInt(dataType));
             String key = MyDateUtil.getFormatDate(new Date(System.currentTimeMillis()), "yyyyMMdd")
-                    + DataType.getEnumByCode(Integer.parseInt(dataType)).getName();
-            Long result = pageService.addPageView(key, name);
+                    + dataTypeEnum.getName();
+            Long result = pageService.addPageEvent(dataTypeEnum, key, name);
             return buildSuccessResultInfo(result);
         } catch (Exception e)
         {

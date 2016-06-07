@@ -19,16 +19,18 @@ public class CommonEnum
 
     public enum DataType implements EnumInterface
     {
-        PAGE_VIEW(1, "PageView"), BUTTON_CLICK_COUNT(2, "ButtonClickCount"), LINK_CLICK_COUNT(3,
-                "LinkClickCount"), USER_ACTIVE(3, "UserActive");
+        PAGE_VIEW(1, "PageView", "PageViewConfig"), BUTTON_CLICK_COUNT(2, "ButtonClick", "ButtonClickConfig"), LINK_CLICK_COUNT(
+                3, "LinkClick", "LinkClickConfig"), USER_ACTIVE(3, "UserActive", "UserActiveConfig");
 
         private int code;
         private String name;
+        private String configName;
 
-        private DataType(int code, String name)
+        private DataType(int code, String name, String configName)
         {
             this.code = code;
             this.name = name;
+            this.configName = configName;
         }
 
         @Override
@@ -41,6 +43,11 @@ public class CommonEnum
         public String getName()
         {
             return this.name;
+        }
+        
+        public String getConfigName()
+        {
+            return this.configName;
         }
 
         public static DataType getEnumByCode(int code)

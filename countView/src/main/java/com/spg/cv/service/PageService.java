@@ -3,6 +3,8 @@ package com.spg.cv.service;
 
 import java.util.Map;
 
+import com.spg.cv.common.CommonEnum.DataType;
+
 
 
 /**
@@ -19,11 +21,12 @@ public interface PageService
     /**
      * @description: 添加一次pv访问量
      * @author: Wind-spg
+     * @param dataType
      * @param key
      * @param pageName
      * @return
      */
-    Long addPageView(String key, String pageName);
+    Long addPageEvent(DataType dataType, String key, String pageName);
     
     /**
      * @description:根据key和field查询相应统计数据

@@ -30,11 +30,11 @@ public class PageServiceImpl extends CommonServiceImpl implements PageService
     private static final Log LOGGER = LogFactory.getLog(PageServiceImpl.class);
 
     @Override
-    public Long addPageView(String key, String pageName)
+    public Long addPageEvent(DataType dataType, String key, String pageName)
     {
         LOGGER.debug(String.format("enter function, %s, %s", key, pageName));
         Long result = 0L;
-        if (StringUtils.isNotEmpty(pageName) && judgePageName(DataType.PAGE_VIEW, pageName))
+        if (StringUtils.isNotEmpty(pageName) && judgePageName(dataType, pageName))
         {
             result = addData(key, pageName, 1L);
         }
@@ -70,7 +70,7 @@ public class PageServiceImpl extends CommonServiceImpl implements PageService
      */
     private boolean judgePageName(DataType dataType, String pageName)
     {
-        List<String> pageViewConfig = RedisListAPIUtil.queryListData(dataType.getName());
+        List<String> pageViewConfig = RedisListAPIUtil.queryListData(dataType.getConfigName());
         List<PVBean> pvBeanList = new ArrayList<PVBean>();
         for (String str : pageViewConfig)
         {

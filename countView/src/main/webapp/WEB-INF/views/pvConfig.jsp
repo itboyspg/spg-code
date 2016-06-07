@@ -22,6 +22,7 @@
 <script type="text/javascript" src="<%=basePath%>js/jQuery/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="<%=basePath%>bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="<%=basePath%>bootstrap/js/bootstrap-treeview.min.js"></script>
+<script type="text/javascript" src="<%=basePath%>js/commoncount.js"></script>
 <script type="text/javascript">
 	var menuData = [
 		{

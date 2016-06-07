@@ -31,7 +31,7 @@ public class ConfigServiceImpl implements ConfigService
     public Long addConfig(DataType dataType, PVBean pvBean)
     {
         LOGGER.debug(String.format("enter function, %s, %s", dataType, pvBean));
-        Long result = RedisListAPIUtil.addToList(dataType.getName(),
+        Long result = RedisListAPIUtil.addToList(dataType.getConfigName(),
                 JSON.toJSONString(pvBean, CommonConstants.SERIALIZER_FEATURES));
         LOGGER.debug(String.format("exit function, %s", result));
         return result;
@@ -51,7 +51,7 @@ public class ConfigServiceImpl implements ConfigService
     public List<String> getAllConfig(DataType dataType)
     {
         LOGGER.debug(String.format("enter function， %s", dataType));
-        List<String> result = RedisListAPIUtil.queryListData(dataType.getName());
+        List<String> result = RedisListAPIUtil.queryListData(dataType.getConfigName());
         LOGGER.debug(String.format("exit function, %s", result));
         return result;
     }
@@ -76,7 +76,7 @@ public class ConfigServiceImpl implements ConfigService
     public Long updateConfig(DataType dataType, PVBean oldPvBean, PVBean newPvBean)
     {
         LOGGER.debug(String.format("enter function, %s, %s, %s", dataType, oldPvBean, newPvBean));
-        Long result = RedisListAPIUtil.updateListData(dataType.getName(),
+        Long result = RedisListAPIUtil.updateListData(dataType.getConfigName(),
                 JSON.toJSONString(oldPvBean, CommonConstants.SERIALIZER_FEATURES),
                 JSON.toJSONString(newPvBean, CommonConstants.SERIALIZER_FEATURES));
         LOGGER.debug(String.format("exit function, %s", result));
