@@ -57,9 +57,16 @@
 ###项目使用步骤说明：
 
 1. 将本项目中commoncount.js拷贝到你需要做埋点的项目某个目录中。
-2. 将commoncount.js引入引入你需要做埋点的页面。
-3. 再给调用相应的方法做相应统计。
+2. 修改commoncount.js中baseUrl值，修改为你项目路径。
+3. 将commoncount.js引入引入你需要做埋点的页面。
+4. 再给调用相应的方法做相应统计。
 
 ###commoncount.js功能说明
-1. userActive();
-2. 
+1. addPV(englishName)；统计一次PV。
+2. addBtnClick(englishName)；某个按钮被点击事件。
+3. addLinkClick(englishName)；某个链接被点击事件。
+4. addUserActive()；一次用户活跃，如用户登录。
+5. addUserIp()；分析用户登录IP分布。
+
+###特殊说明
+- 用户IP分析使用taobaoIP进行分析，淘宝IP对请求量控制为10QPS；
