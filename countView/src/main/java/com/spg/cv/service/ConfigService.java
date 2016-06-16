@@ -4,7 +4,7 @@ package com.spg.cv.service;
 import java.util.List;
 
 import com.spg.cv.common.CommonEnum.DataType;
-import com.spg.cv.po.PVBean;
+import com.spg.cv.po.ConfigBean;
 
 
 /**
@@ -18,13 +18,13 @@ import com.spg.cv.po.PVBean;
 public interface ConfigService
 {
 
-    Long addConfig(DataType dataType, PVBean pvBean);
+    Long addConfig(DataType dataType, ConfigBean configBean);
     
-    Long deleteConfig(DataType dataType, PVBean pvBean);
+    Long deleteConfig(DataType dataType, ConfigBean configBean);
     
-    Long deleteConfigs(DataType dataType, List<PVBean> pvBeans);
+    Long deleteConfigs(DataType dataType, List<ConfigBean> configBeans);
     
-    Long updateConfig(DataType dataType, PVBean oldPvBean, PVBean newPvBean);
+    Long updateConfig(DataType dataType, ConfigBean oldConfigBean, ConfigBean newConfigBean);
     
     List<String> getAllConfig(DataType dataType);
     

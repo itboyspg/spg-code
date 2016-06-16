@@ -11,7 +11,7 @@ import com.alibaba.fastjson.JSON;
 import com.spg.cv.common.CommonConstants;
 import com.spg.cv.common.CommonEnum.DataType;
 import com.spg.cv.dao.RedisListAPIUtil;
-import com.spg.cv.po.PVBean;
+import com.spg.cv.po.ConfigBean;
 import com.spg.cv.service.ConfigService;
 
 /**
@@ -28,21 +28,21 @@ public class ConfigServiceImpl implements ConfigService
     private static final Log LOGGER = LogFactory.getLog(ConfigServiceImpl.class);
 
     @Override
-    public Long addConfig(DataType dataType, PVBean pvBean)
+    public Long addConfig(DataType dataType, ConfigBean configBean)
     {
-        LOGGER.debug(String.format("enter function, %s, %s", dataType, pvBean));
+        LOGGER.debug(String.format("enter function, %s, %s", dataType, configBean));
         Long result = RedisListAPIUtil.addToList(dataType.getConfigName(),
-                JSON.toJSONString(pvBean, CommonConstants.SERIALIZER_FEATURES));
+                JSON.toJSONString(configBean, CommonConstants.SERIALIZER_FEATURES));
         LOGGER.debug(String.format("exit function, %s", result));
         return result;
     }
 
     @Override
-    public Long deleteConfig(DataType dataType, PVBean pvBean)
+    public Long deleteConfig(DataType dataType, ConfigBean configBean)
     {
         LOGGER.debug(String.format("enter function"));
         Long result = RedisListAPIUtil.deleteList(dataType.getName(),
-                JSON.toJSONString(pvBean, CommonConstants.SERIALIZER_FEATURES));
+                JSON.toJSONString(configBean, CommonConstants.SERIALIZER_FEATURES));
         LOGGER.debug(String.format("exit function, %s", result));
         return result;
     }
@@ -57,13 +57,13 @@ public class ConfigServiceImpl implements ConfigService
     }
 
     @Override
-    public Long deleteConfigs(DataType dataType, List<PVBean> pvBeans)
+    public Long deleteConfigs(DataType dataType, List<ConfigBean> configBeans)
     {
-        LOGGER.debug(String.format("enter function, %s, %s", dataType, pvBeans));
+        LOGGER.debug(String.format("enter function, %s, %s", dataType, configBeans));
         Long result = 0L;
-        if (CollectionUtils.isNotEmpty(pvBeans))
+        if (CollectionUtils.isNotEmpty(configBeans))
         {
-            for (PVBean bean : pvBeans)
+            for (ConfigBean bean : configBeans)
             {
                 result += deleteConfig(dataType, bean);
             }
@@ -73,12 +73,12 @@ public class ConfigServiceImpl implements ConfigService
     }
 
     @Override
-    public Long updateConfig(DataType dataType, PVBean oldPvBean, PVBean newPvBean)
+    public Long updateConfig(DataType dataType, ConfigBean oldConfigBean, ConfigBean newConfigBean)
     {
-        LOGGER.debug(String.format("enter function, %s, %s, %s", dataType, oldPvBean, newPvBean));
+        LOGGER.debug(String.format("enter function, %s, %s, %s", dataType, oldConfigBean, newConfigBean));
         Long result = RedisListAPIUtil.updateListData(dataType.getConfigName(),
-                JSON.toJSONString(oldPvBean, CommonConstants.SERIALIZER_FEATURES),
-                JSON.toJSONString(newPvBean, CommonConstants.SERIALIZER_FEATURES));
+                JSON.toJSONString(oldConfigBean, CommonConstants.SERIALIZER_FEATURES),
+                JSON.toJSONString(newConfigBean, CommonConstants.SERIALIZER_FEATURES));
         LOGGER.debug(String.format("exit function, %s", result));
         return result;
     }

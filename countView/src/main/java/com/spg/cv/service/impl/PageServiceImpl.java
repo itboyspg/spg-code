@@ -13,7 +13,7 @@ import com.alibaba.fastjson.JSON;
 import com.spg.cv.common.CommonEnum.DataType;
 import com.spg.cv.dao.RedisListAPIUtil;
 import com.spg.cv.dao.RedisMapAPIUtil;
-import com.spg.cv.po.PVBean;
+import com.spg.cv.po.ConfigBean;
 import com.spg.cv.service.PageService;
 
 /**
@@ -71,14 +71,14 @@ public class PageServiceImpl extends CommonServiceImpl implements PageService
     private boolean judgePageName(DataType dataType, String pageName)
     {
         List<String> pageViewConfig = RedisListAPIUtil.queryListData(dataType.getConfigName());
-        List<PVBean> pvBeanList = new ArrayList<PVBean>();
+        List<ConfigBean> configBeanList = new ArrayList<ConfigBean>();
         for (String str : pageViewConfig)
         {
-            pvBeanList.add(JSON.parseObject(str, PVBean.class));
+            configBeanList.add(JSON.parseObject(str, ConfigBean.class));
         }
-        for (PVBean pvBean : pvBeanList)
+        for (ConfigBean configBean : configBeanList)
         {
-            if (pvBean.getEnglishName().equals(pageName))
+            if (configBean.getEnglishName().equals(pageName))
             {
                 return true;
             }

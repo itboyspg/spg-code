@@ -21,7 +21,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.alibaba.fastjson.JSON;
 import com.spg.common.dateutil.MyDateUtil;
 import com.spg.cv.common.CommonEnum.DataType;
-import com.spg.cv.po.PVBean;
+import com.spg.cv.po.ConfigBean;
 import com.spg.cv.service.ConfigService;
 import com.spg.cv.service.PageService;
 
@@ -61,10 +61,10 @@ public class PVController extends BaseController
 
         DataType dataType = DataType.getEnumByCode(Integer.parseInt(strDataType));
         List<String> configPvData = configService.getAllConfig(dataType);
-        List<PVBean> pvBeanList = new ArrayList<PVBean>();
+        List<ConfigBean> configBeanList = new ArrayList<ConfigBean>();
         for (String str : configPvData)
         {
-            pvBeanList.add(JSON.parseObject(str, PVBean.class));
+            configBeanList.add(JSON.parseObject(str, ConfigBean.class));
         }
 
         Map<String, Map<String, String>> allPVCountData = new HashMap<String, Map<String, String>>();
@@ -73,7 +73,7 @@ public class PVController extends BaseController
         {
             allPVCountData.put(key, pageService.getAllPVData(key + dataType.getName()));
         }
-        resultView.addObject("yAxisDatas", convertAxisData(pvBeanList, last15Day, allPVCountData));
+        resultView.addObject("yAxisDatas", convertAxisData(configBeanList, last15Day, allPVCountData));
         resultView.addObject("strDataType", strDataType);
         return resultView;
     }
@@ -89,17 +89,17 @@ public class PVController extends BaseController
      *            某段时间内各页面的访问量数据，注意此处页面为页面英文描述
      * @return 返回的map中，key为某页面的中文描述，value为这个页面某段时间内的访问量数据
      */
-    private Map<String, List<String>> convertAxisData(List<PVBean> legendList, List<String> yAxisKeys,
+    private Map<String, List<String>> convertAxisData(List<ConfigBean> legendList, List<String> yAxisKeys,
             Map<String, Map<String, String>> sourceData)
     {
         Map<String, List<String>> result = new HashMap<String, List<String>>();
-        for (PVBean pvBean : legendList)
+        for (ConfigBean configBean : legendList)
         {
             List<String> xAxisData = new ArrayList<String>();
             String tempData = null;
             for (String yAxisKey : yAxisKeys)
             {
-                tempData = sourceData.get(yAxisKey).get(pvBean.getEnglishName());
+                tempData = sourceData.get(yAxisKey).get(configBean.getEnglishName());
                 if (StringUtils.isNotEmpty(tempData))
                 {
                     xAxisData.add(tempData);
@@ -108,7 +108,7 @@ public class PVController extends BaseController
                     xAxisData.add("0");
                 }
             }
-            result.put(pvBean.getChineseDescription(), xAxisData);
+            result.put(configBean.getChineseDescription(), xAxisData);
         }
         return result;
     }

@@ -17,7 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.alibaba.fastjson.JSON;
 import com.spg.cv.common.CommonEnum.DataType;
-import com.spg.cv.po.PVBean;
+import com.spg.cv.po.ConfigBean;
 import com.spg.cv.service.ConfigService;
 
 /**
@@ -58,7 +58,7 @@ public class ConfigController extends BaseController
         String dataType = request.getParameter("dataType");
         String englishName = request.getParameter("englishName");
         String chineseDesc = request.getParameter("chineseDesc");
-        PVBean pvBean = new PVBean(englishName, chineseDesc);
+        ConfigBean configBean = new ConfigBean(englishName, chineseDesc);
 
         DataType newDataType = null;
         if (StringUtils.isNotEmpty(dataType))
@@ -79,7 +79,7 @@ public class ConfigController extends BaseController
         {
             return buildFailedResultInfo(-1, "页面英文名或中文描述为空！");
         }
-        Long result = configService.addConfig(newDataType, pvBean);
+        Long result = configService.addConfig(newDataType, configBean);
         return buildSuccessResultInfo(result);
     }
 
@@ -117,7 +117,7 @@ public class ConfigController extends BaseController
             return buildFailedResultInfo(-1, "没有需要删除的数据！");
         } else
         {
-            List<PVBean> deleteBeans = JSON.parseArray(deleteDatasJsonString, PVBean.class);
+            List<ConfigBean> deleteBeans = JSON.parseArray(deleteDatasJsonString, ConfigBean.class);
             Long result = configService.deleteConfigs(newDataType, deleteBeans);
             return buildSuccessResultInfo(result);
         }
@@ -160,9 +160,9 @@ public class ConfigController extends BaseController
             return buildFailedResultInfo(-1, "不能修改为空！");
         } else
         {
-            PVBean oldPvBean = new PVBean(oldEnglishName, oldChineseDesc);
-            PVBean pvBean = new PVBean(englishName, chineseDesc);
-            Long result = configService.updateConfig(newDataType, oldPvBean, pvBean);
+            ConfigBean oldConfigBean = new ConfigBean(oldEnglishName, oldChineseDesc);
+            ConfigBean configBean = new ConfigBean(englishName, chineseDesc);
+            Long result = configService.updateConfig(newDataType, oldConfigBean, configBean);
             return buildSuccessResultInfo(result);
         }
     }
@@ -196,10 +196,10 @@ public class ConfigController extends BaseController
         }
         List<String> result = configService.getAllConfig(newDataType);
 
-        List<PVBean> listObject = new ArrayList<PVBean>();
+        List<ConfigBean> listObject = new ArrayList<ConfigBean>();
         for (String str : result)
         {
-            listObject.add(JSON.parseObject(str, PVBean.class));
+            listObject.add(JSON.parseObject(str, ConfigBean.class));
         }
         return buildSuccessResultInfo(listObject);
     }

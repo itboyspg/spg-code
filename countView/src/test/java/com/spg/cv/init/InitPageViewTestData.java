@@ -1,26 +1,22 @@
-package com.spg.cv.manager.impl;
-
-import static org.junit.Assert.fail;
+package com.spg.cv.init;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
 
 import javax.annotation.Resource;
 
 import org.apache.commons.lang3.RandomUtils;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import redis.clients.jedis.Jedis;
 
 import com.alibaba.fastjson.JSON;
 import com.spg.cv.BaseTest;
-import com.spg.cv.common.CommonEnum.DataType;
 import com.spg.cv.common.RedisPoolUtil;
+import com.spg.cv.common.CommonEnum.DataType;
 import com.spg.cv.po.ConfigBean;
 import com.spg.cv.service.ConfigService;
 import com.spg.cv.service.PageService;
@@ -30,24 +26,27 @@ import com.spg.cv.service.PageService;
  *
  * @description:
  * @author Wind-spg
- * @create_time：2015年11月14日 下午11:26:50
+ * @create_time：2016年6月16日 下午10:32:15
  * @version V1.0.0
  */
-public class PageServiceImplTest extends BaseTest
+public class InitPageViewTestData extends BaseTest
 {
     // private static final Log LOGGER =
-    // LogFactory.getLog(PageManagerImplTest.class);
-
+    // LogFactory.getLog(InitPageViewTestData.class);
     @Resource
     PageService pageService;
-
     @Resource
     ConfigService configService;
 
     @Test
-    public void testAddPageView()
+    public void testwPageViewData()
     {
         DateFormat format = new SimpleDateFormat("yyyyMMdd");
+        // 先清空原来数据
+        Jedis jedis = RedisPoolUtil.getJedis();
+        jedis.del("*" + DataType.PAGE_VIEW.getName());
+        RedisPoolUtil.release(jedis);
+
         // 添加过去15天时间数据（量随机）
         for (int i = 14; i >= 0; i--)
         {
@@ -60,7 +59,7 @@ public class PageServiceImplTest extends BaseTest
             }
             for (ConfigBean configBean : listObject)
             {
-                int count = RandomUtils.nextInt(1, (15 - i) * 100);
+                int count = RandomUtils.nextInt(500, (15 - i) * 1000);
                 for (int j = 0; j < count; j++)
                 {
                     pageService.addPageEvent(DataType.PAGE_VIEW, key + DataType.PAGE_VIEW.getName(),
@@ -68,31 +67,5 @@ public class PageServiceImplTest extends BaseTest
                 }
             }
         }
-    }
-
-    @Test
-    public void testDelete()
-    {
-        Jedis client = RedisPoolUtil.getJedis();
-        Set<String> keys = client.keys("*UserActive");
-        for (String str : keys)
-        {
-            client.del(str);
-        }
-        System.out.println(keys);
-    }
-
-    @Test
-    @Ignore
-    public void testQueryCountData()
-    {
-        fail("Not yet implemented");
-    }
-
-    @Test
-    @Ignore
-    public void testQueryCountByCountKey()
-    {
-        fail("Not yet implemented");
     }
 }

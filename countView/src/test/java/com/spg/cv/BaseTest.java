@@ -7,6 +7,7 @@ package com.spg.cv;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.context.ApplicationContext;
@@ -16,8 +17,6 @@ import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
 import org.springframework.test.context.support.DirtiesContextTestExecutionListener;
-
-import com.github.springtestdbunit.DbUnitTestExecutionListener;
 
 /**
  * 项目名称：happylesson
@@ -60,6 +59,7 @@ public class BaseTest
     }
 
     @Test
+    @Ignore
     public void test()
     {
         Assert.assertEquals(1, 1);

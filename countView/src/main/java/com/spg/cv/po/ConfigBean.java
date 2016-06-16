@@ -10,21 +10,21 @@ import java.io.Serializable;
  * @create_time：2016年4月29日 下午10:50:10
  * @version V1.0.0
  */
-public class PVBean implements Serializable
+public class ConfigBean implements Serializable
 {
     /**
      * {变量说明}
      */
     private static final long serialVersionUID = 1L;
 
-    // private static final Log LOGGER = LogFactory.getLog(PVBean.class);
+    // private static final Log LOGGER = LogFactory.getLog(ConfigBean.class);
 
-    public PVBean()
+    public ConfigBean()
     {
 
     }
 
-    public PVBean(String englishName, String chineseDescription)
+    public ConfigBean(String englishName, String chineseDescription)
     {
         this.englishName = englishName;
         this.chineseDescription = chineseDescription;
@@ -57,7 +57,7 @@ public class PVBean implements Serializable
     @Override
     public String toString()
     {
-        return "PVBean [englishName=" + englishName + ", chineseDescription=" + chineseDescription + "]";
+        return "ConfigBean [englishName=" + englishName + ", chineseDescription=" + chineseDescription + "]";
     }
 
 }
