@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import javax.annotation.Resource;
 
@@ -15,11 +16,11 @@ import redis.clients.jedis.Jedis;
 
 import com.alibaba.fastjson.JSON;
 import com.spg.cv.BaseTest;
-import com.spg.cv.common.RedisPoolUtil;
 import com.spg.cv.common.CommonEnum.DataType;
+import com.spg.cv.common.RedisPoolUtil;
 import com.spg.cv.po.ConfigBean;
+import com.spg.cv.service.CommonService;
 import com.spg.cv.service.ConfigService;
-import com.spg.cv.service.PageService;
 
 /**
  * 项目名称：countView
@@ -34,9 +35,9 @@ public class InitLinkClickTestData extends BaseTest
     // private static final Log LOGGER =
     // LogFactory.getLog(InitLinkClickTestData.class);
     @Resource
-    PageService pageService;
-    @Resource
     ConfigService configService;
+    @Resource
+    CommonService commonService;
 
     @Test
     public void testLinkClickData()
@@ -44,7 +45,13 @@ public class InitLinkClickTestData extends BaseTest
         DateFormat format = new SimpleDateFormat("yyyyMMdd");
         // 先清空原来数据
         Jedis jedis = RedisPoolUtil.getJedis();
-        jedis.del("*" + DataType.LINK_CLICK_COUNT.getName());
+        Set<String> keys = jedis.keys("*" + DataType.LINK_CLICK_COUNT.getName());
+        Long deleteCount = 0L;
+        for (String str : keys)
+        {
+            deleteCount += jedis.del(str);
+        }
+        System.out.println(deleteCount);
         RedisPoolUtil.release(jedis);
 
         // 添加过去15天时间数据（量随机）
@@ -59,12 +66,9 @@ public class InitLinkClickTestData extends BaseTest
             }
             for (ConfigBean configBean : listObject)
             {
-                int count = RandomUtils.nextInt(500, (15 - i) * 1000);
-                for (int j = 0; j < count; j++)
-                {
-                    pageService.addPageEvent(DataType.LINK_CLICK_COUNT,
-                            key + DataType.LINK_CLICK_COUNT.getName(), configBean.getEnglishName());
-                }
+                long count = RandomUtils.nextLong(1000, (15 - i) * 2000);
+                commonService.addData(key + DataType.LINK_CLICK_COUNT.getName(), configBean.getEnglishName(),
+                        count);
             }
         }
     }

@@ -79,6 +79,7 @@ public class PageServiceImplTest extends BaseTest
         {
             client.del(str);
         }
+        RedisPoolUtil.release(client);
         System.out.println(keys);
     }
 

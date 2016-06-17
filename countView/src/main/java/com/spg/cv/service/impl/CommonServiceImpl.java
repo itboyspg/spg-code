@@ -3,6 +3,7 @@ package com.spg.cv.service.impl;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.stereotype.Service;
 
 import com.spg.cv.dao.RedisMapAPIUtil;
 import com.spg.cv.service.CommonService;
@@ -15,6 +16,7 @@ import com.spg.cv.service.CommonService;
  * @create_time：2016年1月10日 下午2:55:14
  * @version V1.0.0
  */
+@Service("commonService")
 public class CommonServiceImpl implements CommonService
 {
     private static final Log LOGGER = LogFactory.getLog(CommonServiceImpl.class);
