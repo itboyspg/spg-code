@@ -113,17 +113,22 @@ public class UserActiveController extends BaseController
         Map<String, Long> userIpMapData = new HashMap<String, Long>();
         for (String country : countrys)
         {
-            List<String> citys = RedisListAPIUtil.queryListData("IpMap" + country);
+            List<String> citys = RedisListAPIUtil.queryListData("IpMapCity" + country);
             for (String city : citys)
             {
-                Map<String, String> cityIpCount = RedisMapAPIUtil.hgetAll("IpMap" + city);
+                // 查询近半个月数据
+                List<String> last15Days = getLast15Days("yyyyMMdd");
                 Long count = 0L;
-                Entry<String, String> entry = null;
-                for (Iterator<Entry<String, String>> iterator = cityIpCount.entrySet().iterator(); iterator
-                        .hasNext();)
+                for (String last15Day : last15Days)
                 {
-                    entry = iterator.next();
-                    count += Long.valueOf(entry.getValue());
+                    Map<String, String> cityIpCount = RedisMapAPIUtil.hgetAll(last15Day + "IpMapCityData" + city);
+                    Entry<String, String> entry = null;
+                    for (Iterator<Entry<String, String>> iterator = cityIpCount.entrySet().iterator(); iterator
+                            .hasNext();)
+                    {
+                        entry = iterator.next();
+                        count += Long.valueOf(entry.getValue());
+                    }
                 }
                 if (city.contains("_"))
                 {
@@ -219,12 +224,14 @@ public class UserActiveController extends BaseController
             RedisListAPIUtil.addToList("IpMapCountry", countryId + "_" + country);
         }
         // 再保存国家_省
-        if (!RedisListAPIUtil.isInList("IpMap" + countryId + "_" + country, countryId + "_" + region))
+        if (!RedisListAPIUtil.isInList("IpMapCity" + countryId + "_" + country, countryId + "_" + region))
         {
-            RedisListAPIUtil.addToList("IpMap" + countryId + "_" + country, countryId + "_" + region);
+            RedisListAPIUtil.addToList("IpMapCity" + countryId + "_" + country, countryId + "_" + region);
         }
         // 再保存省_市IP数量
-        Long addResult = RedisMapAPIUtil.hsetAndIncre("IpMap" + countryId + "_" + region, city, 1L);
+        String dateKey = MyDateUtil.getFormatDate(new Date(System.currentTimeMillis()), "yyyyMMdd");
+        Long addResult = RedisMapAPIUtil.hsetAndIncre(dateKey + "IpMapCityData" + countryId + "_" + region,
+                city, 1L);
         return addResult;
     }
 }

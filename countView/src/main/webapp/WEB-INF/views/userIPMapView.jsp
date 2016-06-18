@@ -228,14 +228,14 @@
 	        },
 	
 	        title : {
-	            text : '用户IP地图分布'
+	            text : '近半个月用户IP地图分布'
 	        },
 	        subtitle: {
 	            text: '中国',
 	            floating: true,
 	            align: 'right',
 	            y: 55,
-	            x: -35,
+	            x: -40,
 	            style: {
 	                fontSize: '16px'
 	            }
@@ -243,6 +243,7 @@
 	        legend: small ? {} : {
 	            layout: 'vertical',
 	            align: 'right',
+	            x: -40,
 	            verticalAlign: 'middle'
 	        },
 	        colorAxis: {
@@ -270,6 +271,7 @@
 	        series : [{
 	            data : data,
 	            name: '中国',
+	            x: -40,
 	            dataLabels: {
 	                enabled: true,
 	                format: '{point.properties.postal-code}'

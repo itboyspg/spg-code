@@ -3,18 +3,23 @@ package com.spg.cv.common;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.junit.Test;
 
+import redis.clients.jedis.Jedis;
+
 import com.alibaba.fastjson.JSONObject;
+import com.spg.common.dateutil.MyDateUtil;
 import com.spg.common.httputil.MyHttpUtil;
 import com.spg.common.pojo.MyHttpResponse;
 import com.spg.cv.BaseTest;
@@ -43,6 +48,17 @@ public class CommonConstantsTest extends BaseTest
     @Test
     public void initProvince()
     {
+        // 先清空原来数据
+        Jedis jedis = RedisPoolUtil.getJedis();
+        Set<String> keys = jedis.keys("*IpMap*");
+        Long deleteCount = 0L;
+        for (String str : keys)
+        {
+            deleteCount += jedis.del(str);
+        }
+        System.out.println(deleteCount);
+        RedisPoolUtil.release(jedis);
+
         ipMap.put("台湾", "59.125.39.5");
         ipMap.put("澳门", "122.100.160.253");
         ipMap.put("香港", "203.198.69.64");
@@ -119,7 +135,7 @@ public class CommonConstantsTest extends BaseTest
         }
     }
 
-    private Long saveUserCity(String countryId, String country, String region, String city)
+    private void saveUserCity(String countryId, String country, String region, String city)
     {
         if ("TW".equalsIgnoreCase(countryId) || "HK".equalsIgnoreCase(countryId)
                 || "MO".equalsIgnoreCase(countryId))
@@ -132,13 +148,17 @@ public class CommonConstantsTest extends BaseTest
             RedisListAPIUtil.addToList("IpMapCountry", countryId + "_" + country);
         }
         // 再保存国家_省
-        if (!RedisListAPIUtil.isInList("IpMap" + countryId + "_" + country, countryId + "_" + region))
+        if (!RedisListAPIUtil.isInList("IpMapCity" + countryId + "_" + country, countryId + "_" + region))
         {
-            RedisListAPIUtil.addToList("IpMap" + countryId + "_" + country, countryId + "_" + region);
+            RedisListAPIUtil.addToList("IpMapCity" + countryId + "_" + country, countryId + "_" + region);
         }
         // 再保存省_市IP数量
-        Long addResult = RedisMapAPIUtil.hsetAndIncre("IpMap" + countryId + "_" + region, city,
-                RandomUtils.nextLong(100, 100000));
-        return addResult;
+        for (int i = 14; i >= 0; i--)
+        {
+            String strDate = MyDateUtil.getFormatDate(new Date(System.currentTimeMillis()
+                    - (i * (24 * 60 * 60 * 1000))), "yyyyMMdd");
+            String key = strDate + "IpMapCityData" + countryId + "_" + region;
+            RedisMapAPIUtil.hsetAndIncre(key, city, RandomUtils.nextLong(100, 100000));
+        }
     }
 }
