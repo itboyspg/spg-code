@@ -40,7 +40,6 @@ public class PageServiceImplTest extends BaseTest
 
     @Resource
     PageService pageService;
-
     @Resource
     ConfigService configService;
 
@@ -83,17 +82,4 @@ public class PageServiceImplTest extends BaseTest
         System.out.println(keys);
     }
 
-    @Test
-    @Ignore
-    public void testQueryCountData()
-    {
-        fail("Not yet implemented");
-    }
-
-    @Test
-    @Ignore
-    public void testQueryCountByCountKey()
-    {
-        fail("Not yet implemented");
-    }
 }

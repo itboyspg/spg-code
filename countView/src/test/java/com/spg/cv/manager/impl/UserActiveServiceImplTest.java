@@ -45,13 +45,4 @@ public class UserActiveServiceImplTest extends BaseTest
         }
     }
 
-    @Test
-    public void testQueryActiveUserCount()
-    {
-    }
-
-    @Test
-    public void testQueryOneDayActiveUserCount()
-    {
-    }
 }
