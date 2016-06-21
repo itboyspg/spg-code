@@ -45,7 +45,7 @@ public class PVController extends BaseController
     ConfigService configService;
 
     /**
-     * @description: 根据dataType跳转到pv、按钮、点击量的统计结果页面
+     * @description: 根据dataType分别跳转到pv、按钮、点击量的统计结果页面
      * @author: Wind-spg
      * @param request
      * @return
@@ -56,7 +56,7 @@ public class PVController extends BaseController
         String strDataType = request.getParameter("dataType");
         ModelAndView resultView = new ModelAndView("pageBtnLinkView");
 
-        // X轴
+        // X轴数据
         resultView.addObject("xAxis", getLast15Days("MM/dd"));
 
         DataType dataType = DataType.getEnumByCode(Integer.parseInt(strDataType));
@@ -114,7 +114,8 @@ public class PVController extends BaseController
     }
 
     /**
-     * @description: 产生一个页面事件（如PV、按钮点击、链接点击），保存数据
+     * @description: 产生一个页面事件（如PV、按钮点击、链接点击），保存数据<br>
+     * 此方法包含多个操作，根据页面事件类型不同，存储不同数据
      * @author: Wind-spg
      * @param request
      * @return

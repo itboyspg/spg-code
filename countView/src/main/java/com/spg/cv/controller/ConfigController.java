@@ -37,6 +37,12 @@ public class ConfigController extends BaseController
     @Resource
     ConfigService configService;
 
+    /**
+     * @description: 跳转到配置页面
+     * @author: Wind-spg
+     * @param request
+     * @return
+     */
     @RequestMapping("toConfigView")
     public ModelAndView toConfigView(HttpServletRequest request)
     {
@@ -45,7 +51,7 @@ public class ConfigController extends BaseController
     }
 
     /**
-     * @description: 增加一个配置
+     * @description: 增加一个配置项，根据dataType不同增加不同类型配置
      * @author: Wind-spg
      * @param request
      * @return
@@ -124,7 +130,8 @@ public class ConfigController extends BaseController
     }
 
     /**
-     * @description: 更新一个埋点配置项
+     * @description: 更新一个埋点配置项<br>
+     * 数据在redis存储，所以先删除再插入
      * @author: Wind-spg
      * @param request
      * @return
