@@ -41,4 +41,33 @@
 开源swaggerapi项目。
 
 ## countView项目
-简易埋点系统，可实现网站PV量、按钮点击量、链接点击量、用户活跃量、用户IP分布等的统计。
+
+>简易埋点系统，项目使用Redis和SpringMVC框架，实现网站PV量、按钮点击量、链接点击量、用户活跃量、用户IP分布等的统计。
+
+###统计项说明
+
+**项目主要统计功能包含：**
+
+1. 统计网站PV量。
+2. 统计页面按钮点击量。
+3. 统计页面链接等的点击量。
+4. 统计每天活跃用户数。
+5. 统计每天活跃用户IP分布情况等。
+
+###项目使用步骤说明：
+
+1. 将本项目中commoncount.js拷贝到你需要做埋点的项目某个目录中。
+2. 修改commoncount.js中baseUrl值，修改为你项目路径。
+3. 将commoncount.js引入引入你需要做埋点的页面。
+4. 再给调用相应的方法做相应统计。
+
+###commoncount.js功能说明
+1. addPV(englishName)；统计一次PV。
+2. addBtnClick(englishName)；某个按钮被点击事件。
+3. addLinkClick(englishName)；某个链接被点击事件。
+4. addUserActive()；一次用户活跃，如用户登录。
+5. addUserIp()；分析用户登录IP分布。
+
+###特殊说明
+- 用户IP分析使用taobaoIP进行分析，淘宝IP对请求量控制为10QPS；
+- 如果需要使用其他方式分析IP，可自行修改代码；
