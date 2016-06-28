@@ -57,7 +57,7 @@ public class InitUserActiveTestData extends BaseTest
         {
             String key = format.format(new Date(System.currentTimeMillis() - (i * (24 * 60 * 60 * 1000))));
             int count = RandomUtils.nextInt(50, (15 - i) * 50);
-            // 让本次数据大于上次数据
+            // 为了测试，让本次数据大于上次数据
             while (count < tempCount)
             {
                 count = RandomUtils.nextInt(50, (15 - i) * 50);
