@@ -1,7 +1,5 @@
 package com.spg.cv.manager.impl;
 
-import static org.junit.Assert.fail;
-
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -12,7 +10,6 @@ import java.util.Set;
 import javax.annotation.Resource;
 
 import org.apache.commons.lang3.RandomUtils;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import redis.clients.jedis.Jedis;
