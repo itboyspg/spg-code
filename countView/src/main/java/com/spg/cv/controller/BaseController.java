@@ -78,7 +78,7 @@ public class BaseController
      * @return
      */
     @RequestMapping(value = "forward")
-    public ModelAndView toTargetView(HttpServletRequest request)
+    protected ModelAndView toTargetView(HttpServletRequest request)
     {
         String targetViewName = request.getParameter("target");
         return new ModelAndView(targetViewName);
@@ -91,7 +91,7 @@ public class BaseController
      * @author: Wind-spg
      * @return
      */
-    public List<Integer> getBeforeDaysList()
+    protected List<Integer> getBeforeDaysList()
     {
         Calendar cal = Calendar.getInstance();
 
@@ -105,7 +105,7 @@ public class BaseController
     }
 
     /**
-     * @description:根据时间格式获取最近15天时间
+     * @description:根据时间格式获取最近15天时间(当前时间之前)
      * @author: Wind-spg
      * @param pattern
      *            时间格式
