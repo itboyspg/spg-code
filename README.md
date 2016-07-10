@@ -59,7 +59,7 @@
 1. 将本项目中commoncount.js拷贝到你需要做埋点的项目某个目录中。
 2. 修改commoncount.js中baseUrl值，修改为你项目路径。
 3. 将commoncount.js引入引入你需要做埋点的页面。
-4. 再给调用相应的方法做相应统计。
+4. 再给需要统计的按钮、链接等的onclick事件上添加相应统计方法，pv统计加在onload上即可。
 
 ###commoncount.js功能说明
 1. addPV(englishName)；统计一次PV。
