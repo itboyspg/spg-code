@@ -46,7 +46,8 @@ public class BaseController
         BaseResultVo resultVo = new BaseResultVo();
         resultVo.setResultData(resultData);
         resultVo.setResultMessage("success");
-        String result = JSON.toJSONString(resultVo, CommonConstants.SERIALIZER_FEATURES);
+        String result = JSON.toJSONString(resultVo, CommonConstants.SERIALIZE_CONFIG,
+                CommonConstants.SERIALIZER_FEATURES);
         LOGGER.debug(String.format("exit function, %s", result));
         return result;
     }

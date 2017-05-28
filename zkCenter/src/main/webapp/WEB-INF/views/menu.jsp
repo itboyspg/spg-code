@@ -68,6 +68,14 @@
 							</ul>
 						</li>
 						<li>
+							<a>
+								<i class="fa fa-gears"></i> 云日志 <span class="fa fa-chevron-down"></span>
+							</a>
+							<ul class="nav child_menu">
+								<li><a href="<%=basePath %>configCtrl/forward?target=queryLog">日志查询</a></li>
+							</ul>
+						</li>
+						<li>
 							<a><i class="fa fa-edit"></i> 埋点统计 <span class="fa fa-chevron-down"></span></a>
 							<ul class="nav child_menu">
 								<li><a href="<%=basePath %>error/comingsoon.html">PV</a></li>
